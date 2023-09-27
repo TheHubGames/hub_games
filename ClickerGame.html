@@ -62,7 +62,6 @@
             background-color: #333;
             padding: 10px;
             border-radius: 5px;
-            
         }
         #tableau {
             font-size: 20px;
@@ -80,6 +79,46 @@
             font-size: 12px;
             color: #777;
         }
+        /* Style pour la boîte modale (popup) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .modal-content {
+            margin: 15% auto;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+        }
+        #play-button {
+            padding: 10px 20px;
+            font-size: 30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #play-button:hover {
+            background-color: #555;
+        }
         /* Style pour le bouton "Retour au hub de jeu" */
         #return-button {
             position: fixed;
@@ -93,7 +132,6 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         #return-button:hover {
             background-color: #555;
         }
@@ -104,7 +142,7 @@
         <h1>Jeu de Clics</h1>
     </header>
     <main>
-        <p id="instructions">Cliquez sur la forme bleue pour gagner des points. Vous avez 30 secondes.</p>
+        <p id="instructions">Cliquez sur la forme bleue pour gagner des points.</p>
         <div id="tableau">
             <p id="score">Score : <span>0</span></p>
             <p id="chrono">Chrono : 30s</p>
@@ -114,19 +152,45 @@
                 <div id="forme"></div>
             </div>
         </div>
-        <button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
     </main>
     <footer>
         <div class="Copyright">
             &copy; 2023 By Klaynight. All rights reserved.
         </div>
     </footer>
+    <!-- La boîte modale (popup) -->
+    <div id="popup" class="modal">
+        <div class="modal-content">
+            <button id="play-button" onclick="startGame()">Jouer</button>
+            <button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
+        </div>
+    </div>
+    <button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
     <script>
         // JavaScript pour le jeu de clics
         let score = 0;
         const scoreElement = document.querySelector("#score span");
         const chronoElement = document.getElementById("chrono");
         const forme = document.getElementById("forme");
+
+        // Fonction pour démarrer le jeu
+        function startGame() {
+            document.getElementById("popup").style.display = "none"; // Masquer la popup
+            document.getElementById("jeu").style.pointerEvents = "auto"; // Activer le jeu
+            deplacerForme(); // Démarrer le jeu en déplaçant la forme initiale
+            startCountdown(); // Démarrer le compte à rebours
+        }
+
+        // Fonction pour afficher la popup
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("jeu").style.pointerEvents = "none"; // Désactiver le jeu
+        }
+
+        // Fonction pour fermer la popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
 
         forme.addEventListener("click", () => {
             score++;
@@ -154,17 +218,20 @@
             return color;
         }
 
-        // Lancer le jeu
+        // Compte à rebours
         let tempsRestant = 30;
-        const chronoInterval = setInterval(() => {
-            tempsRestant--;
-            chronoElement.textContent = `Chrono : ${tempsRestant}s`;
-            if (tempsRestant === 0) {
-                clearInterval(chronoInterval);
-                alert("Temps écoulé ! Votre score final est : " + score);
-                location.reload(); // Recharger la page pour recommencer
-            }
-        }, 1000); // Mettre à jour le chrono chaque seconde
+
+        function startCountdown() {
+            const chronoInterval = setInterval(() => {
+                tempsRestant--;
+                chronoElement.textContent = `Chrono : ${tempsRestant}s`;
+                if (tempsRestant === 0) {
+                    clearInterval(chronoInterval);
+                    alert("Temps écoulé ! Votre score final est : " + score);
+                    location.reload(); // Recharger la page pour recommencer
+                }
+            }, 1000);
+        }
 
         // Fonction pour retourner au hub de jeu
         function returnToHub() {
@@ -172,8 +239,8 @@
             window.location.href = "index.html";
         }
 
-        // Démarrer le jeu en déplaçant la forme initiale
-        deplacerForme();
+        // Afficher la popup au chargement de la page
+        openPopup();
     </script>
 </body>
 </html>
