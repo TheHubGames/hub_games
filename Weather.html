@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations météorologiques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        #weather-container {
+            margin: 20px auto;
+            max-width: 500px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 90%;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        /* Style pour le bouton "Retour au hub de jeu" */
+        #return-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #return-button:hover {
+            background-color: #555;
+        }
+        /* Style pour le pied de page */
+        footer {
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Informations météorologiques</h1>
+    </header>
+    <div id="weather-container">
+        <h2>Données météorologiques actuelles pour <span id="city-name"></span></h2>
+        <p id="weather-description"></p>
+        <p id="temperature"></p>
+        <p id="pressure"></p>
+        <p id="humidity"></p>
+        <p id="wind-speed"></p>
+        <p id="longitude"></p>
+        <p id="latitude"></p>
+        <label for="city-input">Entrez une ville :</label>
+        <input type="text" id="city-input" placeholder="Nom de la ville">
+        <button id="fetch-button">Rechercher</button>
+    </div>
+    <button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
+    <div class="Copyright">
+        <footer>Copyright ©&copy;  2023 By Klaynight. All rights reserved.</footer>
+    </div>
+    
+    <script>
+        function returnToHub() {
+        // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
+            window.location.href = "index.html";
+}
+        function fetchWeatherData() {
+            const api_key = '2dbcf398107ead0a716a4773269a7b68';
+            const url = 'https://api.openweathermap.org/data/2.5/weather';
+            const cityInput = document.getElementById('city-input');
+            const cityName = document.getElementById('city-name');
+            const weatherDescription = document.getElementById('weather-description');
+            const temperature = document.getElementById('temperature');
+            const pressure = document.getElementById('pressure');
+            const humidity = document.getElementById('humidity');
+            const windSpeed = document.getElementById('wind-speed');
+            const longitude = document.getElementById('longitude');
+            const latitude = document.getElementById('latitude');
+
+            const fetchButton = document.getElementById('fetch-button');
+            
+            fetchButton.addEventListener('click', () => {
+                const ville = cityInput.value;
+
+                const params = {
+                    'q': ville,
+                    'units': 'metric',
+                    'lang': 'fr',
+                    'appid': api_key
+                }
+
+                fetch(url + `?q=${ville}&units=metric&lang=fr&appid=${api_key}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        cityName.textContent = ville;
+                        weatherDescription.textContent = `Temps : ${data.weather[0].description}`;
+                        temperature.textContent = `Température : ${data.main.temp}°C`;
+                        pressure.textContent = `Pression atmosphérique : ${data.main.pressure} hPa`;
+                        humidity.textContent = `Humidité : ${data.main.humidity}%`;
+                        windSpeed.textContent = `Vitesse de vent : ${data.wind.speed}m/s`;
+                        longitude.textContent = `Longitude : ${data.coord.lon}`;
+                        latitude.textContent = `Latitude : ${data.coord.lat}`;
+                    })
+                    .catch(error => {
+                        console.error("La requête a échoué avec l'erreur :", error);
+                    });
+            });
+        }
+
+        fetchWeatherData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hub de Jeux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff9900;
+        }
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .game {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .game:hover {
+            transform: scale(1.05);
+        }
+        .game img {
+            object-fit: cover; /* Rogner et agrandir tout en préservant les proportions */
+            min-width: 300px;
+            min-height: 300px;
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+        }
+        .play-button {
+            background-color: #ff9900;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .play-button:hover {
+            background-color: #ff6600;
+        }
+        /* Style pour le pied de page */
+        footer {
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hub de Jeux</h1>
+    </header>
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Jeux</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="game-list">
+        <div class="game">
+            <img src="image/Morpion.jpg" alt="Morpion">
+            <h2>Morpion</h2>
+            <p>Sur une plateau de jeu en 3x3 le premier à alligner trois de ses pions à gagné.</p>
+            <a href="Morpion.html" class="play-button">Jouer</a>
+        </div>
+        <div class="game">
+            <img src="image/Weather.jpg" alt="Nom du Jeu 2">
+            <h2>Weather</h2>
+            <p>Savoir toute les informations météo de l'instant de n'importe quelle ville.</p>
+            <a href="" class="play-button">Jouer</a>
+        </div>
+        <!-- Ajoutez plus de jeux ici -->
+    </div>
+    <div class="Copyright">
+            <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
+    </div>
+</body>
+</html>

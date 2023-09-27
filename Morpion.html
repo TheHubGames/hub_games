@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion</title>
+    <style>
+        /* Style de base */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #game-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        #game-board {
+            margin-right: 20px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border: 2px solid #333;
+            font-size: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cell:hover {
+            background-color: #eee;
+        }
+
+        #message-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Style pour les joueurs X et O */
+        .cell.X {
+            color: #f00; /* Rouge pour X */
+        }
+
+        .cell.O {
+            color: #00f; /* Bleu pour O */
+        }
+
+        /* Style pour le tableau à droite du plateau */
+        #score-table {
+            position: absolute;
+            top: 0;
+            right: -150px; /* Ajustez la valeur en fonction de l'espace souhaité */
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #score-table p {
+            font-size: 20px;
+            margin: 5px 0;
+        }
+        
+        /* Style pour le bouton */
+        #restart-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #restart-button:hover {
+            background-color: #555;
+        }
+
+        /* Style pour le bouton "Retour au hub de jeu" */
+        #return-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #return-button:hover {
+            background-color: #555;
+        }
+
+        /* Style pour le bouton OK */
+        #ok-button {
+            display: none;
+            margin-top: 20px; /* Ajustez la marge pour centrer verticalement */
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative; /* Ajoutez cette ligne */
+            left: 50%; /* Ajoutez cette ligne */
+            transform: translateX(-50%); /* Ajoutez cette ligne pour centrer horizontalement */
+        }
+
+        #ok-button:hover {
+            background-color: #555;
+        }
+
+        .gras-souligne {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .gras {
+            font-weight: bold;
+        }
+
+        /* Style pour le pied de page */
+        footer {
+            margin-top: 20px;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Morpion</h1>
+<div id="message-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeMessageModal()">&times;</span>
+        <p id="message-content"></p>
+        <button id="ok-button" onclick="closeMessageModal()">OK</button>
+    </div>
+</div>
+<div id="game-container">
+    <div id="game-board">
+        <!-- Grille de jeu -->
+        <div class="row">
+            <div class="cell" onclick="makeMove(0)"></div>
+            <div class="cell" onclick="makeMove(1)"></div>
+            <div class="cell" onclick="makeMove(2)"></div>
+        </div>
+        <div class="row">
+            <div class="cell" onclick="makeMove(3)"></div>
+            <div class="cell" onclick="makeMove(4)"></div>
+            <div class="cell" onclick="makeMove(5)"></div>
+        </div>
+        <div class="row">
+            <div class="cell" onclick="makeMove(6)"></div>
+            <div class="cell" onclick="makeMove(7)"></div>
+            <div class="cell" onclick="makeMove(8)"></div>
+        </div>
+    </div>
+    <div id="score-table">
+        <!-- Tableau de scores -->
+        <p>Au tour de : <span id="currentPlayer">X</span></p>
+        <p><span class="gras-souligne">Score</span><span class="gras"> :</span></p>
+        <p>Joueur X: <span id="scoreX">0</span></p>
+        <p>Joueur O: <span id="scoreO">0</span></p>
+    </div>
+</div>
+<button id="restart-button" onclick="restartGame()">Rejouer</button>
+<button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
+<div class="Copyright">
+    <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
+</div><script>
+    // JavaScript
+    const gameBoard = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+    let currentPlayer = Math.random() < 0.5 ? "X" : "O";
+    let gameActive = true;
+    const message = document.getElementById("message-content");
+    const messageModal = document.getElementById("message-modal");
+    const closeModal = document.getElementsByClassName("close")[0];
+    const okButton = document.getElementById("ok-button");
+    const scoreX = document.getElementById("scoreX");
+    const scoreO = document.getElementById("scoreO");
+    const currentPlayerElement = document.getElementById("currentPlayer");
+
+    let winsX = 0;
+    let winsO = 0;
+
+    function returnToHub() {
+    // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
+    window.location.href = "index.html";
+}
+
+    function makeMove(cellIndex) {
+        if (gameBoard[cellIndex] === " " && gameActive) {
+            gameBoard[cellIndex] = currentPlayer;
+            document.getElementsByClassName("cell")[cellIndex].textContent = currentPlayer;
+            document.getElementsByClassName("cell")[cellIndex].classList.add(currentPlayer);
+            checkWinner();
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            currentPlayerElement.textContent = currentPlayer;
+        }
+    }
+
+    function checkWinner() {
+        const winningCombos = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        for (const combo of winningCombos) {
+            const [a, b, c] = combo;
+            if (gameBoard[a] !== " " && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+                showMessage(`Le joueur ${gameBoard[a]} a gagné !`);
+                gameActive = false;
+                updateScore(gameBoard[a]);
+                return;
+            }
+        }
+
+        if (!gameBoard.includes(" ")) {
+            showMessage("Égalité !");
+            gameActive = false;
+        }
+    }
+
+    function updateScore(winner) {
+        if (winner === "X") {
+            winsX++;
+            scoreX.textContent = winsX;
+        } else if (winner === "O") {
+            winsO++;
+            scoreO.textContent = winsO;
+        }
+    }
+
+    function restartGame() {
+        gameBoard.fill(" ");
+        const cells = document.getElementsByClassName("cell");
+        for (const cell of cells) {
+            cell.textContent = "";
+            cell.classList.remove("X", "O");
+        }
+        messageModal.style.display = "none";
+        gameActive = true;
+
+        // Génération aléatoire du joueur qui commence
+        currentPlayer = Math.random() < 0.5 ? "X" : "O";
+        currentPlayerElement.textContent = currentPlayer;
+    }
+
+    function showMessage(messageText) {
+        message.textContent = messageText;
+        messageModal.style.display = "block";
+        if (messageText === "Égalité !" || messageText.startsWith("Le joueur")) {
+            okButton.style.display = "block";
+        } else {
+            okButton.style.display = "none";
+        }
+    }
+
+    function closeMessageModal() {
+        messageModal.style.display = "none";
+    }
+
+    closeModal.onclick = closeMessageModal;
+    okButton.onclick = closeMessageModal;
+</script>
+</body>
+</html>
