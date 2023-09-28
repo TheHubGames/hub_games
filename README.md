@@ -1,6 +1,6 @@
 # Hub Game
 
-Bienvenue dans le dépôt GitHub de Klaynight!
+Bienvenue dans le dépôt GitHub de HubGames Studio!
 
 ## Instructions d'utilisation
 
@@ -20,4 +20,4 @@ Merci d'avoir choisi Klaynight pour votre expérience de jeu!
 
 ---
 
-© 2023 Klaynight. Tous droits réservés.
+© 2023 HubGames Studio. Tous droits réservés.
