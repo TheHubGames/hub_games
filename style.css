@@ -124,6 +124,8 @@ body {
      border: none;
      cursor: pointer;
      transition: background-color 0.3s;
+     text-decoration: none;
+     border-radius: 5px;
 }
  #return-button:hover {
      background-color: #555;
