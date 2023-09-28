@@ -1,0 +1,297 @@
+body {
+     font-family: Arial, sans-serif;
+     text-align: center;
+     background-color: #f2f2f2;
+     /* margin: 0; */
+}
+ header {
+     background-color: #333;
+     color: white;
+     padding: 20px;
+}
+ h1 {
+     margin: 0;
+}
+ nav {
+     display: flex;
+     justify-content: center;
+     background-color: #444;
+     padding: 10px;
+}
+ nav a {
+     color: white;
+     text-decoration: none;
+     margin: 0 20px;
+     transition: color 0.3s;
+}
+ nav a:hover {
+     color: #ff9900;
+}
+ .game-list {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     margin: 20px;
+}
+ .game {
+     width: 300px;
+     margin: 20px;
+     border: 1px solid #ccc;
+     padding: 10px;
+     background-color: white;
+     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+     transition: transform 0.3s;
+}
+ .game:hover {
+     transform: scale(1.05);
+}
+ .game img {
+     object-fit: cover;
+    /* Rogner et agrandir tout en préservant les proportions */
+     min-width: 300px;
+     min-height: 300px;
+     max-width: 300px;
+     max-height: 300px;
+     width: auto;
+     height: auto;
+}
+ .play-button {
+     background-color: #ff9900;
+     color: white;
+     padding: 5px 15px;
+     border: none;
+     cursor: pointer;
+     text-decoration: none;
+     display: block;
+     margin-top: 10px;
+     font-weight: bold;
+     transition: background-color 0.3s;
+}
+ .play-button:hover {
+     background-color: #ff6600;
+}
+/* Style pour le pied de page */
+ footer {
+     margin-top: 20px;
+     color: #666;
+}
+
+
+/*           CSS Pour Weather                  */
+#weather-container {
+     margin: 20px auto;
+     max-width: 500px;
+     background-color: #fff;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+     padding: 20px;
+}
+ h2 {
+     font-size: 20px;
+     margin-top: 0;
+}
+ p {
+     font-size: 16px;
+     margin: 10px 0;
+}
+ input[type="text"] {
+     padding: 10px;
+     width: 90%;
+     font-size: 15px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+}
+ button {
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     font-size: 16px;
+     cursor: pointer;
+     border-radius: 5px;
+     margin-top: 10px;
+}
+/* Style pour le bouton "Retour au hub de jeu" */
+ #return-button {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     padding: 10px 20px;
+     font-size: 18px;
+     background-color: #333;
+     color: #fff;
+     border: none;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     text-decoration: none;
+     border-radius: 5px;
+}
+ #return-button:hover {
+     background-color: #555;
+}
+
+/*          CCS Pour CLICKER         */
+
+#jeu-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: calc(100vh - 140px);
+}
+ #jeu {
+     width: 80%;
+     max-width: 400px;
+    /* Largeur maximale du plateau */
+     aspect-ratio: 1/1;
+    /* Maintient le ratio hauteur/largeur */
+     position: relative;
+     border: 2px solid #ddd;
+     border-radius: 10px;
+    /* Bordure légèrement arrondie */
+     padding: 10px;
+    /* Ajout de l'espace à l'intérieur du plateau */
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+    /* Ombre légère */
+     margin-bottom: 20px;
+    /* Espace entre le jeu et le score */
+     background-color: #ddd;
+}
+ #forme {
+     width: 25px;
+     height: 25px;
+     background-color: blue;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     cursor: pointer;
+     border-radius: 50%;
+     transition: background-color 0.3s ease-in-out;
+}
+ #score {
+     font-size: 24px;
+     color: #eee;
+}
+ #tableau {
+     position: absolute;
+     top: 250px;
+     right: 300px;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     background-color: #333;
+     padding: 10px;
+     border-radius: 5px;
+}
+ #tableau {
+     font-size: 20px;
+     margin: 5px 0;
+}
+ #chrono {
+     font-size: 18px;
+     color: #eee;
+}
+
+/*       CSS POUR MORPION          */
+ #game-container {
+     display: flex;
+     align-items: center;
+     position: relative;
+     justify-content: center;
+}
+ #game-board {
+     margin-right: 20px;
+     width: 300px;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 5px;
+}
+ .cell {
+     width: 100px;
+     height: 100px;
+     background-color: #fff;
+     border: 2px solid #333;
+     font-size: 36px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     transition: background-color 0.3s;
+}
+ .cell:hover {
+     background-color: #eee;
+}
+ #message-modal {
+     display: none;
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.7);
+}
+ .modal-content {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: #fff;
+     padding: 20px;
+     border-radius: 5px;
+     text-align: center;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+ .close {
+     position: absolute;
+     top: 0;
+     right: 0;
+     padding: 10px;
+     cursor: pointer;
+}
+ #message {
+     margin-top: 10px;
+     font-size: 24px;
+     color: #333;
+}
+/* Style pour les joueurs X et O */
+ .cell.X {
+     color: #f00;
+    /* Rouge pour X */
+}
+ .cell.O {
+     color: #00f;
+    /* Bleu pour O */
+}
+/* Style pour le tableau à droite du plateau */
+ #score-table {
+     position: absolute;
+     top: 0;
+     right: -150px;
+    /* Ajustez la valeur en fonction de l'espace souhaité */
+     background-color: #333;
+     color: #fff;
+     padding: 10px;
+     border-radius: 5px;
+}
+ #score-table p {
+     font-size: 20px;
+     margin: 5px 0;
+}
+/* Style pour le bouton */
+ #restart-button {
+     margin-top: 10px;
+     padding: 10px 20px;
+     font-size: 18px;
+     background-color: #333;
+     color: #fff;
+     border: none;
+     cursor: pointer;
+     transition: background-color 0.3s;
+}
+ #restart-button:hover {
+     background-color: #555;
+}
+

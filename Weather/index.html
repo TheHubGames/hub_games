@@ -4,80 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informations météorologiques</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 0;
-        }
-        h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        #weather-container {
-            margin: 20px auto;
-            max-width: 500px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-        }
-        h2 {
-            font-size: 20px;
-            margin-top: 0;
-        }
-        p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 90%;
-            font-size: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        /* Style pour le bouton "Retour au hub de jeu" */
-        #return-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #return-button:hover {
-            background-color: #555;
-        }
-        /* Style pour le pied de page */
-        footer {
-            margin-top: 20px;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
@@ -96,16 +23,12 @@
         <input type="text" id="city-input" placeholder="Nom de la ville">
         <button id="fetch-button">Rechercher</button>
     </div>
-    <button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
+    <a id="return-button" href="/hub_game/">Retour au hub de jeu</a>
     <div class="Copyright">
         <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
     </div>
     
     <script>
-        function returnToHub() {
-        // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
-            window.location.href = "index.html";
-}
         function fetchWeatherData() {
             const api_key = '2dbcf398107ead0a716a4773269a7b68';
             const url = 'https://api.openweathermap.org/data/2.5/weather';
