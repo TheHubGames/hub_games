@@ -23,16 +23,12 @@
         <input type="text" id="city-input" placeholder="Nom de la ville">
         <button id="fetch-button">Rechercher</button>
     </div>
-    <button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
+    <a id="return-button" href="/hub_game_v2">Retour au hub de jeu</a>
     <div class="Copyright">
         <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
     </div>
     
     <script>
-        function returnToHub() {
-        // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
-            window.location.href = "index.html";
-}
         function fetchWeatherData() {
             const api_key = '2dbcf398107ead0a716a4773269a7b68';
             const url = 'https://api.openweathermap.org/data/2.5/weather';
