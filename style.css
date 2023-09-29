@@ -269,7 +269,7 @@ body {
  #score-table {
      position: absolute;
      top: 0;
-     right: -150px;
+     right: 350px;
     /* Ajustez la valeur en fonction de l'espace souhaité */
      background-color: #333;
      color: #fff;
