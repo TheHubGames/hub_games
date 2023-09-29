@@ -308,11 +308,8 @@ body {
      max-width: 17%;
      display: flex;
      flex-direction: row;
- }
- #cps-container p, h1, div {
      text-align: center;
-     align-items: center;
- }   
+ }
 
  #left-column {
      flex: 1;
