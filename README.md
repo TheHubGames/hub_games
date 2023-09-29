@@ -4,7 +4,7 @@ Bienvenue dans le dépôt GitHub de HubGames Studio®!
 
 
 ## À Propos
-Il s'agit d'un hub de jeu développé entièrement par notre équipe. Les jeux sont reprit des jeu les plus connus et simple que vous connaissez. Il y a également des logiciels simples comme le test de CPS ou encore une application métérologique.
+Il s'agit d'un hub de jeu et d'application développé entièrement par notre équipe. Les jeux sont reprit des jeu les plus connus et simple que vous connaissez. Il y a également des logiciels simples comme le test de CPS ou encore une application métérologique.
 
 ## Instructions d'utilisation
 
