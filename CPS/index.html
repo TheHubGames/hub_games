@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur de CPS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        #container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 23%;
+            display: flex;
+            flex-direction: row;
+        }
+        #counter p, h1, div{
+            text-align: center;
+        }   
+
+        #left-column {
+            flex: 1;
+            padding: 10px;
+            text-align: left;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        #click-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Espacement du haut */
+            align-items: center;
+            width: 100%;
+        }
+
+        #click-button.disabled {
+        opacity: 0.5; /* Opacité réduite pour griser le bouton */
+        pointer-events: none; /* Empêcher les interactions avec le bouton */
+    }
+        #click-count {
+            font-size: 24px;
+        }
+        #countdown {
+            font-size: 24px;
+        }
+        #retry-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Espacement du haut */
+            align-items: center;
+            width: 100%;
+        }
+
+        #retry-button:hover {
+            background-color: #0056b3; /* Couleur au survol */
+        }
+
+        /* Style pour le bouton "Retour au hub de jeu" */
+        #return-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #return-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="hist-container">
+        <div id="left-column">
+            <h1>Historique CPS</h1>
+            <p>En cours de développement</p>
+            <ul id="cps-history">
+            </ul>
+        </div>
+    </div>
+    <div id="container">
+        <div>
+            <h1>Compteur de CPS</h1>
+            <div id="click-count">0 clics</div>
+            <div id="cps-result" style="display: none;"></div>
+            <div id="countdown">Attendez de cliquer...</div>
+            <button id="click-button">Cliquez ici!</button>
+            <button id="retry-button" style="display: none;">Refaire un test</button>
+        </div>
+    </div>
+    <button id="return-button" onclick="returnToHub()">Retour au hub de jeu</button>
+
+    <script>
+        function returnToHub() {
+        // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
+            window.location.href = "index.html";
+}
+        let clicks = 0;
+        let countdown = 15;
+        let countdownStarted = false;
+    
+        const clickButton = document.getElementById("click-button");
+        const clickCount = document.getElementById("click-count");
+        const countdownDisplay = document.getElementById("countdown");
+        const cpsResult = document.getElementById("cps-result"); // Élément pour afficher le résultat
+        const retryButton = document.getElementById("retry-button"); // Bouton de retest
+    
+        clickButton.addEventListener("click", () => {
+            if (!countdownStarted) {
+                countdownStarted = true;
+                countdownDisplay.textContent = `Temps restant: ${countdown} secondes`;
+                startCountdown();
+            }
+    
+            clicks++;
+            clickCount.textContent = `${clicks} clics`;
+        });
+    
+        function startCountdown() {
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                countdownDisplay.textContent = `Temps restant: ${countdown} secondes`;
+
+                if (countdown === 0) {
+                    clearInterval(countdownInterval);
+                    // Afficher le résultat du nombre de clics divisé par 15
+                    const result = (clicks / 15).toFixed(2);
+                    cpsResult.textContent = `CPS: ${result}`;
+                    cpsResult.style.display = "block"; // Rendre l'élément visible
+
+                    // Masquer le temps après les 15 secondes
+                    countdownDisplay.style.display = "none";
+
+                    // Masquer le bouton "Cliquez ici!" après les 15 secondes
+                    clickButton.style.display = "none";
+
+                    // Afficher le bouton "Refaire un test"
+                    retryButton.style.display = "block";
+                }
+            }, 1000);
+        }
+
+        retryButton.addEventListener("click", () => {
+            clicks = 0;
+            countdown = 15;
+            countdownStarted = false;
+            cpsResult.style.display = "none";
+
+            // Afficher à nouveau le temps lorsque vous cliquez sur "Refaire un test"
+            countdownDisplay.style.display = "block";
+
+            // Afficher à nouveau le bouton "Cliquez ici!" lorsque vous cliquez sur "Refaire un test"
+            clickButton.style.display = "block";
+
+            retryButton.style.display = "none";
+            clickCount.textContent = "0 clics";
+            countdownDisplay.textContent = "Attendez de cliquer...";
+        });
+
+
+
+    </script> 
+    
+    </body>
+    </html>
