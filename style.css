@@ -11,6 +11,26 @@ body {
      margin-bottom: 10px;
 }
 
+/* Style pour les liens */
+a {
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* Ajoute un effet de soulignement au survol */
+    transition: border-color 0.2s ease-in-out;
+}
+
+a:hover {
+    border-color: #007bff; /* Couleur de l'effet de soulignement au survol */
+}
+
+/* Pour ouvrir les liens dans une nouvelle fenêtre/onglet */
+a[target="_blank"]::after {
+    content: " \f35d"; /* Ajoute une icône d'ouverture dans une nouvelle fenêtre/onglet (utilisez une police d'icônes comme Font Awesome) */
+    font-family: "Font Awesome 5 Free"; /* Assurez-vous de charger la police d'icônes appropriée */
+    font-weight: 900;
+    margin-left: 3px;
+}
+
 section {
     max-width: 800px;
     margin: 0 auto;
