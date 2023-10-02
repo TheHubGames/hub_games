@@ -6,6 +6,13 @@ Bienvenue dans le dépôt GitHub de HubGames Studio®!
 ## À Propos
 Il s'agit d'un hub de jeu et d'application développé entièrement par notre équipe. Les jeux sont reprit des jeu les plus connus et simple que vous connaissez. Il y a également des logiciels simples comme le test de CPS ou encore une application métérologique.
 
+## Mention Légal
+Veuillez lire les documents suivants avant l'utilisation des programmes :
+`SECURITY` Pour tout se qui est en raport avec la sécurtié des programmes et des vulnérabilitées.
+`CONTRIVUTING` Pour toute contribution au code merci de lire se document afin de respecter les règles mises en place.
+`LICENCES` Afin de prendre compte de tout les points sur les droit d'auteurs/utilisations/copies des programmes.
+`CODE_OF_CONDUCT` Afin de respecter les règles en raport avec le code de conduite et de bonne entente.
+
 ## Instructions d'utilisation
 
 Pour utiliser ce code, suivez les étapes simples ci-dessous :
