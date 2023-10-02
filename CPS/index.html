@@ -7,15 +7,11 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <h1>Testeur de CPS</h1>
-    </header>
+    <header><h1>Testeur de CPS</h1></header>
     <div id="hist-container">
         <div id="left-column">
-            <h1>Historique CPS</h1>
-            <p>En cours de développement</p>
-            <ul id="cps-history">
-            </ul>
+            <h1>Dernier Résultat :</h1>
+            <ul id="cps-history"></ul>
         </div>
     </div>
     <div id="cps-container">
@@ -23,11 +19,13 @@
             <div id="click-count">0 clics</div>
             <div id="cps-result" style="display: none;"></div>
             <div id="countdown">Attendez de cliquer...</div>
-            <button id="click-button">Cliquez ici!</button>
-            <button id="retry-button" style="display: none;">Refaire un test</button>
+            <div>
+                <button id="click-button">Cliquez ici!</button>
+                <button id="retry-button" style="display: none;">Refaire un test</button>
+            </div>
         </div>
     </div>
-    <a id="return-button" href="/hub_game/">Retour au hub de jeu</a>
+    <a id="return-button" href="/hub_game/index.html">Retour au hub de jeu</a>
 
     <script>
         function returnToHub() {
@@ -37,12 +35,13 @@
         let clicks = 0;
         let countdown = 15;
         let countdownStarted = false;
-    
+
         const clickButton = document.getElementById("click-button");
         const clickCount = document.getElementById("click-count");
         const countdownDisplay = document.getElementById("countdown");
         const cpsResult = document.getElementById("cps-result"); // Élément pour afficher le résultat
         const retryButton = document.getElementById("retry-button"); // Bouton de retest
+        const histCPS = document.getElementById("cps-history")
     
         clickButton.addEventListener("click", () => {
             if (!countdownStarted) {
@@ -67,6 +66,15 @@
                     cpsResult.textContent = `CPS: ${result}`;
                     cpsResult.style.display = "block"; // Rendre l'élément visible
 
+                    // Obtenir la date et l'heure actuelles au format "dd/mm/aaaa hh:mm"
+                    const currentDate = new Date();
+                    const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getFullYear()} ${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}`;
+
+                    // Ajouter le résultat CPS et la date/heure à l'historique
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${formattedDate} - CPS: ${result}`;
+                    histCPS.appendChild(listItem);
+
                     // Masquer le temps après les 15 secondes
                     countdownDisplay.style.display = "none";
 
@@ -78,6 +86,7 @@
                 }
             }, 1000);
         }
+
 
         retryButton.addEventListener("click", () => {
             clicks = 0;
