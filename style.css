@@ -257,6 +257,7 @@ section {
      align-items: center;
      cursor: pointer;
      transition: background-color 0.3s;
+     margin-top: 5px;
 }
  .cell:hover {
      background-color: #eee;
