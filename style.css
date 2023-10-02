@@ -41,6 +41,8 @@ body {
      background-color: white;
      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
      transition: transform 0.3s;
+     align-items: center;
+     text-align: center;
 }
  .game:hover {
      transform: scale(1.05);
@@ -303,62 +305,76 @@ body {
      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
      padding: 20px;
      margin: 20px auto;
-     width: 80%;
-     align-items: center;
+     width: 23%;
      max-width: 25%;
-     display: flex;
      flex-direction: row;
-     text-align: center;
- }
-
- #left-column {
-     flex: 1;
-     padding: 10px;
-     text-align: left;
-     position: absolute;
-     left: 15%;
-     top: 15%;
-     background-color: #fff;
-     border-radius: 10px;
-     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
- }
- 
- #click-button {
-     background-color: #007BFF;
-     color: #fff;
-     border: none;
-     padding: 10px 20px;
-     font-size: 20px;
-     border-radius: 5px;
-     cursor: pointer;
-     margin-top: 20px; /* Espacement du haut */
-     align-items: center;
-     width: 100%;
- }
-
- #click-button.disabled {
- opacity: 0.5; /* Opacité réduite pour griser le bouton */
- pointer-events: none; /* Empêcher les interactions avec le bouton */
 }
- #click-count {
-     font-size: 24px;
- }
- #countdown {
-     font-size: 24px;
- }
- #retry-button {
-     background-color: #007BFF;
-     color: #fff;
-     border: none;
-     padding: 10px 20px;
-     font-size: 20px;
-     border-radius: 5px;
-     cursor: pointer;
-     margin-top: 20px; /* Espacement du haut */
-     align-items: center;
-     width: 100%;
- }
 
- #retry-button:hover {
-     background-color: #0056b3; /* Couleur au survol */
- }
+#cps-history li::before {
+    content: "\2192"; /* Code Unicode pour la flèche vers la droite (→) */
+    margin-right: 5px; /* Espace entre la flèche et le texte */
+}
+
+.arrow-list-item::before {
+    content: "";
+    background-image: url('/image/right-arrow-png-transparent.png');
+    width: 20px; /* Largeur de l'image de la flèche */
+    height: 20px; /* Hauteur de l'image de la flèche */
+    display: inline-block;
+    margin-right: 5px; /* Espace entre l'image de la flèche et le texte */
+}
+
+
+#left-column {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+    position: absolute;
+    left: 0.5%;
+    top: 15%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#click-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacement du haut */
+    width: 100%;
+}
+
+#click-button.disabled {
+opacity: 0.5; /* Opacité réduite pour griser le bouton */
+pointer-events: none; /* Empêcher les interactions avec le bouton */
+}
+#click-count {
+    font-size: 35px;
+}
+#countdown {
+    font-size: 24px;
+}
+#retry-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacement du haut */
+    width: 100%;
+}
+
+#retry-button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+
+ul {
+    font-size: 24px;
+}
