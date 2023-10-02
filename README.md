@@ -9,13 +9,13 @@ Il s'agit d'un hub de jeu et d'application développé entièrement par notre é
 ## Mention Légal
 Veuillez lire les documents suivants avant l'utilisation des programmes :
 
-<ul>`SECURITY` Pour tout se qui est en raport avec la sécurtié des programmes et des vulnérabilitées.</ul>
+<ul> SECURITY.md Pour tout se qui est en raport avec la sécurtié des programmes et des vulnérabilitées.</ul>
 
-<ul>`CONTRIVUTING` Pour toute contribution au code merci de lire se document afin de respecter les règles mises en place.</ul>
+<ul> CONTRIVUTING.md Pour toute contribution au code merci de lire se document afin de respecter les règles mises en place.</ul>
 
-<ul>`LICENCES` Afin de prendre compte de tout les points sur les droit d'auteurs/utilisations/copies des programmes.</ul>
+<ul> LICENCES.md Afin de prendre compte de tout les points sur les droit d'auteurs/utilisations/copies des programmes.</ul>
 
-<ul>`CODE_OF_CONDUCT` Afin de respecter les règles en raport avec le code de conduite et de bonne entente.</ul>
+<ul> CODE_OF_CONDUCT.md Afin de respecter les règles en raport avec le code de conduite et de bonne entente.</ul>
 
 ## Instructions d'utilisation
 
