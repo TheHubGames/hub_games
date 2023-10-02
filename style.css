@@ -375,6 +375,10 @@ pointer-events: none; /* Empêcher les interactions avec le bouton */
     background-color: #0056b3; /* Couleur au survol */
 }
 
-ul {
+#cps-history ul {
     font-size: 24px;
+}
+
+#cps-history li {
+    list-style-type: none;
 }
