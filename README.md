@@ -8,9 +8,13 @@ Il s'agit d'un hub de jeu et d'application développé entièrement par notre é
 
 ## Mention Légal
 Veuillez lire les documents suivants avant l'utilisation des programmes :
+
 ###`SECURITY` Pour tout se qui est en raport avec la sécurtié des programmes et des vulnérabilitées.
+
 ###`CONTRIVUTING` Pour toute contribution au code merci de lire se document afin de respecter les règles mises en place.
+
 ###`LICENCES` Afin de prendre compte de tout les points sur les droit d'auteurs/utilisations/copies des programmes.
+
 ###`CODE_OF_CONDUCT` Afin de respecter les règles en raport avec le code de conduite et de bonne entente.
 
 ## Instructions d'utilisation
