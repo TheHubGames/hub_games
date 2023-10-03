@@ -31,7 +31,7 @@ Pour utiliser ce code, suivez les étapes simples ci-dessous :
 
 Si vous avez des questions, des préoccupations ou des demandes de collaboration, n'hésitez pas à nous contacter à night.psr@gmail.com.
 
-Merci d'avoir choisi Klaynight pour votre expérience de jeu!
+Merci d'avoir choisi HubGames Studio pour votre expérience de jeu!
 
 ---
 
