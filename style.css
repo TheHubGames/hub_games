@@ -414,3 +414,37 @@ pointer-events: none; /* Empêcher les interactions avec le bouton */
 #cps-history li {
     list-style-type: none;
 }
+
+/*          CSS POUR LE ABOUT           */
+/* Style pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style pour les cellules d'en-tête */
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+
+/* Style pour les cellules de données */
+td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+
+/* Style pour les liens dans les cellules */
+td a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Style pour les liens au survol */
+td a:hover {
+    text-decoration: underline;
+}
