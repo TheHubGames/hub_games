@@ -1,0 +1,63 @@
+1- Snake
+
+Ça n’a l’air de rien, un snake, et c’est justement pour ça que c’est approprié. Pas besoin de connaissances pointues en programmation n’y d’années de développement. Cette personne en a même développé un en moins de 4 minutes, avec un fichier .txt et les fonctions de base du canvas Javascript.
+
+Vous n’avez pas besoin de l’imiter, mais développer un snake et l’intégrer à une page HTML avec un peu de mise en forme CSS sera largement suffisant pour un projet ISN. Et puis de nombreuses petites features peuvent être ajoutées. Pourquoi pas un deuxième joueur ?
+
+2- Casse-briques
+
+Légèrement plus compliqué à construire qu’un snake, le casse-briques reste très accessible et peut exister sans aucun travail du point de vue graphique. Niveau programmer art (c’est-à-dire ronds et carrés) vous pourrez vous en donner à cœur joie.
+
+Notre équipe a récemment développé un casse-brique d’inspiration steampunk avec génération de briques aléatoires, en un seul jour. Mais bon, à trois personnes dont un graphiste, et avec un peu d’expérience, ça va tout de suite plus vite.
+
+3- Memory Puzzle
+
+Vous savez, ce jeu avec des cartes faces cachées où il faut les retourner en trouvant les paires ? Oui, voilà, ce jeu auquel vous jouiez quand vous aviez six ans. Pourquoi ne pas l’adapter en application web ou locale ?
+
+Facile à réaliser, elle vous laissera le champ libre quant au choix des « cartes » (les photos de votre prof ne sont pas conseillées). Le principal défi devrait être la gestion de l’aléatoire pour assurer une vraie rejouabilité. Mais on vous garantit que ça n’est pas si dur !
+
+4- Flood It
+
+Cette idée nous vient d’un livre sur l’apprentissage du langage Python, et convient parfaitement aux critères du projet ISN.
+
+Construisez une grille, de par exemple 50 cases de largeur et de longueur (chaque case doit être bien visible à l’œil nu). Au lancement du jeu, remplissez les cases de la grille de couleurs aléatoires, parmi une palette de par exemple six couleurs. La palette est fixée à l’avance et ne change jamais. Vous obtenez une grille colorée.
+
+A tout moment, le joueur peut choisir une des couleurs de la palette. Puis, en cliquant sur une case, il la transforme et lui donne la couleur qu’il a choisi, à elle ainsi qu’à toutes les cases adjacentes de la même couleur. S’il touche un carré de 4x4 cases vertes avec du rouge, il obtient un carré de 4x4 cases rouges.
+
+Le but est de colorier toute la grille avec le moins de coups possibles. C’est original, fun à jouer et assez simple à développer !
+
+5- Pong
+
+Faut-il vraiment développer sur ce qu’est Pong ? Précisons seulement qu’en termes de développement c’est accessible, et que l’aspect multijoueur vous permettra de mettre une belle raclée à votre prof tout en chopant une bonne note.
+
+Attention aux rebonds de la balle cependant, qui ne sont pas si simples à programmer qu’il n’y parait. Surtout ceux de la balle contre les raquettes.
+
+6- Schmup
+
+Un quoi ? Mais si, un schmup ! Un Shoot ‘Em Up, quoi. Ces jeux nés dans les bornes d’arcade où l’on contrôle un vaisseau (généralement) qui fonce du bas de l’écran vers le haut (généralement) en massacrant des centaines d’ennemis à l’aide d’armes qui tirent en permanence (toujours). Ce genre de jeux.
+
+Voilà une idée pour ceux qui souhaitent se lancer dans l’aventure ambitieuse de gestion des projectiles et des ennemis. Ça n’en a peut-être pas l’air si l’on n’a jamais essayé, mais c’est assez complexe. Si vous avez peu de temps ou de motivation, on conseille vivement de choisir autre chose.
+
+7- Platformer
+
+On vous connait. On a été jeunes, nous aussi. On croyait en nos rêves, on avait de l’ambition, et puis un jour la réalité nous est tombée sur le crâne comme une bonne vieille gueule de bois.
+
+Vous êtes en train d’apprendre la programmation, vous avez envie de sortir le nouveau Mario de votre chapeau, vous vous en sentez capable mais vous vous trompez. Sans moteur de jeu (type Unity ou Godot Engine), développer un platformer est difficile. Il faut gérer le déplacement des personnages, leur collision entre eux et avec le sol ou les plateformes, le « combat » éventuel, le sidescrolling de l’écran, etc. C’est faisable, mais chronophage et compliqué. On vous aura prévenu.
+
+8- Jeu de dames
+
+Ça a l’air moins fun, comme ça, mais adapter un jeu de plateau des plus classiques en application – éventuellement portée sur le web – vous démarquera peut-être plus des nombreuses tentatives de plateformers ou de shooters plus ou moins réussies de vos copains.
+
+Les règles sont simples, le développement devrait l’être aussi. Ce qui vous laissera tout le loisir de soigner l’ergonomie et l’aspect visuel de votre application. Essayez de trouver la meilleure manière de gérer les contrôles des deux joueurs !
+
+9- Space Invaders
+
+Un autre classique parmi les classiques. Il vous donnera plus de fil à retordre que Pong ou le casse-briques, entre autres parce qu’il vous faudra gérer les projectiles et choisir soit de construire le (ou les) niveaux à la main, soit de programmer une génération aléatoire d’ennemis.
+
+Une variante plus simple à réaliser serait de se passer de projectiles. Faites « traverser l’écran » vos ennemis, et donnez au joueur comme but de tous les éviter. Plus il en évite, plus haut sera son score.
+
+10- Word Typer
+
+On n’est pas tout à fait sûr que ça s’appelle comme ça, mais on parle de ces jeux où il faut taper au clavier les mots qui descendent sur l’écran avant qu’ils n’arrivent tout en bas. Des jeux comme celui-ci, qui sont étonnamment funs bien que ressemblant à un exercice pour habituer les personnes âgées à se servir d’un ordinateur.
+
+Même sans le niveau de finition graphique du jeu mentionné, un typer fera son petit effet. Ecrivez ou chargez quelque part un tableau de mots, faites en des objets qui descendent en cascade sur l’écran, augmentez le score du joueur à mesure qu’il les tape en temps et en heure. C’est à la fois facile à développer et rempli de petits défis qu’on vous laissera découvrir.
