@@ -19,9 +19,8 @@
 </nav>
 <div id="message-modal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeMessageModal()">&times;</span>
         <p id="message-content"></p>
-        <button id="ok-button" onclick="closeMessageModal()">OK</button>
+        <button id="ok-button" onclick="restartGame()">OK</button>
     </div>
 </div>
 <div id="game-container">
@@ -51,7 +50,6 @@
         <p>Joueur O: <span id="scoreO">0</span></p>
     </div>
 </div>
-<button id="restart-button" onclick="restartGame()">Rejouer</button>
 <a id="return-button" href="/hub_games/">Retour au hub de jeu</a>
 <div class="Copyright">
     <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
@@ -133,6 +131,7 @@
         // Génération aléatoire du joueur qui commence
         currentPlayer = Math.random() < 0.5 ? "X" : "O";
         currentPlayerElement.textContent = currentPlayer;
+        messageModal.style.display = "none";
     }
 
     function showMessage(messageText) {
@@ -143,10 +142,6 @@
         } else {
             okButton.style.display = "none";
         }
-    }
-
-    function closeMessageModal() {
-        messageModal.style.display = "none";
     }
 
     closeModal.onclick = closeMessageModal;
