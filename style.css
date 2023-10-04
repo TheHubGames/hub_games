@@ -315,18 +315,8 @@ img {
      margin: 5px 0;
 }
 /* Style pour le bouton */
- #restart-button {
-     margin-top: 10px;
-     padding: 10px 20px;
-     font-size: 18px;
-     background-color: #333;
-     color: #fff;
-     border: none;
-     cursor: pointer;
-     transition: background-color 0.3s;
-}
- #restart-button:hover {
-     background-color: #555;
+#ok-button {
+     width: 100%;
 }
 
 /*        CSS POUR CPS             */
