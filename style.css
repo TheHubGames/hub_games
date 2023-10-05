@@ -74,7 +74,31 @@ footer {
     margin-top: 20px;
     color: #666;
 }
-
+h2 {
+     font-size: 20px;
+     margin-top: 0;
+}
+ p {
+     font-size: 16px;
+     margin: 10px 0;
+}
+ input[type="text"] {
+     padding: 10px;
+     width: 90%;
+     font-size: 15px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+}
+ button {
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     font-size: 16px;
+     cursor: pointer;
+     border-radius: 5px;
+     margin-top: 10px;
+}
 
 /*      CSS POUR ACCEUIL        */
  .game-list {
@@ -134,31 +158,7 @@ footer {
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
      padding: 20px;
 }
- h2 {
-     font-size: 20px;
-     margin-top: 0;
-}
- p {
-     font-size: 16px;
-     margin: 10px 0;
-}
- input[type="text"] {
-     padding: 10px;
-     width: 90%;
-     font-size: 15px;
-     border: 1px solid #ccc;
-     border-radius: 5px;
-}
- button {
-     background-color: #007bff;
-     color: #fff;
-     border: none;
-     padding: 10px 20px;
-     font-size: 16px;
-     cursor: pointer;
-     border-radius: 5px;
-     margin-top: 10px;
-}
+
 /* Style pour le bouton "Retour au hub de jeu" */
  #return-button {
      position: fixed;
