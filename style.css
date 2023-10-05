@@ -23,6 +23,17 @@ a:hover {
     border-color: #007bff; /* Couleur de l'effet de soulignement au survol */
 }
 
+.Copyright a {
+    color: #555;
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* Ajoute un effet de soulignement au survol */
+    transition: border-color 0.2s ease-in-out;
+}
+
+.Copyright a:hover {
+    border-color: #555; /* Couleur de l'effet de soulignement au survol */
+}
+
 section {
     max-width: 800px;
     margin: 0 auto;
@@ -58,6 +69,14 @@ img {
  nav a:hover {
      color: #ff9900;
 }
+/* Style pour le pied de page */
+footer {
+    margin-top: 20px;
+    color: #666;
+}
+
+
+/*      CSS POUR ACCEUIL        */
  .game-list {
      display: flex;
      flex-wrap: wrap;
@@ -102,11 +121,6 @@ img {
 }
  .play-button:hover {
      background-color: #ff6600;
-}
-/* Style pour le pied de page */
- footer {
-     margin-top: 20px;
-     color: #666;
 }
 
 
@@ -278,12 +292,17 @@ img {
      text-align: center;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
- .close {
-     position: absolute;
-     top: 0;
-     right: 0;
-     padding: 10px;
-     cursor: pointer;
+
+#ok-button {
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
 }
  #message {
      margin-top: 10px;
@@ -301,9 +320,6 @@ img {
 }
 /* Style pour le tableau à droite du plateau */
  #score-table {
-     position: absolute;
-     top: 0;
-     right: 350px;
     /* Ajustez la valeur en fonction de l'espace souhaité */
      background-color: #333;
      color: #fff;
@@ -314,10 +330,20 @@ img {
      font-size: 20px;
      margin: 5px 0;
 }
-/* Style pour le bouton */
-#ok-button {
-     width: 100%;
-}
+
+@media screen and (max-width: 600px) {
+    /* Réglez la largeur en fonction de la taille de l'écran à partir de laquelle vous souhaitez effectuer la modification */
+    #game-container {
+      flex-direction: column; /* Définissez la disposition en colonne */
+    }
+  
+    #score-table {
+      position: relative; /* Définissez la position sur relative pour revenir à la disposition normale */
+      top: auto; /* Réinitialisez la position en haut */
+      right: auto; /* Réinitialisez la position à droite */
+      margin-top: 10px; /* Ajoutez un espacement en haut pour séparer le tableau du plateau */
+    }
+  }
 
 /*        CSS POUR CPS             */
 
@@ -405,6 +431,7 @@ pointer-events: none; /* Empêcher les interactions avec le bouton */
     list-style-type: none;
 }
 
+
 /*          CSS POUR LE ABOUT           */
 /* Style pour le tableau */
 table {
@@ -437,4 +464,19 @@ td a {
 /* Style pour les liens au survol */
 td a:hover {
     text-decoration: underline;
+}
+
+
+
+/*          CSS POUR SNAKE          */
+canvas {
+    border: 2px solid black;
+    display: block;
+    margin: 0 auto;
+}
+.info {
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
 }
