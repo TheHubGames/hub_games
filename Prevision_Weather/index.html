@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prévisions Météo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prévisions Météo</h1>
+        <form id="weather-form">
+            <label for="city_name">Entrez le nom de la ville :</label>
+            <input type="text" id="city_name" required>
+            <button type="submit">Rechercher</button>
+        </form>
+        <div id="weather-scroll">
+            <button id="scroll-left">&lt;</button>
+            <div id="weather-days">
+                <!-- Les conteneurs de jour seront ajoutés ici en JavaScript -->
+            </div>
+            <button id="scroll-right">&gt;</button>
+        </div>
+        <div id="weather-info">
+            <!-- Les informations météo seront ajoutées ici en JavaScript -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
