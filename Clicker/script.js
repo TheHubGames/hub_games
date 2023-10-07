@@ -1,76 +1,73 @@
-function returnToHub() {
-    // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
-        window.location.href = "index.html";
-}
-    let clicks = 0;
-    let countdown = 15;
-    let countdownStarted = false;
+let score = 0;
+        const scoreElement = document.querySelector("#score span");
+        const chronoElement = document.getElementById("chrono");
+        const forme = document.getElementById("forme");
 
-    const clickButton = document.getElementById("click-button");
-    const clickCount = document.getElementById("click-count");
-    const countdownDisplay = document.getElementById("countdown");
-    const cpsResult = document.getElementById("cps-result"); // Élément pour afficher le résultat
-    const retryButton = document.getElementById("retry-button"); // Bouton de retest
-    const histCPS = document.getElementById("cps-history")
-
-clickButton.addEventListener("click", () => {
-    if (!countdownStarted) {
-        countdownStarted = true;
-        countdownDisplay.textContent = `Temps restant: ${countdown} secondes`;
-        startCountdown();
-    }
-
-    clicks++;
-    clickCount.textContent = `${clicks} clics`;
-});
-
-function startCountdown() {
-    const countdownInterval = setInterval(() => {
-        countdown--;
-        countdownDisplay.textContent = `Temps restant: ${countdown} secondes`;
-
-        if (countdown === 0) {
-            clearInterval(countdownInterval);
-            // Afficher le résultat du nombre de clics divisé par 15
-            const result = (clicks / 15).toFixed(2);
-            cpsResult.textContent = `CPS: ${result}`;
-            cpsResult.style.display = "block"; // Rendre l'élément visible
-
-            // Obtenir la date et l'heure actuelles au format "dd/mm/aaaa hh:mm"
-            const currentDate = new Date();
-            const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getFullYear()} ${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}`;
-
-            // Ajouter le résultat CPS et la date/heure à l'historique
-            const listItem = document.createElement("li");
-            listItem.textContent = `${formattedDate} - CPS: ${result}`;
-            histCPS.appendChild(listItem);
-
-            // Masquer le temps après les 15 secondes
-            countdownDisplay.style.display = "none";
-
-            // Masquer le bouton "Cliquez ici!" après les 15 secondes
-            clickButton.style.display = "none";
-
-            // Afficher le bouton "Refaire un test"
-            retryButton.style.display = "block";
+        // Fonction pour démarrer le jeu
+        function startGame() {
+            document.getElementById("popup").style.display = "none"; // Masquer la popup
+            document.getElementById("jeu").style.pointerEvents = "auto"; // Activer le jeu
+            deplacerForme(); // Démarrer le jeu en déplaçant la forme initiale
+            startCountdown(); // Démarrer le compte à rebours
         }
-    }, 1000);
-}
 
+        // Fonction pour afficher la popup
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("jeu").style.pointerEvents = "none"; // Désactiver le jeu
+        }
 
-retryButton.addEventListener("click", () => {
-    clicks = 0;
-    countdown = 15;
-    countdownStarted = false;
-    cpsResult.style.display = "none";
+        // Fonction pour fermer la popup
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
 
-    // Afficher à nouveau le temps lorsque vous cliquez sur "Refaire un test"
-    countdownDisplay.style.display = "block";
+        forme.addEventListener("click", () => {
+            score++;
+            scoreElement.textContent = score;
+            deplacerForme();
+        });
 
-    // Afficher à nouveau le bouton "Cliquez ici!" lorsque vous cliquez sur "Refaire un test"
-    clickButton.style.display = "block";
+        function deplacerForme() {
+            const jeu = document.getElementById("jeu");
+            const maxX = jeu.clientWidth - forme.clientWidth;
+            const maxY = jeu.clientHeight - forme.clientHeight;
+            const nouvelleX = Math.random() * maxX;
+            const nouvelleY = Math.random() * maxY;
+            forme.style.left = nouvelleX + "px";
+            forme.style.top = nouvelleY + "px";
+            forme.style.backgroundColor = getRandomColor();
+        }
 
-    retryButton.style.display = "none";
-    clickCount.textContent = "0 clics";
-    countdownDisplay.textContent = "Attendez de cliquer...";
-});
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Compte à rebours
+        let tempsRestant = 30;
+
+        function startCountdown() {
+            const chronoInterval = setInterval(() => {
+                tempsRestant--;
+                chronoElement.textContent = `Chrono : ${tempsRestant}s`;
+                if (tempsRestant === 0) {
+                    clearInterval(chronoInterval);
+                    alert("Temps écoulé ! Votre score final est : " + score);
+                    location.reload(); // Recharger la page pour recommencer
+                }
+            }, 1000);
+        }
+
+        // Fonction pour retourner au hub de jeu
+        function returnToHub() {
+            // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
+            window.location.href = "index.html";
+        }
+
+        // Afficher la popup au chargement de la page
+        openPopup();
