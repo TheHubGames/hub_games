@@ -13,16 +13,16 @@ function returnToHub() {
     const retryButton = document.getElementById("retry-button"); // Bouton de retest
     const histCPS = document.getElementById("cps-history")
 
-    clickButton.addEventListener("click", () => {
-        if (!countdownStarted) {
-            countdownStarted = true;
-            countdownDisplay.textContent = `Temps restant: ${countdown} secondes`;
-            startCountdown();
-        }
+clickButton.addEventListener("click", () => {
+    if (!countdownStarted) {
+        countdownStarted = true;
+        countdownDisplay.textContent = `Temps restant: ${countdown} secondes`;
+        startCountdown();
+    }
 
-        clicks++;
-        clickCount.textContent = `${clicks} clics`;
-    });
+    clicks++;
+    clickCount.textContent = `${clicks} clics`;
+});
 
 function startCountdown() {
     const countdownInterval = setInterval(() => {
