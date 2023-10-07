@@ -386,7 +386,7 @@ button {
 }
 
 /* Styles spécifiques pour les téléphones */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
     /* Placez le conteneur de l'historique en bas du CPS container */
     #hist-container {
         position: relative; /* Réinitialisez la position */
