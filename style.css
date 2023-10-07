@@ -235,7 +235,7 @@ button {
     border-radius: 5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1800px) {
     #jeu-container {
         flex-direction: column; /* Mettez en colonne pour les petits écrans */
         align-items: center; /* Centrez les éléments verticalement */
