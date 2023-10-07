@@ -187,24 +187,24 @@ button {
     justify-content: center;
     height: calc(100vh - 140px);
 }
+
 #jeu {
     width: 80%;
     max-width: 400px;
-   /* Largeur maximale du plateau */
+    /* Largeur maximale du plateau */
     aspect-ratio: 1/1;
-   /* Maintient le ratio hauteur/largeur */
+    /* Maintient le ratio hauteur/largeur */
     position: relative;
     border: 2px solid #ddd;
     border-radius: 10px;
-   /* Bordure légèrement arrondie */
+    /* Bordure légèrement arrondie */
     padding: 10px;
-   /* Ajout de l'espace à l'intérieur du plateau */
+    /* Ajout de l'espace à l'intérieur du plateau */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
-   /* Ombre légère */
-    margin-bottom: 20px;
-   /* Espace entre le jeu et le score */
+    /* Ombre légère */
     background-color: #ddd;
 }
+
 #forme {
     width: 25px;
     height: 25px;
@@ -217,14 +217,16 @@ button {
     border-radius: 50%;
     transition: background-color 0.3s ease-in-out;
 }
+
 #score {
     font-size: 24px;
     color: #eee;
 }
+
 #tableau {
     position: absolute;
-    top: 250px;
-    right: 300px;
+    top: 45%;
+    right: 30%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -232,14 +234,34 @@ button {
     padding: 10px;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 600px) {
+    #jeu-container {
+        flex-direction: column; /* Mettez en colonne pour les petits écrans */
+        align-items: center; /* Centrez les éléments verticalement */
+    }
+    #tableau {
+        top: 1%;
+        left: 0%;
+        position: relative; /* Changez la position en relative pour déplacer le tableau en dessous du jeu */
+        margin-top: 10px; /* Ajoutez un espace plus petit entre le jeu et le tableau */
+        text-align: center; /* Centrez le texte à l'intérieur du tableau */
+    }
+    #score {
+        margin-bottom: 5px; /* Réduisez légèrement l'espace entre le score et le chrono */
+    }
+}
+
 #tableau {
     font-size: 20px;
     margin: 5px 0;
 }
+
 #chrono {
     font-size: 18px;
     color: #eee;
 }
+
 
 /*       CSS POUR MORPION          */
 #game-container {
