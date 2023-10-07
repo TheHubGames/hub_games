@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        let weatherHTML = `<h2>Prévisions météo pour ${cityName}</h2>`;
+        let weatherHTML = `<h2>Coordonnée de ${cityName}</h2>`;
         let daysHTML = '';
 
         for (const date in dailyForecasts) {
