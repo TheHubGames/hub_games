@@ -89,6 +89,34 @@ table {
   font-size: 1.5em;
 }
 
+#phone-incompatible-message {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  /* Masquez le contenu du jeu */
+  .container,
+  .tetris,
+  .stats,
+  .next-piece,
+  #game-over-window {
+    display: none;
+  }
+
+  /* Affichez un message d'erreur */
+  #phone-incompatible-message {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ff0000;
+    border-radius: 10px;
+  }
+}
+
+
+
 /*** CLASS SELECTORS ***/
 
 .game-over-box {
@@ -158,3 +186,4 @@ button {
   margin-top: 10px;
   width: 100%;
 }
+
