@@ -1,0 +1,154 @@
+/*** TAG SELECTORS ***/
+
+body {
+    background: #202028;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.Copyright a {
+  color: #555;
+  text-decoration: none;
+  border-bottom: 2px solid transparent; /* Ajoute un effet de soulignement au survol */
+  transition: border-color 0.2s ease-in-out;
+}
+
+.Copyright a:hover {
+  border-color: #555; /* Couleur de l'effet de soulignement au survol */
+}
+
+h1 {
+  margin : 0;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Style pour le bouton "Retour au hub de jeu" */
+#return-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  border-radius: 5px;
+}
+#return-button:hover {
+  background-color: #555;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #444;
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #ff9900;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+td {
+  padding: 0 10px;
+}
+
+footer {
+  margin-top: 20px;
+  color: #666;
+}
+
+/*** CLASS SELECTORS ***/
+
+.game-over-box {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.game-over-content {
+  background-color: #202028;
+  color: #fff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  text-align: left;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.game-over-header {
+  background-color: #202028;
+  color: #DD2F21;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.next-piece {
+    width: 20%;
+    display: inline-block;
+    position: absolute;
+    right: 15%;
+}
+
+.stats {
+    display: inline-block;
+    width: 20%;
+    text-align: left;
+    position: absolute;
+    left: 15%;
+}
+
+.tetris {
+    width: 30%;
+    display:inline-block;
+}
+button {
+  background-color: #535353;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
