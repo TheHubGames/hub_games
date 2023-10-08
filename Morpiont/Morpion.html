@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            font-size: 24px;
+            cursor: pointer;
+            border: 2px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            color: #333;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #difficulty-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3367d6;
+        }
+
+        button:active {
+            background-color: #2a56c6;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Morpion</h1>
+        <div id="board"></div>
+        <p id="result"></p>
+        <div id="difficulty-buttons">
+            <button onclick="setDifficulty('easy')">Facile</button>
+            <button onclick="setDifficulty('medium')">Moyen</button>
+            <button onclick="setDifficulty('hard')">Difficile</button>
+        </div>
+        <button onclick="resetGame()">Réinitialiser</button>
+    </div>
+
+    <script>
+        const board = document.getElementById('board');
+        const resultMessage = document.getElementById('result');
+        let currentPlayer = 'X';
+        let gameBoard = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
+        let difficulty = 'medium';
+
+        function createBoard() {
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.setAttribute('data-index', i);
+                cell.addEventListener('click', handleCellClick);
+                board.appendChild(cell);
+            }
+        }
+
+        function handleCellClick(event) {
+            const index = event.target.getAttribute('data-index');
+
+            if (gameBoard[index] === '' && gameActive) {
+                gameBoard[index] = currentPlayer;
+                event.target.innerText = currentPlayer;
+
+                if (checkWinner()) {
+                    resultMessage.innerText = `Le joueur ${currentPlayer} a gagné !`;
+                    gameActive = false;
+                } else if (gameBoard.every(cell => cell !== '')) {
+                    resultMessage.innerText = 'Match nul !';
+                    gameActive = false;
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    if (currentPlayer === 'O') {
+                        setTimeout(robotMove, 500);
+                    }
+                }
+            }
+        }
+
+        function robotMove() {
+            let robotMoveIndex;
+
+            if (difficulty === 'easy') {
+                robotMoveIndex = getRandomMove();
+            } else if (difficulty === 'medium') {
+                robotMoveIndex = getMediumMove();
+            } else if (difficulty === 'hard') {
+                robotMoveIndex = getHardMove();
+            }
+
+            gameBoard[robotMoveIndex] = 'O';
+            const robotCell = document.querySelector(`[data-index="${robotMoveIndex}"]`);
+            robotCell.innerText = 'O';
+
+            if (checkWinner()) {
+                resultMessage.innerText = 'Le robot a gagné !';
+                gameActive = false;
+            } else if (gameBoard.every(cell => cell !== '')) {
+                resultMessage.innerText = 'Match nul !';
+                gameActive = false;
+            } else {
+                currentPlayer = 'X';
+            }
+        }
+
+        function getRandomMove() {
+            const emptyCells = gameBoard.reduce((acc, cell, index) => {
+                if (cell === '') {
+                    acc.push(index);
+                }
+                return acc;
+            }, []);
+
+            const randomIndex = Math.floor(Math.random() * emptyCells.length);
+            return emptyCells[randomIndex];
+        }
+
+        function getMediumMove() {
+            return getRandomMove();
+        }
+
+        function getHardMove() {
+            return getRandomMove();
+        }
+
+        function checkWinner() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            return winPatterns.some(pattern => {
+                const [a, b, c] = pattern;
+                return gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c];
+            });
+        }
+
+        function resetGame() {
+            gameBoard = ['', '', '', '', '', '', '', '', ''];
+            currentPlayer = 'X';
+            gameActive = true;
+            resultMessage.innerText = '';
+            document.querySelectorAll('.cell').forEach(cell => {
+                cell.innerText = '';
+            });
+
+            if (currentPlayer === 'O') {
+                setTimeout(robotMove, 500);
+            }
+        }
+
+        function setDifficulty(selectedDifficulty) {
+            difficulty = selectedDifficulty;
+            resetGame();
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>
