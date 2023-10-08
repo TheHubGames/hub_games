@@ -7,14 +7,25 @@
   <title>Find_the_number</title>
 </head>
 <body>
+  <header>
+        <h1>Trouve le Nombre</h1>
+    </header>
+    <nav>
+        <a href="/hub_games/">Accueil</a>
+        <a href="#">Jeux</a>
+        <a href="/hub_games/About">À propos</a>
+        <a href="#">Contact</a>
+    </nav>
   <div class="game-container">
-    <h1>Trouve le Nombre</h1>
     <p id="instruction">Trouve le nombre entre 1 et 100:</p>
     <input type="number" id="userGuess" min="1" max="100">
     <button onclick="checkGuess()">Submit Guess</button>
     <p id="result"></p>
     <h2>Historique</h2>
     <ul id="guessesSoFar"></ul>
+  </div>
+  <div class="Copyright">
+            <footer>Copyright &copy;  2023 By HubGames Studio All rights reserved.</footer>
   </div>
   <script src="script.js"></script>
 </body>
