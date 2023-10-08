@@ -1,74 +1,9 @@
-/*** TAG SELECTORS ***/
-
 body {
-    background: #202028;
-    color: #fff;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f2f2f2;
+    /* margin: 0; */
 }
-
-.Copyright a {
-  color: #555;
-  text-decoration: none;
-  border-bottom: 2px solid transparent; /* Ajoute un effet de soulignement au survol */
-  transition: border-color 0.2s ease-in-out;
-}
-
-.Copyright a:hover {
-  border-color: #555; /* Couleur de l'effet de soulignement au survol */
-}
-
-h1 {
-  margin : 0;
-}
-
-h2 {
-  font-size: 20px;
-  margin-top: 0;
-}
-p {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-/* Style pour le bouton "Retour au hub de jeu" */
-#return-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  text-decoration: none;
-  border-radius: 5px;
-}
-#return-button:hover {
-  background-color: #555;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #444;
-  padding: 10px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 20px;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: #ff9900;
-}
-
 header {
     background-color: #333;
     color: white;
@@ -76,114 +11,511 @@ header {
     border-radius: 5px;
 }
 
-td {
-  padding: 0 10px;
+/* Style pour les liens */
+a {
+   color: #007bff;
+   text-decoration: none;
+   border-bottom: 2px solid transparent; /* Ajoute un effet de soulignement au survol */
+   transition: border-color 0.2s ease-in-out;
 }
 
+a:hover {
+   border-color: #007bff; /* Couleur de l'effet de soulignement au survol */
+}
+
+.Copyright a {
+   color: #555;
+   text-decoration: none;
+   border-bottom: 2px solid transparent; /* Ajoute un effet de soulignement au survol */
+   transition: border-color 0.2s ease-in-out;
+}
+
+.Copyright a:hover {
+   border-color: #555; /* Couleur de l'effet de soulignement au survol */
+}
+
+section {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 20px;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+   margin-bottom: 20px;
+}
+
+img {
+   width: 100%;
+}
+
+h1 {
+    margin : 0;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #ff9900;
+}
+/* Style pour le pied de page */
 footer {
-  margin-top: 20px;
-  color: #666;
+   margin-top: 20px;
+   color: #666;
 }
-
-table {
-  font-size: 1.5em;
+h2 {
+    font-size: 20px;
+    margin-top: 0;
 }
-
-#phone-incompatible-message {
-  display: none;
+p {
+    font-size: 16px;
+    margin: 10px 0;
 }
-
-@media screen and (max-width: 1000px) {
-  /* Masquez le contenu du jeu */
-  .container,
-  .tetris,
-  .stats,
-  .next-piece,
-  #game-over-window {
-    display: none;
-  }
-
-  /* Affichez un message d'erreur */
-  #phone-incompatible-message {
-    display: block;
-    text-align: center;
-    padding: 20px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #ff0000;
-    border-radius: 10px;
-  }
-}
-
-
-
-/*** CLASS SELECTORS ***/
-
-.game-over-box {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.game-over-content {
-  background-color: #202028;
-  color: #fff;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  text-align: left;
-  width: 50%;
-  border-radius: 5px;
-  font-size: 2em;
-}
-
-.game-over-header {
-  background-color: #202028;
-  color: #DD2F21;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 50%;
-  border-radius: 5px;
-}
-
-.next-piece {
-    width: 20%;
-    display: inline-block;
-    position: absolute;
-    right: 15%;
-    font-size: 1.5em;
-}
-
-.stats {
-    display: inline-block;
-    width: 20%;
-    text-align: left;
-    position: absolute;
-    left: 15%;
-}
-
-.tetris {
-    width: 30%;
-    display:inline-block;
+input[type="text"] {
+    padding: 10px;
+    width: 90%;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 button {
-  background-color: #535353;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-  width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
+/*      CSS POUR ACCEUIL        */
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+.game {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    align-items: center;
+    text-align: center;
+}
+.game:hover {
+    transform: scale(1.05);
+}
+.game img {
+    object-fit: cover;
+   /* Rogner et agrandir tout en préservant les proportions */
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+}
+.play-button {
+    background-color: #ff9900;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.play-button:hover {
+    background-color: #ff6600;
+}
+
+
+/*           CSS Pour Weather                  */
+#weather-container {
+    margin: 20px auto;
+    max-width: 500px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Style pour le bouton "Retour au hub de jeu" */
+#return-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    border-radius: 5px;
+}
+#return-button:hover {
+    background-color: #555;
+}
+
+/*          CCS Pour CLICKER         */
+
+#jeu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 140px);
+}
+
+#jeu {
+    width: 80%;
+    max-width: 400px;
+    /* Largeur maximale du plateau */
+    aspect-ratio: 1/1;
+    /* Maintient le ratio hauteur/largeur */
+    position: relative;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    /* Bordure légèrement arrondie */
+    padding: 10px;
+    /* Ajout de l'espace à l'intérieur du plateau */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+    /* Ombre légère */
+    background-color: #ddd;
+}
+
+#forme {
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#score {
+    font-size: 24px;
+    color: #eee;
+}
+
+#tableau {
+    position: absolute;
+    top: 45%;
+    right: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1800px) {
+    #jeu-container {
+        flex-direction: column; /* Mettez en colonne pour les petits écrans */
+        align-items: center; /* Centrez les éléments verticalement */
+    }
+    #tableau {
+        top: 1%;
+        left: 0%;
+        position: relative; /* Changez la position en relative pour déplacer le tableau en dessous du jeu */
+        margin-top: 10px; /* Ajoutez un espace plus petit entre le jeu et le tableau */
+        text-align: center; /* Centrez le texte à l'intérieur du tableau */
+    }
+    #score {
+        margin-bottom: 5px; /* Réduisez légèrement l'espace entre le score et le chrono */
+    }
+}
+
+#tableau {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+#chrono {
+    font-size: 18px;
+    color: #eee;
+}
+
+
+/*       CSS POUR MORPION          */
+#game-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+#game-board {
+    margin-right: 20px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #333;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+.cell:hover {
+    background-color: #eee;
+}
+#message-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#ok-button {
+   width: 100%;
+}
+
+.close {
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 10px;
+   cursor: pointer;
+}
+#message {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+/* Style pour les joueurs X et O */
+.cell.X {
+    color: #f00;
+   /* Rouge pour X */
+}
+.cell.O {
+    color: #00f;
+   /* Bleu pour O */
+}
+/* Style pour le tableau à droite du plateau */
+#score-table {
+   /* Ajustez la valeur en fonction de l'espace souhaité */
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+#score-table p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 600px) {
+   /* Réglez la largeur en fonction de la taille de l'écran à partir de laquelle vous souhaitez effectuer la modification */
+   #game-container {
+     flex-direction: column; /* Définissez la disposition en colonne */
+   }
+ 
+   #score-table {
+     position: relative; /* Définissez la position sur relative pour revenir à la disposition normale */
+     top: auto; /* Réinitialisez la position en haut */
+     right: auto; /* Réinitialisez la position à droite */
+     margin-top: 10px; /* Ajoutez un espacement en haut pour séparer le tableau du plateau */
+   }
+ }
+
+/*        CSS POUR CPS             */
+
+/* Styles communs pour tous les écrans */
+#cps-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    width: 23%;
+    max-width: 25%;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+/* Styles spécifiques pour les téléphones */
+@media screen and (max-width: 850px) {
+    /* Placez le conteneur de l'historique en bas du CPS container */
+    #hist-container {
+        position: relative; /* Réinitialisez la position */
+        top: auto;
+        right: auto;
+        margin-top: 10px; /* Ajoutez un espacement en haut pour séparer le tableau du reste du contenu */
+    }
+    #cps-container {
+    width: 50%;
+    max-width: 50%;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    }
+}
+
+#cps-history li::before {
+    content: "\2192"; /* Code Unicode pour la flèche vers la droite (→) */
+    margin-right: 5px; /* Espace entre la flèche et le texte */
+}
+
+#left-column {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+    position: absolute;
+    left: 0.5%;
+    top: 15%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#click-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacement du haut */
+    width: 100%;
+}
+
+#click-button.disabled {
+    opacity: 0.5; /* Opacité réduite pour griser le bouton */
+    pointer-events: none; /* Empêcher les interactions avec le bouton */
+}
+
+#click-count {
+    font-size: 35px;
+}
+
+#countdown {
+    font-size: 24px;
+}
+
+#retry-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacement du haut */
+    width: 100%;
+}
+
+#retry-button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+
+#cps-history ul {
+    font-size: 24px;
+}
+
+#cps-history li {
+    list-style-type: none;
+}
+
+
+/*          CSS POUR LE ABOUT           */
+/* Style pour le tableau */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+
+/* Style pour les cellules d'en-tête */
+th {
+   background-color: #f2f2f2;
+   text-align: left;
+   padding: 10px;
+   border: 1px solid #dddddd;
+}
+
+/* Style pour les cellules de données */
+td {
+   padding: 10px;
+   border: 1px solid #dddddd;
+}
+
+/* Style pour les liens dans les cellules */
+td a {
+   color: #007BFF;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+/* Style pour les liens au survol */
+td a:hover {
+   text-decoration: underline;
+}
+
+
+
+/*          CSS POUR SNAKE          */
+canvas {
+   border: 2px solid black;
+   display: block;
+   margin: 0 auto;
+}
+.info {
+   text-align: center;
+   color: #fff;
+   font-family: Arial, sans-serif;
+   margin-top: 20px;
+}
