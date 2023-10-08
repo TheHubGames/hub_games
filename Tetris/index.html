@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Tetris</title>
+</head>
+
+<body>
+  <header>
+    <h1>Tetris</h1>
+</header>
+<nav>
+    <a href="/hub_games/">Accueil</a>
+    <a href="#">Jeux</a>
+    <a href="/hub_games/About">À propos</a>
+    <a href="/hub_games/About#Contact">Contact</a>
+</nav>
+  <div class="container">
+    <div class="stats">
+      <table>
+        <tr><td>Score :</td><td><div id="score"></div></td></tr>
+        <tr><td>Ligne détruite :</td><td><div id="rows-cleared"></div></td></tr>
+        <tr><td>Niveau :</td><td><div id="level"></div></td></tr>
+
+        <tr><td style="padding: 30px;"><canvas id="held-piece" width="120" height="120"></canvas></td></tr>
+
+        <tr><td>Ligne Simple :</td><td><div id="singles"></div></td></tr>
+        <tr><td>Ligne Double :</td><td><div id="doubles"></div></td></tr>
+        <tr><td>Ligne Triple :</td><td><div id="triples"></div></td></tr>
+        <tr><td>Tetris :</td><td><div id="num-tetris"></div></td></tr>
+      </table>
+    </div>
+
+    <div class="tetris">
+      <canvas id="tetris" width="300" height="600"></canvas>
+    </div>
+
+    <div class="next-piece">
+      Prochaine pièce:<br><br>
+      <canvas id="next-piece" width="120" height="120"></canvas>
+    </div>
+  </div>
+
+  <div id="game-over-window" class="game-over-box">
+    <div class="game-over-header">
+      <h1><b>Partie Terminée</b></h1>
+    </div>
+    <div class="game-over-content">
+      <table>
+        <tr><td>Score Final :</td><td><div id="final-score"></div></td></tr>
+        <tr><td>Ligne détruite :</td><td><div id="final-rows-cleared"></div></td></tr>
+        <tr><td>Niveau atteint :</td><td><div id="final-level"></div></td></tr>
+
+        <tr><td>Ligne Simple :</td><td><div id="final-singles"></div></td></tr>
+        <tr><td>Ligne Double :</td><td><div id="final-doubles"></div></td></tr>
+        <tr><td>Ligne Triple :</td><td><div id="final-triples"></div></td></tr>
+        <tr><td>Tetris :</td><td><div id="final-num-tetris"></div></td></tr>
+      </table>
+    </div>
+    <div class="game-over-content">
+      <button type="button" id="play-again-button">Rejouer</button>
+    </div>
+  </div>
+  <a id="return-button" href="/hub_games/">Retour au hub de jeu</a>
+  <div class="Copyright">
+    <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
+</div>
+</body>
+<script src="tetris.js" charset="utf-8"></script>
+</html>
