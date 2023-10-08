@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Find_the_number</title>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Trouve le Nombre</h1>
+    <p id="instruction">Trouve le nombre entre 1 et 100:</p>
+    <input type="number" id="userGuess" min="1" max="100">
+    <button onclick="checkGuess()">Submit Guess</button>
+    <p id="result"></p>
+    <h2>Historique</h2>
+    <ul id="guessesSoFar"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
