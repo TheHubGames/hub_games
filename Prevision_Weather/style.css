@@ -134,3 +134,38 @@ button {
 #scroll-right:hover {
     background-color: #0056b3;
 }
+
+#retry-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacement du haut */
+    width: 100%;
+}
+
+#retry-button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #ff9900;
+}
