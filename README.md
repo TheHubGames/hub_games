@@ -1,4 +1,4 @@
-# Hub Game®
+# Hub Games®
 
 Bienvenue dans le dépôt GitHub de HubGames Studio®!
 
