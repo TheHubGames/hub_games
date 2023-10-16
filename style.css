@@ -98,8 +98,11 @@ button {
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    transition: background-color 0.3s;
 }
-
+button:hover{
+    background-color: #238eff;
+}
 /*      CSS POUR ACCEUIL        */
 .game-list {
     display: flex;
