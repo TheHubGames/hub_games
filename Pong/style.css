@@ -22,13 +22,13 @@
         display: none;
     }
     /* Affichez un message d'erreur */
-  #phone-incompatible-message {
-    display: block;
-    text-align: center;
-    padding: 20px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #ff0000;
-    border-radius: 10px;
+    #phone-incompatible-message {
+      display: block;
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #ff0000;
+      border-radius: 10px;
   }
 }
