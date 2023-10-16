@@ -1,0 +1,75 @@
+#canvas
+{
+    background-color:#30c0df;
+    border: 2px solid black;
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 20%;
+}
+
+#instruction {
+    background-color: #555;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px){
+    #canvas {
+        background-color: #30c0df;
+        border: 2px solid black;
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%; /* Utilisez 100% pour que le canvas occupe toute la largeur */
+        height: auto; /* Laissez la hauteur en auto pour conserver le ratio d'aspect */
+    }    
+}
+/* Styles pour le bouton de mise en plein écran */
+#fullscreen-button {
+    display: flex;
+    background-color: #555;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    bottom: 65px;
+    right: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    max-width: 150px; /* Définissez la largeur maximale souhaitée */
+    
+}
+
+#fullscreen-button p {
+    margin: 0; /* Supprimez la marge par défaut du paragraphe */
+    margin-right: 10px; /* Ajoutez un espacement entre l'icône et le texte */
+}
+
+#fullscreen-button:hover {
+    background-color: #6b6b6b;
+}
+
+
+/* Styles spécifiques pour les écrans de petite taille (téléphone) */
+@media (max-width: 767px) {
+    #fullscreen-button {
+        position: fixed;
+        bottom: 65px; /* Ajustez la valeur pour définir la position verticale souhaitée */
+        right: 7%; /* Centrez horizontalement sur les écrans de petite taille */
+        transform: translateX(50%); /* Centrez horizontalement */
+    }
+    #affichePC {
+        display: none;
+    }
+}
+
