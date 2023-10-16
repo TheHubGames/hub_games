@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Find_the_number</title>
 </head>
 <body>
@@ -16,13 +17,20 @@
         <a href="/About">À propos</a>
         <a href="#">Contact</a>
     </nav>
-  <div class="game-container">
-    <p id="instruction">Trouve le nombre entre 1 et 100:</p>
-    <input type="number" id="userGuess" min="1" max="100">
-    <button onclick="checkGuess()">Submit Guess</button>
-    <p id="result"></p>
-    <h2>Historique</h2>
-    <ul id="guessesSoFar"></ul>
+  <div id="game-container">
+    <div id="container-content">
+      <h2 id="instruction">Trouve le nombre entre 1 et 100</h2>
+      <input type="number" id="userGuess" min="1" max="100">
+      <button onclick="checkGuess()" id="guessButton">Submit Guess</button>
+      <button onclick="resetGame()" style="display: none;" id="resetButton">Rejouer</button>
+      <div id="feedback-container" style="display: none;">
+        <p id="result"></p>
+      </div>
+    </div>
+    <div id="hist-container">  
+      <h2>Historique</h2>
+      <ul id="guessesSoFar"></ul>
+    </div>
   </div>
   <a id="return-button" href="../">Retour au hub de jeu</a>
   <div class="Copyright">
