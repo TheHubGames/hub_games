@@ -384,15 +384,23 @@ document.addEventListener('keydown', event => {
             break;
         case "ArrowDown": playerDrop();
             break;
+        case "S": playerDrop();
+            break;
+        case "s": playerDrop();
+            break;
         case "ArrowUp": playerHold();
+            break;
+        case "z": playerHold();
+            break;
+        case "Z": playerHold();
             break;
         case "d": playerRotate(+1);
             break;
         case "D": playerRotate(+1);
             break;
-        case "a": playerRotate(-1);
+        case "q": playerRotate(-1);
             break;
-        case "A": playerRotate(-1);
+        case "Q": playerRotate(-1);
     }
 });
 
