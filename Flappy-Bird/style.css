@@ -73,3 +73,24 @@
     }
 }
 
+#fullscreen-button {
+    display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Alignez les éléments verticalement au centre */
+}
+
+#fullscreen-button span {
+    display: flex; /* Utilisez Flexbox pour aligner le texte et l'icône horizontalement */
+    align-items: center; /* Alignez les éléments verticalement au centre */
+}
+
+#affichePC {
+    margin-right: 8px; /* Ajoutez un peu d'espace entre le texte et l'icône */
+}
+
+#exit-fullscreen-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: none; /* Masquez le bouton par défaut */
+    z-index: 2; /* Assurez-vous que le bouton est au-dessus du canvas */
+}
