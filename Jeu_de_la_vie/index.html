@@ -147,5 +147,12 @@ href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
   <footer>Copyright &copy; 2023 By HubGames Studio. All rights reserved.</footer>
 </div>
 <script src="js/life.js"></script>
+<script>
+      window.addEventListener("load", function() {
+    // La page est entièrement chargée, masquez l'écran de chargement.
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").style.display = "block"; // Affiche le contenu principal
+});
+</script>
 </body>
 </html>
