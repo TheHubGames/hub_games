@@ -65,10 +65,12 @@ nav a {
     text-decoration: none;
     margin: 0 20px;
     transition: color 0.3s;
+    text-align: center;
 }
 nav a:hover {
     color: #ff9900;
 }
+
 /* Style pour le pied de page */
 footer {
    margin-top: 20px;
@@ -104,6 +106,14 @@ button:hover{
     background-color: #238eff;
 }
 /*      CSS POUR ACCEUIL        */
+#github-repo-info{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: max-content;
+    margin: 0 auto;
+}
+
 .game-list {
     display: flex;
     flex-wrap: wrap;
@@ -227,9 +237,9 @@ button:hover{
 }
 
 #tableau {
-    position: absolute;
-    top: 45%;
-    right: 30%;
+    position: fixed;
+    top: 20%;
+    right: 5%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -238,7 +248,7 @@ button:hover{
     border-radius: 5px;
 }
 
-@media screen and (max-width: 1800px) {
+@media screen and (max-width: 790px) {
     #jeu-container {
         flex-direction: column; /* Mettez en colonne pour les petits écrans */
         align-items: center; /* Centrez les éléments verticalement */
