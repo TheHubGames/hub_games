@@ -17,6 +17,9 @@
         <a href="../hub_games/About">À propos</a>
         <a href="#">Contact</a>
     </nav>
+    <div id="github-repo-info">
+        <p>Chargement des informations du dépôt GitHub...</p>
+    </div>    
     <div class="game-list">
         <div class="game">
             <img src="image/Morpion.jpg" alt="Morpion">
@@ -66,16 +69,37 @@
             <p>Fait sauter ton oiseau entre des tuyaux pour faire le meilleur score, mais attention si tu tappes ça fait mal au front !</p>
             <a href="/hub_games/Flappy-Bird/" class="play-button">Jouer</a>
         </div>
-        <div class="game">
-            <img src="image/JDLV.jpg" alt="JDLV">
-            <h2>Le Jeu de La vie</h2>
-            <p>3 règles simple et pourtant la vie se déroule devant vaut yeux !</p>
-            <a href="/hub_games/Jeu_de_la_vie/" class="play-button">Jouer</a>
-        </div>
         <!-- Ajoutez plus de jeux ici -->
     </div>
     <div class="Copyright">
             <footer>Copyright &copy; 2023 By HubGames Studio All rights reserved.</footer>
     </div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+    const accessToken = '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'; // Remplacez par votre propre jeton d'accès
+    const repoOwner = 'TheHubGames'; // Remplacez par le nom du propriétaire du dépôt
+    const repoName = 'hub_games'; // Remplacez par le nom du dépôt
+
+    const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`;
+
+    fetch(apiUrl, {
+        headers: {
+            'Authorization': `Bearer ${accessToken}`
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const repoInfo = document.getElementById('github-repo-info');
+        const markdownText = `# Dernière version de ${repoName}\n\n${data.body}`;
+        const htmlContent = marked(markdownText);
+        repoInfo.innerHTML = htmlContent;
+    })
+    .catch(error => {
+        console.error('Erreur lors de la récupération des informations du dépôt GitHub', error);
+    });
+</script>
+
 </body>
 </html>
