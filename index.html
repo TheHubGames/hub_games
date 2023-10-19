@@ -17,8 +17,13 @@
         <a href="../hub_games/About">À propos</a>
         <a href="#">Contact</a>
     </nav>
-    <div id="github-repo-info">
-        <p>Cliquez <a href="MAJ/Dernière_maj/">ici</a> pour lire les denières mises à jour de notre site web et <a href="MAJ/All_maj/">ici</a> pour lire l'ensemble des mises à jour.</p>
+    <div class="github-releases-container">
+        <div id="github-releases" class="modem">
+            <p id="load">Chargement de la dernière release depuis GitHub...</p>
+        </div>
+        <div id="txt" style="margin-left: 20px; width: 100%;">
+            
+        </div>
     </div>    
     <div class="game-list">
         <div class="game">
@@ -75,31 +80,47 @@
             <footer>Copyright &copy; 2023 By HubGames Studio All rights reserved.</footer>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const repoOwner = 'TheHubGames'; // Remplacez par le nom du propriétaire du dépôt
+        const repoName = 'hub_games'; // Remplacez par le nom du dépôt
 
-<script>
-    const accessToken = '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'; // Remplacez par votre propre jeton d'accès
-    const repoOwner = 'TheHubGames'; // Remplacez par le nom du propriétaire du dépôt
-    const repoName = 'hub_games'; // Remplacez par le nom du dépôt
+        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`;
 
-    const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`;
+        fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur lors de la récupération de la dernière release depuis GitHub');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const releasesDiv = document.getElementById('github-releases');
+            const md = window.markdownit();
+            document.getElementById('load').style.display = 'none';
 
-    fetch(apiUrl, {
-        headers: {
-            'Authorization': `Bearer ${accessToken}`
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        const repoInfo = document.getElementById('github-repo-info');
-        const markdownText = `# Dernière version de ${repoName}\n\n${data.body}`;
-        const htmlContent = marked(markdownText);
-        repoInfo.innerHTML = htmlContent;
-    })
-    .catch(error => {
-        console.error('Erreur lors de la récupération des informations du dépôt GitHub', error);
+            const releaseContainer = document.createElement('div');
+            releaseContainer.classList.add('release-container');
+
+            const firstFewLines = data.body.split('\n').slice(0, 5).join('\n'); // Récupère les 5 premières lignes
+            const releaseHTML = `<div>
+                <h3>${data.name}</h3>
+                <p>${md.render(firstFewLines)}</p>
+                <a href="MAJ/Dernière_maj" target="_blank">Lire la suite</a>
+            </div>`;
+            releaseContainer.innerHTML = releaseHTML;
+
+            releasesDiv.appendChild(releaseContainer);
+        })
+        .catch(error => {
+            const releasesDiv = document.getElementById('github-releases');
+            releasesDiv.innerHTML = '<p>Erreur lors de la récupération de la dernière release depuis GitHub</p>';
+            console.error('Erreur lors de la récupération de la dernière release depuis GitHub', error);
+        });
     });
-</script>
+
+    </script>
 
 </body>
 </html>
