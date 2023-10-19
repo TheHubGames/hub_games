@@ -120,6 +120,7 @@ button:hover{
     align-items: center;
     color: white;
     z-index: 999;
+    transtion: display 2s;
 }
 
 #loader-spinner {
