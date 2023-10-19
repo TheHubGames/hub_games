@@ -109,6 +109,7 @@ li:hover {
     justify-content: center;
     align-items: center;
     color: white;
+    z-index: 999;
 }
 
 #loader-spinner {
