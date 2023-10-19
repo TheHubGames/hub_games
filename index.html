@@ -8,6 +8,10 @@
     <meta name="description" content="Découvrez à propos de Hub Games, notre mission, notre équipe, comment nous contacter, et les contributeurs GitHub qui ont participé à notre projet. Rejoignez-nous pour des jeux passionnants !" />
 </head>
 <body>
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
     <header>
         <h1>Hub de Jeux</h1>
     </header>
@@ -76,7 +80,7 @@
         </div>
         <div class="game">
             <img src="image/JDLV.jpg" alt="JDLV">
-            <h2>Flappy-Bird</h2>
+            <h2>Jeu de la vie</h2>
             <p>3 simple règles et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !</p>
             <a href="Jeu_de_la_vie/" class="play-button">Jouer</a>
         </div>
@@ -125,7 +129,11 @@
             console.error('Erreur lors de la récupération de la dernière release depuis GitHub', error);
         });
     });
-
+    window.addEventListener("load", function() {
+    // La page est entièrement chargée, masquez l'écran de chargement.
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").style.display = "block"; // Affiche le contenu principal
+    });
     </script>
 
 </body>
