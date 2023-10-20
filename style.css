@@ -158,10 +158,6 @@ button:hover{
     margin: 10px 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-.release-container:hover {
-    transform: scale(1.05);
 }
 
 #txt {
