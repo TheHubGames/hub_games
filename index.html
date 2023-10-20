@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    
     <title>Hub de Jeux</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="image/icon.png">
@@ -18,7 +24,6 @@
     <!-- Navbar from nav.html-->
     <div id="navbar"></div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script> 
     $(function(){
       $("#navbar").load("nav.html"); 
@@ -96,7 +101,7 @@
     </div>
     <div id="footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
         const repoOwner = 'TheHubGames'; // Remplacez par le nom du propriétaire du dépôt
