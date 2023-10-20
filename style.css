@@ -160,7 +160,7 @@ button:hover{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
 }
-.release-container {
+.release-container:hover {
     transform: scale(1.05);
 }
 
