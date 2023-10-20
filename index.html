@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Hub de Jeux</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="image/icon.png">
@@ -12,15 +14,15 @@
         <div id="loader-spinner"></div>
         <p>Chargement en cours...</p>
     </div>
-    <header>
-        <h1>Hub Games</h1>
-    </header>
-    <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Jeux</a>
-        <a href="../hub_games/About">À propos</a>
-        <a href="#">Contact</a>
-    </nav>
+
+    <!-- Navbar from nav.html-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script> 
+    $(function(){
+      $("#includedContent").load("nav.html"); 
+    });
+    </script> 
+    
     <div class="github-releases-container">
         <div id="github-releases" class="modem">
             <p id="load">Chargement de la dernière release depuis GitHub...</p>
