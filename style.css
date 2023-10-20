@@ -6,11 +6,20 @@ body {
     background-color: #f2f2f2;
     /* margin: 0; */
 }
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
+
+.news-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  text-align: left !important;
+  font-weight: 800;
+  color: hsl(var(--sc));
+}
+
+.news-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  text-align: left !important;
+  font-weight: 400;
 }
 
 /* Style pour les liens */
