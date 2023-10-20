@@ -202,7 +202,7 @@
             releaseContainer.classList.add('bg-base-100');
             releaseContainer.classList.add('shadow-xl');
 
-            const firstFewLines = data.body.split('\n').slice(0, 6).join('\n'); // Récupère les 5 premières lignes
+            const firstFewLines = data.body.split('\n').slice(0, 8).join('\n'); // Récupère les 8 premières lignes
             const releaseHTML = `<div class="card-body">
                 <h2 class="news-title"><i class="fa-solid fa-bullhorn"></i> ${data.name}</h2>
                 <div class="news-text">${md.render(firstFewLines)}</div>
@@ -211,7 +211,7 @@
                 </div>
 
             </div>
-            <figure><img class="object-cover" src="https://f.dreamclouds.fr/hub_game_v2/image/JDLV.jpg" alt="JDLV Image" /></figure>`;
+            <figure><img class="object-cover sm:hide" src="https://f.dreamclouds.fr/hub_game_v2/image/JDLV.jpg" alt="JDLV Image" /></figure>`;
             releaseContainer.innerHTML = releaseHTML;
 
             releasesDiv.appendChild(releaseContainer);
