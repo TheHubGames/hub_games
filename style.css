@@ -108,15 +108,12 @@ button:hover{
 
 /* Style pour le bouton "En savoir plus */
 #button {
-    position: absolute;
+    position: relative;
     padding: 10px 20px;
-    font-size: 18px;
     background-color: #333;
     color: #fff;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    text-decoration: none;
     border-radius: 5px;
 }
 #return-button:hover {
