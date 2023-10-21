@@ -442,8 +442,8 @@ button:hover{
 /* Style pour le tableau à droite du plateau */
 #score-table {
    /* Ajustez la valeur en fonction de l'espace souhaité */
-    background-color: #333;
-    color: #fff;
+    background-color: hsl(var(--ac));
+    color: hsl(var(--b1));
     padding: 10px;
     border-radius: 5px;
     margin-left: 10px;
