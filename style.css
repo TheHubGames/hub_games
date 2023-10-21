@@ -251,6 +251,13 @@ button:hover{
 }
 
 /* Style pour le bouton "Retour au hub de jeu" */
+
+.return-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+    
 #return-button {
     position: fixed;
     bottom: 20px;
