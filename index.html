@@ -132,7 +132,7 @@
             </div>
         </div>
  
-        <div class="mt-4 card w-80 bg-base-100 shadow-xl">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl">
           <figure><img class="object-cover aspect-square" src="https://f.dreamclouds.fr/hub_game_v2/image/ClickerGame.jpg" alt="Morpion" /></figure>
               <div class="card-body">
                 <h2 class="card-title">Clicker Game</h2>
@@ -143,7 +143,7 @@
             </div>
         </div>
         
-        <div class="mt-4 card w-80 bg-base-100 shadow-xl">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl">
           <figure><img class="object-coveraspect-square" src="https://f.dreamclouds.fr/hub_game_v2/image/CPS.jpg" alt="Morpion" /></figure>
               <div class="card-body">
                 <h2 class="card-title">Test de CPS</h2>
@@ -154,7 +154,7 @@
             </div>
         </div>
   
-        <div class="mt-4 card w-80 bg-base-100 shadow-xl">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl">
           <figure><img class="object-cover aspect-square" src="https://f.dreamclouds.fr/hub_game_v2/image/Tetris.jpg" alt="Tetris Image" /></figure>
               <div class="card-body">
                 <h2 class="card-title">Tetris</h2>
@@ -165,7 +165,7 @@
             </div>
         </div>
         
-        <div class="mt-4 card w-80 bg-base-100 shadow-xl">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl">
           <figure><img class="object-cover aspect-square" src="https://f.dreamclouds.fr/hub_game_v2/image/FTN.jpg" alt="FTN Image" /></figure>
               <div class="card-body">
                 <h2 class="card-title">Trouver le Nombre</h2>
@@ -176,7 +176,7 @@
             </div>
         </div>
   
-        <div class="mt-4 card w-80 bg-base-100 shadow-xl">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl">
           <figure><img class="object-cover aspect-square" src="https://f.dreamclouds.fr/hub_game_v2/image/Pong.jpg" alt="Pong Image" /></figure>
               <div class="card-body">
                 <h2 class="card-title">Pong</h2>
@@ -187,7 +187,7 @@
             </div>
         </div>
         
-        <div class="mt-4 card w-80 bg-base-100 shadow-xl">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl">
           <figure><img class="object-cover aspect-square" src="https://f.dreamclouds.fr/hub_game_v2/image/Flappy-Bird.jpg" alt="Flappy-Bird Image" /></figure>
               <div class="card-body">
                 <h2 class="card-title">Flappy-Bird</h2>
@@ -198,7 +198,7 @@
             </div>
         </div>
       
-        <div class="mt-4 card w-80 bg-base-100 shadow-xl">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl">
           <figure><img class="object-cover aspect-square" src="https://f.dreamclouds.fr/hub_game_v2/image/JDLV.jpg" alt="JDLV Image" /></figure>
               <div class="card-body">
                 <h2 class="card-title">Jeu de la vie</h2>
@@ -237,13 +237,13 @@
             releaseContainer.classList.add('card');
             releaseContainer.classList.add('m-2');
             releaseContainer.classList.add('lg:card-side');
-            releaseContainer.classList.add('bg-base-100');
+            releaseContainer.classList.add('bg-base-300');
             releaseContainer.classList.add('shadow-xl');
 
             const firstFewLines = data.body.split('\n').slice(0, 8).join('\n'); // Récupère les 8 premières lignes
             const releaseHTML = `<div class="lg:w-1/3 card-body">
-                <h2 class="news-title"><i class="fa-solid fa-bullhorn"></i> ${data.name}</h2>
-                <div class="news-text">${md.render(firstFewLines)}</div>
+                <h2 class="news-title accent-content"><i class="fa-solid fa-bullhorn"></i> ${data.name}</h2>
+                <div class="news-text neutral-content">${md.render(firstFewLines)}</div>
                 <div class="card-actions justify-end">
                   <a href="MAJ/Derniere_maj" class="btn btn-primary" target="_blank">Lire la suite</a>
                 </div>
