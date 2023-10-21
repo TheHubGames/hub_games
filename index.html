@@ -96,7 +96,7 @@
         </ul>
       </div>
       <div class="navbar-end">
-        <select class="select" data-choose-theme>
+        <select class="select select-bordered mx-2" data-choose-theme>
           <option value="light">Thème Clair</option>
           <option value="dark">Thème Sombre</option>
           <option value="aqua">Thème DreamCloud</option>
@@ -242,7 +242,7 @@
 
             const firstFewLines = data.body.split('\n').slice(0, 8).join('\n'); // Récupère les 8 premières lignes
             const releaseHTML = `<div class="lg:w-1/3 card-body">
-                <h2 class="news-title accent-content"><i class="fa-solid fa-bullhorn"></i> ${data.name}</h2>
+                <h2 class="news-title accent-content light:base-100"><i class="fa-solid fa-bullhorn"></i> ${data.name}</h2>
                 <div class="news-text neutral-content">${md.render(firstFewLines)}</div>
                 <div class="card-actions justify-end">
                   <a href="MAJ/Derniere_maj" class="btn btn-primary" target="_blank">Lire la suite</a>
