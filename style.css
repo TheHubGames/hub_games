@@ -13,7 +13,6 @@ body {
   font-size: 4rem;
   text-align: left !important;
   font-weight: 800;
-  color: hsl(var(--sc));
 }
 
 .news-text {
