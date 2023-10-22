@@ -199,11 +199,18 @@ button:hover{
     justify-content: center;
     margin: 20px;
 }
-#game {
+.game {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
+    align-items: center;
+    text-align: center;
 }
-#game:hover {
+.game:hover {
     transform: scale(1.05);
 }
 .game img {
@@ -216,24 +223,6 @@ button:hover{
     width: auto;
     height: auto;
 }
-
-#app {
-    transition: transform 0.3s;
-}
-#app:hover {
-    transform: scale(1.05);
-}
-.app img {
-    object-fit: cover;
-   /* Rogner et agrandir tout en préservant les proportions */
-    min-width: 300px;
-    min-height: 300px;
-    max-width: 300px;
-    max-height: 300px;
-    width: auto;
-    height: auto;
-}
-
 .play-button {
     background-color: #ff9900;
     color: white;
