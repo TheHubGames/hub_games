@@ -64,6 +64,7 @@ h1 {
     margin : 0;
 }
 nav {
+    position: fixed;
     display: flex;
     justify-content: center;
     background-color: #444;
