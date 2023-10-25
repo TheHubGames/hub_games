@@ -1,14 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f2f2f2;
-    /* margin: 0; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+html {
+    font-family: 'Poppins', sans-serif;
 }
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
+
+body {
+    text-align: center;
+}
+
+.news-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  text-align: left !important;
+  font-weight: 800;
+}
+
+.news-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  text-align: left !important;
+  font-weight: 400;
 }
 
 /* Style pour les liens */
@@ -52,6 +64,7 @@ h1 {
     margin : 0;
 }
 nav {
+    position: fixed;
     display: flex;
     justify-content: center;
     background-color: #444;
@@ -240,6 +253,13 @@ button:hover{
 }
 
 /* Style pour le bouton "Retour au hub de jeu" */
+
+.return-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+    
 #return-button {
     position: fixed;
     bottom: 20px;
@@ -423,8 +443,8 @@ button:hover{
 /* Style pour le tableau à droite du plateau */
 #score-table {
    /* Ajustez la valeur en fonction de l'espace souhaité */
-    background-color: #333;
-    color: #fff;
+    background-color: hsl(var(--ac));
+    color: hsl(var(--b1));
     padding: 10px;
     border-radius: 5px;
     margin-left: 10px;

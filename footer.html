@@ -1,0 +1,39 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+  const owner = 'TheHubGames',  
+      repo = 'hub_games';
+      
+axios
+  .get(`https://api.github.com/repos/${owner}/${repo}/contributors`)
+    .then(response => {
+
+    const contributors = response.data;
+    const list = document.getElementById("contributors");
+
+    contributors.forEach(contributor => {
+      const li = document.createElement('li');
+
+      const a = document.createElement('a');
+      a.href = `https://github.com/${contributor.login}`; 
+      a.innerHTML = contributor.login;
+      
+      // Add class
+      a.classList.add("hover:underline");
+      a.classList.add("mr-4"); 
+
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+
+  });
+</script>
+
+<footer class="bg-base-100">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://studio.hubgames.io" class="hover:underline">HubGames™</a>. All Rights Reserved.
+    </span>
+    <ul id="contributors" class="sm:text-center flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 name">
+
+    </ul>
+    </div>
+</footer>
