@@ -10,19 +10,17 @@ function fetchWeatherData() {
     const windSpeed = document.getElementById('wind-speed');
     const longitude = document.getElementById('longitude');
     const latitude = document.getElementById('latitude');
-
     const fetchButton = document.getElementById('fetch-button');
     
-    fetchButton.addEventListener('click', () => {
+    function fetchData() {
         const ville = cityInput.value;
-
         const params = {
             'q': ville,
             'units': 'metric',
             'lang': 'fr',
             'appid': api_key
         }
-
+        
         fetch(url + `?q=${ville}&units=metric&lang=fr&appid=${api_key}`)
             .then(response => response.json())
             .then(data => {
@@ -38,6 +36,14 @@ function fetchWeatherData() {
             .catch(error => {
                 console.error("La requête a échoué avec l'erreur :", error);
             });
+    }
+
+    fetchButton.addEventListener('click', fetchData);
+
+    cityInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            fetchData();
+        }
     });
 }
 
