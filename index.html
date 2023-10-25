@@ -263,9 +263,9 @@
             console.error('Erreur lors de la récupération de la dernière release depuis GitHub', error);
         });
     });
-    window.addEventListener("load", function() {
+    window.addEventListener("preloader", function() {
     // La page est entièrement chargée, masquez l'écran de chargement.
-    document.getElementById("loader").style.display = "none";
+    document.getElementById("preloader").style.display = "none";
     document.getElementById("content").style.display = "block"; // Affiche le contenu principal
     });
     </script>
