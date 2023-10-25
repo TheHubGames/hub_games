@@ -7,9 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -47,8 +44,8 @@
     <meta name="description" content="Découvrez à propos de Hub Games, notre mission, notre équipe, comment nous contacter, et les contributeurs GitHub qui ont participé à notre projet. Rejoignez-nous pour des jeux passionnants !" />
 </head>
 <body class="bg-base-100">
-    <div id="preloader">
-        <div id="loader"></div>
+    <div id="loader">
+        <div id="loader-spinner"></div>
         <p>Chargement en cours...</p>
     </div>
 
@@ -74,6 +71,13 @@
               </ul> -->
             </li>
             <li><a href="About">À Propos</a></li>
+            <li class="hidden lg:block">
+                <select class="select select-bordered mx-2" data-choose-theme>
+                    <option value="light">Thème Clair</option>
+                    <option value="dark">Thème Sombre</option>
+                    <option value="aqua">Thème DreamCloud</option>
+                </select>
+            </li>
           </ul>
         </div>
         <a class="btn btn-ghost normal-case text-xl">
@@ -119,7 +123,7 @@
                 <h2 class="card-title">Morpion</h2>
                 <p>Sur un plateau de jeu en 3x3 le premier à alligner trois de ses pions à gagné.</p>
                 <div class="card-actions justify-end">
-                <a href="Morpion" class="btn btn-primary">Jouer</a>
+                <a href="/Morpion" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -130,7 +134,7 @@
                 <h2 class="card-title">Weather</h2>
                 <p>Savoir toute les informations météo de l'instant de n'importe quelle ville.</p>
                 <div class="card-actions justify-end">
-                <a href="Weather" class="btn btn-primary">Tester</a>
+                <a href="/Weather" class="btn btn-primary">Tester</a>
               </div>
             </div>
         </div>
@@ -152,7 +156,7 @@
                 <h2 class="card-title">Test de CPS</h2>
                 <p>Pour savoir ton nombre de clique par seconde, mais aussi pour flex.</p>
                 <div class="card-actions justify-end">
-                <a href="/CPS" class="btn btn-primary">Jouer</a>
+                <a href="/Morpion" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -263,9 +267,9 @@
             console.error('Erreur lors de la récupération de la dernière release depuis GitHub', error);
         });
     });
-    window.addEventListener("preloader", function() {
+    window.addEventListener("load", function() {
     // La page est entièrement chargée, masquez l'écran de chargement.
-    document.getElementById("preloader").style.display = "none";
+    document.getElementById("loader").style.display = "none";
     document.getElementById("content").style.display = "block"; // Affiche le contenu principal
     });
     </script>
