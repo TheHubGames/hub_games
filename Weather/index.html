@@ -18,6 +18,11 @@
 </head>
 <body class="bg-base-100">
     <script> 
+    $(function(){
+      $("#footer").load("../footer.html"); 
+    });
+    </script>
+    <script> 
         $(function(){
           $("#nav").load("../nav.html"); 
         });
@@ -37,9 +42,7 @@
         <button id="fetch-button">Rechercher</button>
     </div>
     <a id="return-button" href="../">Retour au hub de jeu</a>
-    <div class="Copyright">
-        <footer>Copyright &copy; 2023 By HubGames Studio. All rights reserved.</footer>
-    </div>
+    <div id="footer"></div>
     
     <script src="script.js"></script>
 </body>
