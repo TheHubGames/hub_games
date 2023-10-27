@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informations météorologiques</title>
+    <meta property="og:image" content="https://raw.githubusercontent.com/TheHubGames/jobs_hub_games/main/image/icon.png?raw=true" />
+    <meta name="description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    
+    <title>Morpion</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../image/icon.png">
 </head>
-<body>
-    <header>
-        <h1>Informations météorologiques</h1>
-    </header>
-    <nav>
-        <a href="../">Accueil</a>
-        <a href="#">Jeux</a>
-        <a href="../About">À propos</a>
-        <a href="#">Contact</a>
-    </nav>
-    <div id="weather-container">
+<body class="bg-base-100">
+    <script> 
+        $(function(){
+          $("#nav").load("../nav.html"); 
+        });
+    </script> 
+    <div id="nav"></div>
+    <div id="weather-container" class="py-20">
         <h2>Données météorologiques actuelles pour <span id="city-name"></span></h2>
         <p id="weather-description"></p>
         <p id="temperature"></p>
