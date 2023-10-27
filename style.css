@@ -245,8 +245,7 @@ button:hover{
 #weather-container {
     margin: 20px auto;
     max-width: 500px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -266,16 +265,10 @@ button:hover{
     right: 20px;
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #333;
-    color: #fff;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
     text-decoration: none;
     border-radius: 5px;
-}
-#return-button:hover {
-    background-color: #555;
 }
 
 /*          CCS Pour CLICKER         */
