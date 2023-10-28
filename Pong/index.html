@@ -2,23 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://raw.githubusercontent.com/TheHubGames/jobs_hub_games/main/image/icon.png?raw=true" />
+    <meta name="description" content="Deux barres, une boule, 5 manches. À vous de jouer !" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
     <title>Pong Game</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../image/icon.png">
 </head>
 <body>
-    <header>
-        <h1>Pong</h1>
-    </header>
-    <nav>
-        <a href="/hub_games/">Accueil</a>
-        <a href="#">Jeux</a>
-        <a href="/hub_games/About">À propos</a>
-        <a href="/hub_games/About#Contact">Contact</a>
-    </nav>
+    <script> 
+        $(function(){
+          $("#nav").load("../nav.html"); 
+        });
+    </script> 
+    <div id="nav"></div>
+    <script> 
+        $(function(){
+          $("#footer").load("../footer.html"); 
+        });
+        </script>
     <div id="phone-incompatible-message">
         Désolé, ce jeu n'est pas compatible avec votre type d'écran.
     </div>
@@ -30,9 +40,7 @@
     </div>
     <canvas id="pong-game-canva"></canvas>
     <a id="return-button" href="../">Retour au hub de jeu</a>
-    <div class="Copyright">
-      <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
-    </div>
+    <div id="footer"></div>
     <script src="./script.js"></script>
 </body>
 </html>
