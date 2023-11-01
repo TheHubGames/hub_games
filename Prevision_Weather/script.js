@@ -118,11 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
             daysHTML += `<p>Niveau de la mer : ${forecast.niveauMer}</p>`;
             daysHTML += `</div>`;
         }
-
-        weatherHTML += `<p>Longitude : ${lon}</p>`;
-        weatherHTML += `<p>Latitude : ${lat}</p>`;
-
-        weatherData.innerHTML = weatherHTML;
         weatherDays.innerHTML = daysHTML;
     }
 
