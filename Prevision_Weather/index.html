@@ -4,41 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="https://raw.githubusercontent.com/TheHubGames/jobs_hub_games/main/image/icon.png?raw=true" />
-    <meta name="description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    <meta name="description" content="Savoir toutes les informations et prévisions météo de l'instant de n'importe quelle ville." />
     
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-
+    
     <title>Prévisions Météo</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="../image/icon.png"></head>
-<body>
+    <link rel="icon" href="../image/icon.png">
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100">
     <script> 
         $(function(){
           $("#footer").load("../footer.html"); 
         });
-        </script>
-        <script> 
-            $(function(){
-              $("#nav").load("../nav.html"); 
-            });
-        </script> 
-        <div id="nav"></div>
-    <div class="container">
-        <form id="weather-form">
-            <label for="city_name">Entrez le nom de la ville :</label>
-            <input type="text" id="city_name" required>
-            <button type="submit">Rechercher</button>
+    </script>
+    <script> 
+        $(function(){
+          $("#nav").load("../nav.html"); 
+        });
+    </script> 
+    <div id="nav"></div>
+    <div class="container p-4 bg-black rounded-lg shadow-md max-w-screen-sm mx-auto">
+        <h1 class="text-center text-4xl mb-8">Prévisions Météo</h1>
+        <form id="weather-form" class="text-center mb-8">
+            <label for="city_name" class="font-bold block mb-5">Entrez le nom de la ville :</label>
+            <input type="text" id="city_name" required class="w-4/5 p-4 border rounded-lg text-xl">
+            <button type="submit" class="bg-blue-500 text-white p-4 rounded-lg text-xl mt-4">Rechercher</button>
         </form>
-        <div id="weather-scroll">
-            <button id="scroll-left">&lt;</button>
-            <div id="weather-days">
+        <div id="weather-scroll" class="flex justify-between items-center mb-4">
+            <button id="scroll-left" class="p-4 bg-gray-300 text-gray-700 rounded-full text-2xl">&lt;</button>
+            <div id="weather-days" class="flex overflow-auto whitespace-no-wrap border rounded-lg shadow-md m-2">
                 <!-- Les conteneurs de jour seront ajoutés ici en JavaScript -->
             </div>
-            <button id="scroll-right">&gt;</button>
+            <button id="scroll-right" class="p-4 bg-gray-300 text-gray-700 rounded-full text-2xl">&gt;</button>
         </div>
         <div id="weather-info">
             <!-- Les informations météo seront ajoutées ici en JavaScript -->
