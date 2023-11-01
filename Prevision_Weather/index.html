@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://raw.githubusercontent.com/TheHubGames/jobs_hub_games/main/image/icon.png?raw=true" />
+    <meta name="description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
     <title>Prévisions Météo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../image/icon.png"></head>
 <body>
-    <header>
-        <h1>Prévisions Météo</h1>
-    </header>
-    <nav>
-        <a href="../">Accueil</a>
-        <a href="#">Jeux</a>
-        <a href="../About">À propos</a>
-        <a href="#">Contact</a>
-    </nav>
+    <script> 
+        $(function(){
+          $("#footer").load("../footer.html"); 
+        });
+        </script>
+        <script> 
+            $(function(){
+              $("#nav").load("../nav.html"); 
+            });
+        </script> 
+        <div id="nav"></div>
     <div class="container">
         <form id="weather-form">
             <label for="city_name">Entrez le nom de la ville :</label>
@@ -33,10 +44,8 @@
             <!-- Les informations météo seront ajoutées ici en JavaScript -->
         </div>
     </div>
-    <a id="return-button" href="../">Retour au hub de jeu</a>
-    <div class="Copyright">
-        <footer>Copyright &copy;  2023 By HubGames Studio. All rights reserved.</footer>
-    </div>
+    <a id="return-button" class="btn btn-primary" href="../">Retour au hub de jeu</a>
+    <div id="footer"></div>
     
     <script src="script.js"></script>
 </body>
