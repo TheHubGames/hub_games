@@ -3,6 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Pong - HubGames" />
+    <meta name="description" content="Deux barres, une boule, 5 manches. À vous de jouer !" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/Pong/" />
+    <meta property="og:title" content="Pong - HubGames" />
+    <meta property="og:description" content="Deux barres, une boule, 5 manches. À vous de jouer !" />
+    <meta property="og:image" content="https://hubgames.studio/image/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hubgames.studio/Pong/" />
+    <meta property="twitter:title" content="Pong - HubGames" />
+    <meta property="twitter:description" content="Deux barres, une boule, 5 manches. À vous de jouer !" />
+    <meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FlappyBird</title>
     <link rel="stylesheet" href="style.css" >
@@ -11,34 +34,40 @@
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Flappy Bird</h1>
-    </header>
-    <nav>
-        <a href="../">Accueil</a>
-        <a href="#">Jeux</a>
-        <a href="../hub_games/About">À propos</a>
-        <a href="#">Contact</a>
-    </nav>
-    <div id="instruction">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-medical-fill" viewBox="0 0 16 16">
+    <script>
+        $(function(){
+            $("#footer").load("../footer.html"); 
+          });
+      </script> 
+    <script> 
+      $(function(){
+        $("#nav").load("../nav.html"); 
+      });
+    </script> 
+    <div id="nav"></div>
+    
+    <main class="justify-center content-center block">
+    <div id="instruction" class="bg-stone-700 rounded-xl text-gray-555 text-lg block p-4 w-2/4 mx-auto my-0 mb-5 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-medical-fill" viewBox="0 0 16 16" style="display: inline;">
             <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-3 2v.634l.549-.317a.5.5 0 1 1 .5.866L7 7l.549.317a.5.5 0 1 1-.5.866L6.5 7.866V8.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L5 7l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V5.5a.5.5 0 1 1 1 0zm-2 4.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zm0 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"/>
-          </svg>
-          Cliquez ou appuillez sur espace pour commencer ainsi que pour souter.
+        </svg>
+        <span class="inline">
+            Cliquez ou appuyez sur espace pour commencer ainsi que pour sauter.
+        </span>
     </div>
+        
     <canvas id="canvas" width="276" height="414"></canvas>
-<button id="fullscreen-button">
-    <p id="affichePC">Plein écran</p>
-    <svg id="fullscreen-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
-        <!-- Remplacez le contenu ci-dessous par votre propre icône SVG -->
-        <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
-    </svg>
-</button>
+    <button id="fullscreen-button" class="btn btn-neutral block mx-auto my-0 text-center mt-1">
+        <p id="affichePC" class="inline">Plein écran</p>
+        <svg id="fullscreen-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen inline" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+        </svg>
+    </button>
 
+    
+    <a class="relative m-2 right-1 btn btn-primary return-button" href="../">Retour au hub de jeu</a>
+    </main>
+    <div id="footer"></div>
     <script src="game.js"></script>
-    <a id="return-button" href="../">Retour au hub de jeu</a>
-    <div class="Copyright">
-        <footer>Copyright &copy; 2023 By HubGames Studio All rights reserved.</footer>
-    </div>
 </body>
 </html>

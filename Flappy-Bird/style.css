@@ -8,22 +8,9 @@
     width: 20%;
 }
 
-#instruction {
-    background-color: #555;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 18px;
-    display: block;
-    padding: 20px;
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
 @media screen and (max-width: 500px){
     #canvas {
-        background-color: #30c0df;
+        background-color: #343749;
         border: 2px solid black;
         display: block;
         margin: 0;
@@ -32,33 +19,6 @@
         height: auto; /* Laissez la hauteur en auto pour conserver le ratio d'aspect */
     }    
 }
-/* Styles pour le bouton de mise en plein écran */
-#fullscreen-button {
-    display: flex;
-    background-color: #555;
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    bottom: 65px;
-    right: 20px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-    border-radius: 10px;
-    max-width: 150px; /* Définissez la largeur maximale souhaitée */
-    
-}
-
-#fullscreen-button p {
-    margin: 0; /* Supprimez la marge par défaut du paragraphe */
-    margin-right: 10px; /* Ajoutez un espacement entre l'icône et le texte */
-}
-
-#fullscreen-button:hover {
-    background-color: #6b6b6b;
-}
-
 
 /* Styles spécifiques pour les écrans de petite taille (téléphone) */
 @media (max-width: 767px) {
@@ -67,20 +27,11 @@
         bottom: 65px; /* Ajustez la valeur pour définir la position verticale souhaitée */
         right: 7%; /* Centrez horizontalement sur les écrans de petite taille */
         transform: translateX(50%); /* Centrez horizontalement */
+        z-index: 999;
     }
     #affichePC {
         display: none;
     }
-}
-
-#fullscreen-button {
-    display: flex; /* Utilisez Flexbox pour aligner les éléments horizontalement */
-    align-items: center; /* Alignez les éléments verticalement au centre */
-}
-
-#fullscreen-button span {
-    display: flex; /* Utilisez Flexbox pour aligner le texte et l'icône horizontalement */
-    align-items: center; /* Alignez les éléments verticalement au centre */
 }
 
 #affichePC {
@@ -94,3 +45,5 @@
     display: none; /* Masquez le bouton par défaut */
     z-index: 2; /* Assurez-vous que le bouton est au-dessus du canvas */
 }
+
+

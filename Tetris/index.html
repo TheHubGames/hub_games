@@ -2,23 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Tetris - HubGames" />
+  <meta name="description" content="Empiler des blocs les uns sur les autres pour faire une ligne et les détruires pour éviter de monter dans les étages." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hubgames.studio/Tetris/" />
+  <meta property="og:title" content="Tetris - HubGames" />
+  <meta property="og:description" content="Empiler des blocs les uns sur les autres pour faire une ligne et les détruires pour éviter de monter dans les étages." />
+  <meta property="og:image" content="https://hubgames.studio/image/icon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://hubgames.studio/Tetris/" />
+  <meta property="twitter:title" content="Tetris - HubGames" />
+  <meta property="twitter:description" content="Empiler des blocs les uns sur les autres pour faire une ligne et les détruires pour éviter de monter dans les étages." />
+  <meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
   <title>Tetris</title>
+  <link rel="stylesheet" href=" style.css">
   <link rel="icon" href="../image/icon.png">
 </head>
-
 <body>
-  <header>
-    <h1>Tetris</h1>
-</header>
-<nav>
-    <a href="/hub_games/">Accueil</a>
-    <a href="#">Jeux</a>
-    <a href="/hub_games/About">À propos</a>
-    <a href="/hub_games/About#Contact">Contact</a>
-</nav>
+    <script> 
+        $(function(){
+          $("#footer").load("../footer.html"); 
+        });
+        </script> 
+        <script> 
+          $(function(){
+            $("#nav").load("../nav.html"); 
+          });
+    </script> 
+    <div id="nav"></div>
 
 <div id="phone-incompatible-message">
   Désolé, ce jeu n'est pas compatible avec votre type d'écran.
@@ -80,10 +105,8 @@
       <button type="button" id="play-again-button">Rejouer</button>
     </div>
   </div>
-  <a id="return-button" href="../">Retour au hub de jeu</a>
-  <div class="Copyright">
-    <footer>Copyright &copy;  2023 By Klaynight. All rights reserved.</footer>
-</div>
+  <a id="return-button" class="btn btn-neutral bottom-5 right-5 mb-5 p-2.5 text-lg border-0 cursor-pointer no-underline rounded-md" href="../">Retour au hub de jeu</a>
+  <div id="footer"></div>
 
 </body>
 <script src="tetris.js" charset="utf-8"></script>

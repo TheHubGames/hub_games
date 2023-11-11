@@ -5,6 +5,15 @@ body {
     padding: 0;
     line-height: 1.6;
     text-align: left;
+    color: black;
+}
+
+#nav {
+    color: #fff;
+}
+
+#nav a {
+    color: #fff;
 }
 
 h1 {
@@ -36,7 +45,6 @@ li {
 }
 
 a {
-    color: #0366d6; /* Couleur de lien Markdown */
     text-decoration: none;
 }
 
@@ -45,9 +53,8 @@ a:hover {
 }
 
 code {
-    background-color: #f3f3f3;
     padding: 2px 4px;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 3px;
     font-family: "Courier New", Courier, monospace;
     font-size: 14px;
@@ -58,7 +65,12 @@ header {
     margin-top: -10px;
     text-align: center;
 }
-img {
+
+#txt {
+    margin-left: 15px;
+}
+
+#github-releases img {
     min-width: 300px;
     min-height: 300px;
     max-width: 300px;
@@ -69,8 +81,7 @@ img {
 .release-container {
     margin: 20px;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 10px;
     font-size: 16px;
 }
@@ -82,4 +93,8 @@ img {
 
 .release-container p {
     line-height: 1.6;
+}
+
+#footer a {
+    color : #999;
 }

@@ -84,10 +84,8 @@ nav a:hover {
     color: #ff9900;
 }
 
-/* Style pour le pied de page */
-footer {
-   margin-top: 20px;
-   color: #666;
+#footer .hover:underline {
+    color : #666;
 }
 h2 {
     font-size: 20px;
@@ -129,9 +127,6 @@ button:hover{
     transition: background-color 0.3s;
     border-radius: 5px;
 }
-#return-button:hover {
-    background-color: #555;
-}
 /*      CSS POUR ACCEUIL        */
 
 #loader {
@@ -166,14 +161,6 @@ button:hover{
 
 
 .release-container {
-    background-color: white;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#txt {
     background-color: white;
     padding: 20px;
     margin: 10px 0;
@@ -249,26 +236,6 @@ button:hover{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-}
-
-/* Style pour le bouton "Retour au hub de jeu" */
-
-.return-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-    
-#return-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
 /*          CCS Pour CLICKER         */
@@ -465,13 +432,12 @@ button:hover{
 
 /* Styles communs pour tous les écrans */
 #cps-container {
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     margin: 20px auto;
-    width: 23%;
-    max-width: 25%;
+    width: 30%;
+    max-width: 30%;
     flex-direction: row;
     align-items: center;
     position: relative;
@@ -509,14 +475,11 @@ button:hover{
     position: absolute;
     left: 0.5%;
     top: 15%;
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 #click-button {
-    background-color: #007BFF;
-    color: #fff;
     border: none;
     padding: 10px 20px;
     font-size: 20px;
@@ -540,8 +503,6 @@ button:hover{
 }
 
 #retry-button {
-    background-color: #007BFF;
-    color: #fff;
     border: none;
     padding: 10px 20px;
     font-size: 20px;
@@ -549,10 +510,6 @@ button:hover{
     cursor: pointer;
     margin-top: 20px; /* Espacement du haut */
     width: 100%;
-}
-
-#retry-button:hover {
-    background-color: #0056b3; /* Couleur au survol */
 }
 
 #cps-history ul {

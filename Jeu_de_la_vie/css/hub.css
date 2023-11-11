@@ -1,13 +1,6 @@
 body {
     font-family: Arial, sans-serif;
 }
-header {
-    background-color: #333;
-    color: white;
-    padding: 0.1px;
-    border-radius: 10px;
-    margin: 5px;
-}
 
 /* Style pour les liens */
 a {
@@ -63,17 +56,18 @@ footer {
     left: 40%;
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #333;
-    color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
     text-decoration: none;
     border-radius: 5px;
 }
-#return-button:hover {
-    background-color: #555;
+canvas {
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
+
 #box {
     background-color: #333;
     border-radius: 10px;

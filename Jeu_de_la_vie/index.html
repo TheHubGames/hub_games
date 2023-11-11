@@ -3,12 +3,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
-<meta name="description" content="A colourful implementation of
-Conway's Game of Life in Javascript, using HTML5 features like Canvas
-and localStorage. Works nicely on the iPad too, as an offline app." />
+<!-- Primary Meta Tags -->
+<meta name="title" content="Jeu de la vie - HubGames" />
+<meta name="description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
 
-<meta name="keywords" content="life, game of life, conway,
-cellular automata, CAs, HTML5, Canvas, offline, localStorage" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hubgames.studio/JDLV/" />
+<meta property="og:title" content="Jeu de la vie - HubGames" />
+<meta property="og:description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
+<meta property="og:image" content="https://hubgames.studio/image/icon.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://hubgames.studio/JDLV/" />
+<meta property="twitter:title" content="Jeu de la vie - HubGames" />
+<meta property="twitter:description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
+<meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
+<meta name="keywords" content="life, game of life, conway, cellular automata, CAs, HTML5, Canvas, offline, localStorage, HubGames" />
 
 <title>Jeu de la vie</title>
 
@@ -27,8 +39,14 @@ cellular automata, CAs, HTML5, Canvas, offline, localStorage" />
 <script src="js/log4javascript.js"></script>
 
 <!-- JQuery and JQuery UI -->
-<link type="text/css"
-href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
+<link type="text/css" href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Tailwindcss and DaisyUI -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery.ui.js"></script>
@@ -43,11 +61,24 @@ href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/hub.css">
 </head>
 
-<body>
+<body class="bg-base-100">
+  <script> 
+    $(function(){
+      $("#footer").load("../footer.html"); 
+    });
+    </script> 
+    <script> 
+      $(function(){
+        $("#nav").load("../nav.html"); 
+      });
+</script> 
+
+<!-- Loader -->
 <div id="loader">
       <div id="loader-spinner"></div>
       <p>Chargement en cours...</p>
 </div>
+
 <noscript>
   This program requires javascript.
   <style>
@@ -55,15 +86,7 @@ href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
   </style>
 </noscript>
 
-<header>
-  <h1>Jeu de la Vie</h1>
-</header>
-<nav>
-  <a href="../">Accueil</a>
-  <a href="#">Jeux</a>
-  <a href="../About">À propos</a>
-  <a href="#">Contact</a>
-</nav>
+<div id="nav"></div>
 
 <div id="controls">
   <div id="buttons">
@@ -142,10 +165,8 @@ href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
     <p>Copyright &copy; 2023 By HubGames Studio. All rights reserved.</p>
   </div>
 </div>
-<a id="return-button" href="../">Retour au hub de jeu</a>
-<div class="Copyright">
-  <footer>Copyright &copy; 2023 By HubGames Studio. All rights reserved.</footer>
-</div>
+<a id="return-button" class="btn btn-primary bottom-5 right-5 mb-5 p-2.5 text-lg border-0 cursor-pointer no-underline rounded-md" href="../">Retour au hub de jeu</a>
+<div id="footer"></div>
 <script src="js/life.js"></script>
 <script>
       window.addEventListener("load", function() {

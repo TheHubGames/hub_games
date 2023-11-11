@@ -31,26 +31,6 @@ p {
   margin: 10px 0;
 }
 
-/* Style pour le bouton "Retour au hub de jeu" */
-#return-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  text-decoration: none;
-  border-radius: 5px;
-  z-index: 999;
-}
-#return-button:hover {
-  background-color: #555;
-}
-
 nav {
   display: flex;
   justify-content: center;
@@ -79,11 +59,6 @@ header {
 
 td {
   padding: 0 10px;
-}
-
-footer {
-  margin-top: 20px;
-  color: #666;
 }
 
 table {
@@ -169,7 +144,7 @@ table {
     width: 20%;
     text-align: left;
     position: absolute;
-    left: 15%;
+    left: 10%;
 }
 
 .tetris {
