@@ -1,228 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
-  
+<html manifest="cache.manifest">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Offres d'emploi - HubGames Studio" />
-    <meta name="description" content="Découvrez nos offres d'emploi chez HubGames Studio. Nous recherchons des développeurs web, des graphistes, des designers et des développeurs de jeux passionnés pour rejoindre notre équipe. Rejoignez-nous pour des opportunités excitantes dans le domaine du développement web et du design graphique." />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jobs.hubgames.studio" />
-    <meta property="og:title" content="Offres d'emploi - HubGames Studio" />
-    <meta property="og:description" content="Découvrez nos offres d'emploi chez HubGames Studio. Nous recherchons des développeurs web, des graphistes, des designers et des développeurs de jeux passionnés pour rejoindre notre équipe. Rejoignez-nous pour des opportunités excitantes dans le domaine du développement web et du design graphique." />
-    <meta property="og:image" content="https://hubgames.studio/image/icon.png" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://jobs.hubgames.studio" />
-    <meta property="twitter:title" content="Offres d'emploi - HubGames Studio" />
-    <meta property="twitter:description" content="Découvrez nos offres d'emploi chez HubGames Studio. Nous recherchons des développeurs web, des graphistes, des designers et des développeurs de jeux passionnés pour rejoindre notre équipe. Rejoignez-nous pour des opportunités excitantes dans le domaine du développement web et du design graphique." />
-    <meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
-    <script>
-    $(document).ready(function(){
-      // Add smooth scrolling to all links
-      $("a").on('click', function(event) {
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
+<!-- Primary Meta Tags -->
+<meta name="title" content="Jeu de la vie - HubGames" />
+<meta name="description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
 
-          // Store hash
-          var hash = this.hash;
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hubgames.studio/JDLV/" />
+<meta property="og:title" content="Jeu de la vie - HubGames" />
+<meta property="og:description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
+<meta property="og:image" content="https://hubgames.studio/image/icon.png" />
 
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function(){
-   
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-    });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-    
-    <title>Offres d'emploi - HubGames Studio</title>
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://hubgames.studio/JDLV/" />
+<meta property="twitter:title" content="Jeu de la vie - HubGames" />
+<meta property="twitter:description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
+<meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
+<meta name="keywords" content="life, game of life, conway, cellular automata, CAs, HTML5, Canvas, offline, localStorage, HubGames" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="image/icon.png">
-    <meta name="description" content="Découvrez nos offres d'emploi chez HubGames Studio. Nous recherchons des développeurs web, des graphistes, des designers et des développeurs de jeux passionnés pour rejoindre notre équipe. Rejoignez-nous pour des opportunités excitantes dans le domaine du développement web et du design graphique.">
-</head>
-<body class="bg-base-100">
-    <div class="navbar bg-base-100">
-<div class="navbar bg-base-100">
-<div class="navbar-start">
-  <div class="dropdown">
-    <label tabindex="0" class="btn btn-ghost lg:hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-    </label>
-    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-      <li><a href="https://hubgames.studio">Accueil</a></li>
-      <li>
-        <a href="https://hubgames.studio/#game">Jeux</a>
-        <!-- <ul class="p-2">
-          <li><a>Submenu 1</a></li>
-          <li><a>Submenu 2</a></li>
-        </ul> -->
-      </li>
-      <li><a href="https://jobs.hubgames.studio/">Recrutement</a></li>
-      <li><a href="https://hubgames.studio/About">À Propos</a></li>
-      <li>
-          <select id="affiche-625" class="select select-bordered mx-2" data-choose-theme>
-              <option value="light">Thème Clair</option>
-              <option value="dark">Thème Sombre</option>
-              <option value="aqua">Thème DreamCloud</option>
-          </select>
-      </li>
-      <li>
-        <a id="affiche-390" href="https://github.com/TheHubGames/hub_games" class="btn btn-neutral text-white mt-2 flex items-center">
-            <i class="fa-brands fa-github mt-2"></i>
-            <p class="mt-2">GitHub</p>
-        </a>
-      </li>
-    
-    </ul>
-  </div>
-  <a href="https://hubgames.studio" class="btn btn-ghost normal-case text-xl" style="font-family: 'Westway', sans-serif;">
-      <img src="https://hubgames.studio/image/icon.png" class="w-10 rounded">
-      HubGames
-  </a>
-</div>
-<div class="navbar-center hidden lg:flex">
-  <ul class="menu menu-horizontal px-1">
-    <li><a href="https://jobs.hubgames.studio">Accueil</a></li>
-    <!-- <li tabindex="0">
-      <details>
-        <summary>Parent</summary>
-        <ul class="p-2">
-          <li><a>Submenu 1</a></li>
-          <li><a>Submenu 2</a></li>
-        </ul>
-      </details>
-    </li> -->
-    <li><a href="https://jobs.hubgames.studio#jobs">Jobs</a></li>
-    <li><a href="https://hubgames.studio/About">À Propos</a></li>
-  </ul>
-</div>
-<div class="navbar-end">
-  <select id="affiche625" class="select select-bordered mx-2" data-choose-theme>
-    <option value="light">Thème Clair</option>
-    <option value="dark">Thème Sombre</option>
-    <option value="aqua">Thème DreamCloud</option>
-  </select>
-  <div id="affiche390">
-    <a href="https://github.com/TheHubGames/hub_games" class="btn btn-neutral text-white"><i class="fa-brands fa-github"></i> GitHub</a>
-  </div>
-</div>
-</div>
+<title>Jeu de la vie</title>
 
+<!-- Fullscreen when run from icon -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="glider-icon.png" />
+<link rel="icon" href="../image/icon.png">
 
-    <div id="jobs" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
-      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
-        <div>
-          <h2 class="job-title text-2xl font-bold text-primary text-center">
-            <div class="flex items-center justify-center">
-              <div class="emoji emoji--lg emoji--mrg-r-2">👨‍💻</div>
-              <span>Développeur Web</span>
-            </div>
-          </h2>
-          <p class="job-description">HubGames Studio recherche un développeur web expérimenté pour rejoindre notre équipe. Si vous avez des compétences en développement web et que vous êtes passionné par la création de sites web interactifs, nous aimerions vous entendre.</p>
-        </div>
-        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md" href="recrutement-form/index.html">Postuler</a>
-      </div>
-    
-      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
-        <div>
-          <h2 class="job-title text-2xl font-bold text-primary text-center">
-            <div class="flex items-center justify-center">
-              <div class="emoji emoji--lg emoji--mrg-r-2">🎨</div>
-              <span>Graphiste</span>
-            </div>
-          </h2>
-          <p class="job-description">Nous sommes à la recherche d'un graphiste talentueux pour aider à donner vie à nos projets visuels. Si vous avez une passion pour le design graphique et que vous êtes créatif, postulez dès maintenant.</p>
-        </div>
-        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md" href="recrutement-form/index.html">Postuler</a>
-      </div>
-    
-      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
-        <div>
-          <h2 class="job-title text-2xl font-bold text-primary text-center">
-            <div class="flex items-center justify-center">
-              <div class="emoji emoji--lg emoji--mrg-r-2">✏️</div>
-              <span>Designer</span>
-            </div>
-          </h2>
-          <p class="job-description">HubGames Studio a besoin d'un designer pour créer des expériences visuelles exceptionnelles pour nos jeux et applications. Si vous êtes un concepteur créatif et que vous aimez repousser les limites du design, rejoignez-nous.</p>
-        </div>
-        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md" href="recrutement-form/index.html">Postuler</a>
-      </div>
-    
-      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
-        <div>
-          <h2 class="job-title text-2xl font-bold text-primary text-center">
-            <div class="flex items-center justify-center">
-              <div class="emoji emoji--lg emoji--mrg-r-2">🎮</div>
-              <span>Développeur de Jeu/App</span>
-            </div>
-          </h2>
-          <p class="job-description">Nous recherchons un développeur de jeu/app passionné pour participer à la création de nos jeux et applications. Si vous avez de l'expérience dans le développement de jeux ou d'applications, postulez dès maintenant.</p>
-        </div>
-        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md" href="recrutement-form/index.html">Postuler</a>
-      </div>
-    </div>    
+<!-- Scale done on double tap -->
+<meta name="viewport" content="initial-scale=1, user-scalable=no, width=device-width" />
 
-    
+<!-- Do not parse for and highlight phone numbers -->
+<meta name="format-detection" content="telephone=no" />
 
+<!-- Utils -->
+<script src="js/log4javascript.js"></script>
+
+<!-- JQuery and JQuery UI -->
+<link type="text/css" href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Tailwindcss and DaisyUI -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script>
-  const owner = 'TheHubGames',  
-      repo = 'jobs_hub_games';
-      
-axios
-  .get(`https://api.github.com/repos/${owner}/${repo}/contributors`)
-    .then(response => {
 
-    const contributors = response.data;
-    const list = document.getElementById("contributors");
+<script src="js/jquery.js"></script>
+<script src="js/jquery.ui.js"></script>
+<script src="js/jquery.ui.ipad.js"></script>
 
-    contributors.forEach(contributor => {
-      const li = document.createElement('li');
+<!-- Colour Picker -->
+<link type="text/css" href="css/farbtastic.css" rel="stylesheet" />
+<script src="js/farbtastic.js"></script>
 
-      const a = document.createElement('a');
-      a.href = `https://github.com/${contributor.login}`; 
-      a.innerHTML = contributor.login;
-      
-      // Add class
-      a.classList.add("hover:underline");
-      a.classList.add("mr-4"); 
+<!-- Life -->
+<link type="text/css" href="css/life.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/hub.css">
+</head>
 
-      li.appendChild(a);
-      list.appendChild(li);
+<body class="bg-base-100">
+  <div id="loader">
+    <div id="loader-spinner"></div>
+    <p>Chargement en cours...</p>
+  </div>
+  <script> 
+    $(function(){
+      $("#footer").load("../footer.html"); 
     });
+    </script> 
+    <script> 
+      $(function(){
+        $("#nav").load("../nav.html"); 
+      });
+</script> 
 
-  });
-</script>
+<noscript>
+  This program requires javascript.
+  <style>
+    div {display: none;}
+  </style>
+</noscript>
 
-<footer class="bg-base-100">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://studio.hubgames.io" class="hover:underline">HubGames™</a>. All Rights Reserved.
-    </span>
-    <ul id="contributors" class="sm:text-center flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 name">
+<div id="nav"></div>
 
-    </ul>
+<div id="controls">
+  <div id="buttons">
+    <input type="button" id="tick" value="Step" />
+    <input type="button" id="start" value="Start" />
+    <input type="button" id="stop" value="Stop" />
+    <input type="button" id="reset" value="Reset" />
+    <input type="button" id="show-settings" value="Settings" />
+  </div>
+  <div id="speed"><span id="speed-label">Vitesse:</span> <div id="speed-slider"></div></div>
+</div>
+
+<div id="status-display">
+  <span id="speed-display">Intervalle d'actualisation: <span id="speed-val"></span></span>
+  <span id="generation-display">Generation: <span id="generation"></span></span>
+  <span id="status">Arrêter</span>
+</div>
+
+<div id="grid-div"></div>
+
+<div id="panels" title="Settings">
+  <h3><a href="#">Colour</a></h3>
+  <div id="colour-panel">
+    Combien de générations voulez-vous colorier? <span class="small">(Faire glisser pour modifier)</span>
+    <div id="no-of-colours-slider"></div>
+    <div id="colour-pickers">
+      <table>
+      </table>
     </div>
-</footer>
+    <div id="colour-picker"></div>
+    <!--<div id="swatch-tip">Cliquez sur l'échantillon pour changer de couleur</div>-->
+  </div>
 
+  <h3><a href="#">Grid</a></h3>
+  <div>
+    <div class="config-section">
+      <h4>Taille de la Grille</h4>
+      Hauteur: <span id="height-display"></span>
+      <div id="height-slider"></div>
+
+      Largeur: <span id="width-display"></span>
+      <div id="width-slider"></div>
+    </div>
+
+    <div class="config-section">
+      <h4>Taille des cellules</h4>
+      <div id="cellSize-slider"></div>
+    </div>
+
+    <div class="config-section">
+      <label for="wraparound-p">Wrap edges?: </label>
+      <input type="checkbox" id="wraparound-p" />
+    </div>
+  </div>
+
+  <h3><a href="#">Rules</a></h3>
+  <div>
+    <div id="box">-- Règle du jeu de Conway --</div>
+
+    <ul id="left">
+    <li id="bottom">Une cellule naît si elle a trois voisins.</li>
+    <li id="bottom">Il reste en vie s'il a 2 ou 3 voisins.</li>
+    <li id="bottom">Il meurt autrement.</li>
+    </ul>
+  </div>
+
+  <h3><a href="#">About</a></h3>
+  <div>
+    <p>
+    Jeu créé sur la base du jeu :
+    <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Conway%27s_Game_of_Life">
+      Conway's Game of Life</a></p>
+
+    <p>Voir tout le projet sur le <a href="https://github.com/thehubgames/hub_games">github</a>.</p>
+
+    <p>Copyright &copy; 2023 By HubGames Studio. All rights reserved.</p>
+  </div>
+</div>
+<a id="return-button" class="btn btn-primary bottom-5 right-5 mb-5 p-2.5 text-lg border-0 cursor-pointer no-underline rounded-md" href="../">Retour au hub de jeu</a>
+<div id="footer"></div>
+<script src="js/life.js"></script>
+<script src="../loader.js"></script>
 </body>
 </html>
