@@ -43,6 +43,11 @@
     <meta name="description" content="Découvrez à propos de Hub Games, notre mission, notre équipe, comment nous contacter, et les contributeurs GitHub qui ont participé à notre projet. Rejoignez-nous pour des jeux passionnants !" />
 </head>
 <body class="bg-base-100">
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
+
     <script> 
     $(function(){
       $("#footer").load("footer.html"); 
@@ -212,12 +217,7 @@
             console.error('Erreur lors de la récupération de la dernière release depuis GitHub', error);
         });
     });
-    window.addEventListener("load", function() {
-    // La page est entièrement chargée, masquez l'écran de chargement.
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("content").style.display = "block"; // Affiche le contenu principal
-    });
     </script>
-
+    <script src="loader.html"></script>
 </body>
 </html>

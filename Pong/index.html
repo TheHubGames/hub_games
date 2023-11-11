@@ -33,6 +33,10 @@
     <link rel="icon" href="../image/icon.png">
 </head>
 <body>
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
     <script> 
         $(function(){
           $("#nav").load("../nav.html"); 
@@ -61,5 +65,6 @@
     <a class="relative right-0 btn btn-primary return-button" href="../">Retour au hub de jeu</a>
     <div id="footer"></div>
     <script src="script.js"></script>
+    <script src="../loader.js"></script>
 </body>
 </html>

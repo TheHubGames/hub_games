@@ -34,6 +34,10 @@
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
     <script>
         $(function(){
             $("#footer").load("../footer.html"); 
@@ -69,5 +73,6 @@
     </main>
     <div id="footer"></div>
     <script src="game.js"></script>
+    <script src="../loader.js"></script>
 </body>
 </html>

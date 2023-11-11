@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
-@font-face {font-family: 'Westway'; src: url('https://hubgames.studio/ressources/Westway.ttf') format('truetype'); font-weight: normal; font-style: normal;}
-@media screen and (max-width: 390px) {#affiche390 {display: none;}}
-@media screen and (min-width: 391px) {#affiche-390{display: none} #affiche390 {display: block;}}
-@media screen and (max-width: 625px) {#affiche625 {display: none;}}
-@media screen and (min-width: 626px) {#affiche-625{display: none} #affiche625 {display: block;}}
+
 html {
     font-family: 'Poppins', sans-serif;
 }
