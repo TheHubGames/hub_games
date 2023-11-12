@@ -47,7 +47,6 @@
         <div id="loader-spinner"></div>
         <p>Chargement en cours...</p>
     </div>
-
     <script> 
     $(function(){
       $("#footer").load("footer.html"); 
@@ -58,12 +57,7 @@
         $("#nav").load("nav.html"); 
       });
     </script> 
-    <div id="nav"></div>
-  
-    <div id="github-releases">
-        <p id="load">Chargement de la dernière release depuis GitHub...</p>
-    </div>
-    <div id="warning" class="relative alert alert-warning w-6/12 mx-auto my-0 text-center">
+    <div id="warning" class="relative alert alert-warning w-1 mx-auto my-0 text-center">
         <button class="absolute top-1 right-1 p-1" onclick="closeWarning()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>
@@ -80,6 +74,12 @@
         document.getElementById('warning').style.display = 'none';
     }
     </script>
+    
+    <div id="nav"></div>
+  
+    <div id="github-releases">
+        <p id="load">Chargement de la dernière release depuis GitHub...</p>
+    </div>
     
     <!-- List of games and app -->
       <div id="game" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
