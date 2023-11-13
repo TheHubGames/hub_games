@@ -47,13 +47,6 @@
     });
   </script> 
   <div id="nav"></div>
-  
-<div id="message-modal" class="modal">
-    <div class="modal-content">
-        <p id="message-content"></p>
-        <button id="ok-button" onclick="restartGame()">OK</button>
-    </div>
-</div>
 <div id="game-container">
     <div id="game-board">
         <!-- Grille de jeu -->
@@ -79,6 +72,12 @@
         <p><span class="gras-souligne">Score</span><span class="gras"> :</span></p>
         <p>Joueur X: <span id="scoreX">0</span></p>
         <p>Joueur O: <span id="scoreO">0</span></p>
+    </div>
+</div>
+<div id="message-modal">
+    <div id="modal-content" class="bg-inherit">
+        <p id="message-content"></p>
+        <button id="ok-button" onclick="restartGame()">OK</button>
     </div>
 </div>
 <a class="relative m-2 btn btn-primary return-button" href="../">Retour au hub de jeu</a>
