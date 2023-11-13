@@ -1,69 +1,89 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!DOCTYPE html>
+  <html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="Weather - HubGames" />
-  <meta name="description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Weather - HubGames" />
+    <meta name="description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hubgames.studio/Weather/" />
-  <meta property="og:title" content="Weather - HubGames" />
-  <meta property="og:description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
-  <meta property="og:image" content="https://hubgames.studio/image/icon.png" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/Weather/" />
+    <meta property="og:title" content="Weather - HubGames" />
+    <meta property="og:description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    <meta property="og:image" content="https://hubgames.studio/image/icon.png" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://hubgames.studio/Weather/" />
-  <meta property="twitter:title" content="Weather - HubGames" />
-  <meta property="twitter:description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
-  <meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hubgames.studio/Weather/" />
+    <meta property="twitter:title" content="Weather - HubGames" />
+    <meta property="twitter:description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    <meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
 
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    
-    <title>Weather</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../image/icon.png">
-</head>
-<body class="bg-base-100">
-  <div id="loader">
-    <div id="loader-spinner"></div>
-    <p>Chargement en cours...</p>
-  </div>
-    <script> 
-    $(function(){
-      $("#footer").load("../footer.html"); 
-    });
-    </script>
-    <script> 
-        $(function(){
-          $("#nav").load("../nav.html"); 
-        });
-    </script> 
-    <div id="nav"></div>
-    <div id="weather-container" class="py-20">
-        <h2>Données météorologiques actuelles pour <span id="city-name"></span></h2>
-        <p id="weather-description"></p>
-        <p id="temperature"></p>
-        <p id="pressure"></p>
-        <p id="humidity"></p>
-        <p id="wind-speed"></p>
-        <p id="longitude"></p>
-        <p id="latitude"></p>
-        <label for="city-input" class="mt-5">Entrez une ville :</label>
-        <input type="text" id="city-input" placeholder="Nom de la ville">
-        <a id="fetch-button" class="btn btn-primary mt-1">Rechercher</a>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+      
+      <title>Weather</title>
+      <link rel="stylesheet" href="../style.css">
+      <link rel="stylesheet" href="btnstyle.css">
+      <link rel="icon" href="../image/icon.png">
+  </head>
+  <body class="bg-base-100">
+    <div id="loader">
+      <div id="loader-spinner"></div>
+      <p>Chargement en cours...</p>
     </div>
-    <a id="return-button" class="btn btn-primary" href="../">Retour au hub de jeu</a>
-    <div id="footer"></div>
-    
-    <script src="script.js"></script>
-    <script src="../loader.js"></script>
-</body>
-</html>
+      <script> 
+      $(function(){
+        $("#footer").load("../footer.html"); 
+      });
+      </script>
+      <script> 
+          $(function(){
+            $("#nav").load("../nav.html"); 
+          });
+      </script> 
+      <div id="nav"></div>
+      <div id="weather-container" class="py-20">
+          <h2>Données météorologiques actuelles pour <span id="city-name"></span></h2>
+          <p id="weather-description"></p>
+          <p id="temperature"></p>
+          <p id="pressure"></p>
+          <p id="humidity"></p>
+          <p id="wind-speed"></p>
+          <p id="longitude"></p>
+          <p id="latitude"></p>
+          <label for="city-input" class="mt-5">Entrez une ville :</label>
+          <input type="text" id="city-input" placeholder="Nom de la ville">
+          <div id="btn" class="flex items-center mt-1 justify-center">
+            <a id="fetch-button" class="btn btn-primary mr-5">Rechercher</a>
+            <div class="down" onclick="downstart()">
+              <div class="downprogress">
+                <div class="progressfill"></div>
+              </div>
+              <div class="downbtn"></div>
+              <div class="downicon">
+                <svg version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path d="M112 268L256 412L400 268M256 392L256 100" fill="none" opacity="1" stroke="#851aff" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="downcheck"><ion-icon name="checkmark-outline"></ion-icon></div>
+            </div>
+          </div>
+      </div>
+      <a id="return-button" class="btn btn-primary" href="../">Retour au hub de jeu</a>
+      <div id="footer"></div>
+      
+      <script src="script.js"></script>
+      <script src="btnscript.js"></script> 
+      <script src="../loader.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
+  </body>
+  </html>
