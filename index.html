@@ -36,6 +36,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <script src="loader.js"></script>
+    <script src="ressources/modal.js"></script>
     
     <title>Hub Games</title>
     <link rel="stylesheet" href="style.css">
@@ -57,12 +59,7 @@
         $("#nav").load("nav.html"); 
       });
     </script>
-    
-    <script>
-    function closeWarning() {
-        document.getElementById('warning').style.display = 'none';
-    }
-    </script>
+  
     
     <div id="nav"></div>
      <div id="warning" class="relative alert alert-warning mx-auto my-0 text-center">
@@ -221,9 +218,8 @@
                 <div class="card-actions justify-end">
                   <a href="MAJ/Derniere_maj" class="btn btn-primary" target="_blank">Lire la suite</a>
                 </div>
-
             </div>
-            <figure><img class="mr-6 rounded object-cover hidden lg:block" src="https://hubgames.studio/rsrcs/1.4/view__new_page.jpg" alt="JDLV Image" /></figure>`;
+            <!--<figure><img class="mr-6 rounded object-cover hidden lg:block" src="https://hubgames.studio/rsrc_maj/1.X.X/" alt="" /></figure>-->`;
             releaseContainer.innerHTML = releaseHTML;
 
             releasesDiv.appendChild(releaseContainer);
@@ -235,6 +231,5 @@
         });
     });
     </script>
-    <script src="loader.js"></script>
 </body>
 </html>
