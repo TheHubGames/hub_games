@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 function returnToHub() {
     // Vous pouvez rediriger l'utilisateur vers le hub de jeu en utilisant window.location.href
         window.location.href = "index.html";
@@ -73,4 +74,5 @@ retryButton.addEventListener("click", () => {
     retryButton.style.display = "none";
     clickCount.textContent = "0 clics";
     countdownDisplay.textContent = "Attendez de cliquer...";
+});
 });
