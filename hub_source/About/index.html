@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="À Propos - Hub Games" />
+    <meta name="description" content="By Klaynight Studio, Découvrez le moindre petit détail de Hubgames !" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/hub_source/About" />
+    <meta property="og:title" content="À Propos - Hub Games" />
+    <meta property="og:description" content="By Klaynight Studio, Découvrez le moindre petit détail de Hubgames !" />
+    <meta property="og:image" content="https://hubgames.studio/content/images/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hubgames.studio/hub_source/About" />
+    <meta property="twitter:title" content="À Propos - Hub Games" />
+    <meta property="twitter:description" content="By Klaynight Studio, Découvrez le moindre petit détail de Hubgames !" />
+    <meta property="twitter:image" content="https://hubgames.studio/content/images/icon.png" />
+
+    <title>À Propos - Hub Games</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="https://hubgames.studio/content/images/icon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>    
+</head>
+<body>
+  <div id="loader">
+    <div id="loader-spinner"></div>
+    <p>Chargement en cours...</p>
+  </div>
+  <script> 
+    $(function(){
+      $("#footer").load("../../footer.html"); 
+    });
+    </script> 
+    <script> 
+      $(function(){
+        $("#nav").load("../../nav.html"); 
+      });
+  </script> 
+
+
+  <div id="nav"></div>
+
+  <div class="mt-10">
+    <h1 class="text-2xl font-bold ml-10 mb-4 text-left">
+      <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      </svg>
+      À Propos de nous
+  </h1>
+    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+      <h2 class="text-2xl font-bold mb-4">Notre Mission</h2>
+      <p>Bienvenue sur le site Hub Games ! Notre mission est de fournir une expérience de jeu en ligne exceptionnelle à nos utilisateurs. Nous sommes passionnés par les jeux et nous nous efforçons de créer un environnement amusant et divertissant pour les joueurs de tous âges. Nos jeux sont simples et amusants, qu'ils soient tirés de jeux existants ou créés de toutes pièces, ils portent toujours notre empreinte unique !</p>
+    </div>
+    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+      <h2 class="text-2xl font-bold mb-4">Notre Équipe</h2>
+      <p>Hub Games est dirigé par une équipe talentueuse de développeurs de jeux et de designers. Nous travaillons dur pour créer des jeux passionnants et innovants qui captivent nos joueurs.</p>
+    </div>
+    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+      <h2 class="text-2xl font-bold mb-4">Contactez-nous</h2>
+      <p>Si vous avez des questions, des commentaires ou des suggestions, n'hésitez pas à nous contacter. Nous sommes toujours ravis d'entendre nos utilisateurs et d'améliorer notre service.</p>
+      <p>Adresse e-mail : <a href="mailto:night.psr@gmail.com" class="text-blue-500">night.psr@gmail.com</a></p>
+      <p>Github : <a href="https://github.com/TheHubGames/hub_games" target="_blank" class="text-blue-500">https://github.com/TheHubGames/hub_games</a></p>
+    </div>
+    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+      <h2 class="text-2xl font-bold mb-10">Contributeurs GitHub</h2>
+      <table class="w-full border-collapse border border-gray-300">
+          <thead>
+              <tr>
+                  <th class="border border-gray-300">Nom</th>
+                  <th class="border border-gray-300">Contributions Pull Requests</th>
+                  <th class="border border-gray-300">Contributions Issues</th>
+              </tr>
+          </thead>
+          <tbody id="contributors_table">
+              <!-- Les contributeurs seront affichés ici par JavaScript -->
+          </tbody>
+      </table>
+    </div>
+  </div>
+    
+  <a id="return-button" class="btn btn-neutral bottom-5 right-5 p-2.5 ml-5 text-lg border-0 cursor-pointer no-underline rounded-md" href="../../../">Retour au hub de jeu</a>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="../../loader.js"></script>
+</body>
+</html>
