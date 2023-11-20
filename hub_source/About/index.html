@@ -58,22 +58,23 @@
       </svg>
       À Propos de nous
   </h1>
-    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+    <div class="container bg-base mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
       <h2 class="text-2xl font-bold mb-4">Notre Mission</h2>
       <p>Bienvenue sur le site Hub Games ! Notre mission est de fournir une expérience de jeu en ligne exceptionnelle à nos utilisateurs. Nous sommes passionnés par les jeux et nous nous efforçons de créer un environnement amusant et divertissant pour les joueurs de tous âges. Nos jeux sont simples et amusants, qu'ils soient tirés de jeux existants ou créés de toutes pièces, ils portent toujours notre empreinte unique !</p>
     </div>
-    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+    <div class="container bg-auto mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
       <h2 class="text-2xl font-bold mb-4">Notre Équipe</h2>
       <p>Hub Games est dirigé par une équipe talentueuse de développeurs de jeux et de designers. Nous travaillons dur pour créer des jeux passionnants et innovants qui captivent nos joueurs.</p>
+      <div id="members_list" class="items-center space-x-4"></div>
     </div>
-    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+    <div class="container bg-base mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
       <h2 class="text-2xl font-bold mb-4">Contactez-nous</h2>
       <p>Si vous avez des questions, des commentaires ou des suggestions, n'hésitez pas à nous contacter. Nous sommes toujours ravis d'entendre nos utilisateurs et d'améliorer notre service.</p>
       <p>Adresse e-mail : <a href="mailto:night.psr@gmail.com" class="text-blue-500">night.psr@gmail.com</a></p>
       <p>Github : <a href="https://github.com/TheHubGames/hub_games" target="_blank" class="text-blue-500">https://github.com/TheHubGames/hub_games</a></p>
     </div>
-    <div class="container bg-neutral mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
-      <h2 class="text-2xl font-bold mb-10">Contributeurs GitHub</h2>
+    <div class="container bg-base mx-auto px-4 py-8 shadow-lg rounded-lg m-2">
+      <h2 class="text-2xl font-bold mb-10">Contributeurs GitHub Hubgames</h2>
       <table class="w-full border-collapse border border-gray-300">
           <thead>
               <tr>
@@ -86,6 +87,20 @@
               <!-- Les contributeurs seront affichés ici par JavaScript -->
           </tbody>
       </table>
+      <h2 class="text-2xl font-bold mb-10 mt-10">Contributeurs GitHub Jobs Hubgames</h2>
+      <table class="w-full border-collapse border border-gray-300">
+          <thead>
+              <tr>
+                  <th class="border border-gray-300">Nom</th>
+                  <th class="border border-gray-300">Contributions Pull Requests</th>
+                  <th class="border border-gray-300">Contributions Issues</th>
+              </tr>
+          </thead>
+          <tbody id="jobs_contributors_table">
+              <!-- Les contributeurs seront affichés ici par JavaScript -->
+          </tbody>
+      </table>
+      
     </div>
   </div>
     
@@ -93,7 +108,8 @@
 
   <div id="footer"></div>
 
-  <script src="script.js"></script>
+  <script src="script_hubgames.js"></script>
+  <script src="script_jobs.hubgames.js"></script>
   <script src="../../loader.js"></script>
 </body>
 </html>
