@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Testeur de CPS - HubGames" />
+    <meta name="description" content="Pour savoir ton nombre de clique par seconde, mais aussi pour flex." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/games/CPS/" />
+    <meta property="og:title" content="Testeur de CPS - HubGames" />
+    <meta property="og:description" content="Pour savoir ton nombre de clique par seconde, mais aussi pour flex." />
+    <meta property="og:image" content="https://hubgames.studio/content/images/icon.png" />
+
+   <!-- Twitter -->
+   <meta property="twitter:card" content="summary_large_image" />
+   <meta property="twitter:url" content="https://hubgames.studio/games/CPS/" />
+   <meta property="twitter:title" content="Testeur de CPS - HubGames" />
+   <meta property="twitter:description" content="Pour savoir ton nombre de clique par seconde, mais aussi pour flex." />
+   <meta property="twitter:image" content="https://hubgames.studio/images/icon.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+    <title>Compteur de CPS</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../content/images/icon.png">
+</head>
+<body>
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
+    <script> 
+        $(function(){
+          $("#footer").load("../../footer.html"); 
+        });
+        </script> 
+        <script> 
+          $(function(){
+            $("#nav").load("../../nav.html"); 
+          });
+    </script> 
+    <div id="nav"></div>
+    <div id="cps-container">
+        <div>
+            <div id="click-count">0 clics</div>
+            <div id="cps-result" style="display: none;"></div>
+            <div id="countdown" style="font-size:medium;">Attendez de cliquer...</div>
+            <div>
+                <button id="click-button" class="btn btn-primary">Cliquez ici!</button>
+                <button id="retry-button" class="btn btn-primary" style="display: none;">Refaire un test</button>
+            </div>
+        </div>
+    </div>
+    <div id="hist-container">
+        <div id="left-column">
+            <h1 class="text-3xl">Dernier Résultat :</h1>
+            <ul id="cps-history"></ul>
+        </div>
+    </div>
+    <a id="return-button" class="btn btn-neutral bottom-5 right-5 mb-5 p-2.5 text-lg border-0 cursor-pointer no-underline rounded-md z-999" href="../../">Retour au hub de jeu</a>
+    <div id="footer"></div>
+    <script src="script.js"></script> 
+    <script src="../../loader.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,49 @@
+#canvas
+{
+    background-color:#30c0df;
+    border: 2px solid black;
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 20%;
+}
+
+@media screen and (max-width: 500px){
+    #canvas {
+        background-color: #343749;
+        border: 2px solid black;
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%; /* Utilisez 100% pour que le canvas occupe toute la largeur */
+        height: auto; /* Laissez la hauteur en auto pour conserver le ratio d'aspect */
+    }    
+}
+
+/* Styles spécifiques pour les écrans de petite taille (téléphone) */
+@media (max-width: 767px) {
+    #fullscreen-button {
+        position: fixed;
+        bottom: 65px; /* Ajustez la valeur pour définir la position verticale souhaitée */
+        right: 7%; /* Centrez horizontalement sur les écrans de petite taille */
+        transform: translateX(50%); /* Centrez horizontalement */
+        z-index: 999;
+    }
+    #affichePC {
+        display: none;
+    }
+}
+
+#affichePC {
+    margin-right: 8px; /* Ajoutez un peu d'espace entre le texte et l'icône */
+}
+
+#exit-fullscreen-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: none; /* Masquez le bouton par défaut */
+    z-index: 2; /* Assurez-vous que le bouton est au-dessus du canvas */
+}
+
+
