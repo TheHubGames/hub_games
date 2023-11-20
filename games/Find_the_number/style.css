@@ -1,0 +1,102 @@
+#container-content {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centrer verticalement */
+}
+
+#hist-container {
+    padding: 20px;
+    width: 25%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    text-align: center;
+    right: 10px;
+    top: 15%; /* Placez-le à droite de la page par défaut */
+}
+
+/* Styles pour la scrollbar */
+#hist-container ul {
+    max-height: 150px; /* Hauteur maximale */
+    overflow-y: auto; /* Activation du défilement vertical si nécessaire */
+  
+    /* Personnalisation de la scrollbar */
+    scrollbar-width: thin; /* Largeur de la scrollbar */
+    scrollbar-color: #aaa #ddd; /* Couleur de la scrollbar */
+}
+
+/* Track et thumb de la scrollbar */
+#hist-container ul::-webkit-scrollbar {
+    width: 8px; /* Largeur de la scrollbar */
+}
+
+#hist-container ul::-webkit-scrollbar-track {
+    background: #ddd; /* Couleur de la piste de la scrollbar */
+    border-radius: 10px; /* Rayon des coins de la piste */
+}
+
+#hist-container ul::-webkit-scrollbar-thumb {
+    background-color: #aaa; /* Couleur du bouton de la scrollbar */
+    border-radius: 10px; /* Rayon des coins du bouton */
+}
+
+/* Optionnel : Change la couleur de fond de la scrollbar */
+#hist-container ul::-webkit-scrollbar-corner {
+    background-color: #fff; /* Couleur de fond de la scrollbar */
+}
+  
+  
+
+@media screen and (max-width: 850px) {
+    #container-content, #hist-container {
+        width: 100%;
+        position: static;
+        margin-top: 20px; /* Ajoutez un espacement en haut pour séparer le contenu */
+    }
+    
+    #hist-container {
+        top: auto;
+        bottom: 20px; /* Placez-le en bas du #container-content sur les téléphones */
+    }
+}
+
+ul {
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 0; /* Ajustez la valeur pour éliminer tout espacement entre le texte et la puce */
+}
+
+#feedback-container {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px; /* Ajouter de l'espace au-dessus du feedback */
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
+.correct {
+    background-color: green;
+    color: white;
+}
+
+.incorrect {
+    background-color: red;
+    color: white;
+}
+
+.correct, .incorrect {
+    padding: 10px;
+    border-radius: 10px;
+    width: 95%;
+    margin-top: -20px;
+}

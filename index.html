@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Acceuil - HubGames" />
+    <meta name="description" content="By Klaynight Studio, Un hub d'applications et de jeux amusant et utile" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/" />
+    <meta property="og:title" content="Acceuil - HubGames" />
+    <meta property="og:description" content="By Klaynight Studio, Un hub d'applications et de jeux amusant et utile." />
+    <meta property="og:image" content="https://hubgames.studio/content/images/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hubgames.studio/" />
+    <meta property="twitter:title" content="Morpion - HubGames" />
+    <meta property="twitter:description" content="By Klaynight Studio, Un hub d'applications et de jeux amusant et utile" />
+    <meta property="twitter:image" content="https://hubgames.studio/content/images/icon.png" />
     
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/TheHubGames/jobs_hub_games/main/image/icon.png?raw=true" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -39,10 +56,9 @@
     <script src="loader.js"></script>
     <script src="ressources/modal.js"></script>
     
-    <title>Hub Games</title>
+    <title>Acceuil - Hubgames</title>
+    <link rel="icon" href="https://hubgames.studio/content/images/icon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="image/icon.png">
-    <meta name="description" content="Découvrez à propos de Hub Games, notre mission, notre équipe, comment nous contacter, et les contributeurs GitHub qui ont participé à notre projet. Rejoignez-nous pour des jeux passionnants !" />
 </head>
 <body class="bg-base-100">
     <div id="loader">
@@ -62,7 +78,7 @@
   
     
     <div id="nav"></div>
-     <div id="warning" class="relative alert alert-warning mx-auto my-0 text-center">
+     <div id="warning" class="relative alert alert-warning ml-2 mr-2 w-auto text-center">
         <button class="absolute top-1 right-1 p-1" onclick="closeWarning()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>
@@ -86,7 +102,7 @@
                 <h2 class="card-title">Morpion</h2>
                 <p>Sur un plateau de jeu en 3x3 le premier à alligner trois de ses pions à gagné.</p>
                 <div class="card-actions justify-end">
-                <a href="/Morpion" class="btn btn-primary">Jouer</a>
+                <a href="games/Morpion" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -97,7 +113,7 @@
                 <h2 class="card-title">Weather</h2>
                 <p>Savoir toute les informations météo de l'instant de n'importe quelle ville.</p>
                 <div class="card-actions justify-end">
-                <a href="/Weather" class="btn btn-primary">Tester</a>
+                <a href="games/Weather" class="btn btn-primary">Tester</a>
               </div>
             </div>
         </div>
@@ -108,7 +124,7 @@
                 <h2 class="card-title">Clicker Game</h2>
                 <p>Pour passer le temps en cliquant sur un bouton multicolor, mais battre son score et s'entrener à OSU</p>
                 <div class="card-actions justify-end">
-                <a href="/Clicker" class="btn btn-primary">Jouer</a>
+                <a href="games/Clicker" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -119,7 +135,7 @@
                 <h2 class="card-title">Test de CPS</h2>
                 <p>Pour savoir ton nombre de clique par seconde, mais aussi pour flex.</p>
                 <div class="card-actions justify-end">
-                <a href="/CPS" class="btn btn-primary">Jouer</a>
+                <a href="games/CPS" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -130,7 +146,7 @@
                 <h2 class="card-title">Tetris</h2>
                 <p>Empiler des blocs les uns sur les autres pour faire une ligne et les détruires pour éviter de monter dans les étages.</p>
                 <div class="card-actions justify-end">
-                <a href="Tetris/" class="btn btn-primary">Jouer</a>
+                <a href="games/Tetris/" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -141,7 +157,7 @@
                 <h2 class="card-title">Trouver le Nombre</h2>
                 <p>Seriez-vous capable de trouver le bon nombre ? Prouvez le nous en y jouant !</p>
                 <div class="card-actions justify-end">
-                <a href="Find_the_number/" class="btn btn-primary">Jouer</a>
+                <a href="games/Find_the_number/" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -152,7 +168,7 @@
                 <h2 class="card-title">Pong</h2>
                 <p>Deux barres, une boule, 5 manches. À vous de jouer !</p>
                 <div class="card-actions justify-end">
-                <a href="Pong/" class="btn btn-primary">Jouer</a>
+                <a href="games/Pong/" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -163,7 +179,7 @@
                 <h2 class="card-title">Flappy-Bird</h2>
                 <p>Fait sauter ton oiseau entre des tuyaux pour faire le meilleur score, mais attention si tu tappes ça fait mal au front !!</p>
                 <div class="card-actions justify-end">
-                <a href="Flappy-Bird/" class="btn btn-primary">Jouer</a>
+                <a href="games/Flappy-Bird/" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -174,7 +190,7 @@
                 <h2 class="card-title">Jeu de la vie</h2>
                 <p>3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !</p>
                 <div class="card-actions justify-end">
-                <a href="Jeu_de_la_vie/" class="btn btn-primary">Jouer</a>
+                <a href="games/Jeu_de_la_vie/" class="btn btn-primary">Jouer</a>
               </div>
             </div>
         </div>
@@ -219,7 +235,7 @@
                   <a href="MAJ/Derniere_maj" class="btn btn-primary" target="_blank">Lire la suite</a>
                 </div>
             </div>
-            <!--<figure><img class="mr-6 rounded object-cover hidden lg:block" src="https://hubgames.studio/rsrc_maj/1.X.X/" alt="" /></figure>-->`;
+            <!--<figure><img class="mr-6 rounded object-cover hidden lg:block" src="https://hubgames.studio/content/rsrc_maj/1.X.X/" alt="" /></figure>-->`;
             releaseContainer.innerHTML = releaseHTML;
 
             releasesDiv.appendChild(releaseContainer);

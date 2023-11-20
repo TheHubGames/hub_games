@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Jeu de la vie - HubGames" />
+<meta name="description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hubgames.studio/games/JDLV/" />
+<meta property="og:title" content="Jeu de la vie - HubGames" />
+<meta property="og:description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
+<meta property="og:image" content="https://hubgames.studio/content/images/icon.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://hubgames.studio/games/JDLV/" />
+<meta property="twitter:title" content="Jeu de la vie - HubGames" />
+<meta property="twitter:description" content="3 règles simples et pourtant la vie se déroule devant vos yeux. Alors à vous de créer !" />
+<meta property="twitter:image" content="https://hubgames.studio/content/images/icon.png" />
+<meta name="keywords" content="life, game of life, conway, cellular automata, CAs, HTML5, Canvas, offline, localStorage, HubGames" />
+
+<title>Jeu de la vie</title>
+
+<!-- Fullscreen when run from icon -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="glider-icon.png" />
+<link rel="icon" href="../../content/images/icon.png">
+
+<!-- Scale done on double tap -->
+<meta name="viewport" content="initial-scale=1, user-scalable=no, width=device-width" />
+
+<!-- Do not parse for and highlight phone numbers -->
+<meta name="format-detection" content="telephone=no" />
+
+<!-- Utils -->
+<script src="js/log4javascript.js"></script>
+
+<!-- JQuery and JQuery UI -->
+<link type="text/css" href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Tailwindcss and DaisyUI -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.ui.js"></script>
+<script src="js/jquery.ui.ipad.js"></script>
+
+<!-- Colour Picker -->
+<link type="text/css" href="css/farbtastic.css" rel="stylesheet" />
+<script src="js/farbtastic.js"></script>
+
+<!-- Life -->
+<link type="text/css" href="css/life.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/hub.css">
+</head>
+
+<body class="bg-base-100">
+  <div id="loader">
+    <div id="loader-spinner"></div>
+    <p>Chargement en cours...</p>
+  </div>
+  <script> 
+    $(function(){
+      $("#footer").load("../../footer.html"); 
+    });
+    </script> 
+    <script> 
+      $(function(){
+        $("#nav").load("../../nav.html"); 
+      });
+</script> 
+
+<noscript>
+  This program requires javascript.
+  <style>
+    div {display: none;}
+  </style>
+</noscript>
+
+<div id="nav"></div>
+
+<div id="controls">
+  <div id="buttons">
+    <input type="button" id="tick" value="Step" />
+    <input type="button" id="start" value="Start" />
+    <input type="button" id="stop" value="Stop" />
+    <input type="button" id="reset" value="Reset" />
+    <input type="button" id="show-settings" value="Settings" />
+  </div>
+  <div id="speed"><span id="speed-label">Vitesse:</span> <div id="speed-slider"></div></div>
+</div>
+
+<div id="status-display">
+  <span id="speed-display">Intervalle d'actualisation: <span id="speed-val"></span></span>
+  <span id="generation-display">Generation: <span id="generation"></span></span>
+  <span id="status">Arrêter</span>
+</div>
+
+<div id="grid-div"></div>
+
+<div id="panels" title="Settings">
+  <h3><a href="#">Colour</a></h3>
+  <div id="colour-panel">
+    Combien de générations voulez-vous colorier? <span class="small">(Faire glisser pour modifier)</span>
+    <div id="no-of-colours-slider"></div>
+    <div id="colour-pickers">
+      <table>
+      </table>
+    </div>
+    <div id="colour-picker"></div>
+    <!--<div id="swatch-tip">Cliquez sur l'échantillon pour changer de couleur</div>-->
+  </div>
+
+  <h3><a href="#">Grid</a></h3>
+  <div>
+    <div class="config-section">
+      <h4>Taille de la Grille</h4>
+      Hauteur: <span id="height-display"></span>
+      <div id="height-slider"></div>
+
+      Largeur: <span id="width-display"></span>
+      <div id="width-slider"></div>
+    </div>
+
+    <div class="config-section">
+      <h4>Taille des cellules</h4>
+      <div id="cellSize-slider"></div>
+    </div>
+
+    <div class="config-section">
+      <label for="wraparound-p">Wrap edges?: </label>
+      <input type="checkbox" id="wraparound-p" />
+    </div>
+  </div>
+
+  <h3><a href="#">Rules</a></h3>
+  <div>
+    <div id="box">-- Règle du jeu de Conway --</div>
+
+    <ul id="left">
+    <li id="bottom">Une cellule naît si elle a trois voisins.</li>
+    <li id="bottom">Il reste en vie s'il a 2 ou 3 voisins.</li>
+    <li id="bottom">Il meurt autrement.</li>
+    </ul>
+  </div>
+
+  <h3><a href="#">About</a></h3>
+  <div>
+    <p>
+    Jeu créé sur la base du jeu :
+    <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Conway%27s_Game_of_Life">
+      Conway's Game of Life</a></p>
+
+    <p>Voir tout le projet sur le <a href="https://github.com/thehubgames/hub_games">github</a>.</p>
+
+    <p>Copyright &copy; 2023 By HubGames Studio. All rights reserved.</p>
+  </div>
+</div>
+<a class="relative m-2 right-1 btn btn-primary return-button" href="../../">Retour au hub de jeu</a>
+<div id="footer"></div>
+<script src="js/life.js"></script>
+<script src="../../loader.js"></script>
+</body>
+</html>

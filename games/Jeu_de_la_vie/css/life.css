@@ -1,0 +1,160 @@
+/*div {
+    border-width: 2px;
+    border-color: red;
+    border-style: solid; 
+}*/
+
+noscript {
+    color: red;
+    font-size: x-large;
+}
+
+body {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Cells */
+.live { background-color: #fff }
+.dead { background-color: #000 }
+
+#controls {
+    display: inline-block;
+}
+
+#buttons {
+    margin-bottom: 5px;
+}
+
+
+/* 
+* An attempt to make the checkbox larger. This seems to be known
+* difficult and have inconsistent results. Will leave it for now.
+
+input[type="checkbox"] {
+    width: 2em;
+    height: 2em;
+}
+*/
+
+input[type="Button"] {
+    background-color: #444;
+    border-radius: 10px;
+    color: #eee;
+    padding: 5px;
+    transition: background-color 0.35s;
+}
+
+input[type="Button"]:hover {
+    background-color: #777;
+}
+
+#buttons * {
+    font-size: 120%;
+}
+
+#speed {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    margin-bottom:0.5em;
+}
+
+#speed-slider {
+margin-top: 0.2em;
+    display: inline-block;
+    width: 80%;
+    float: right;
+    /* Default 0.8 but this makes it not fit in centre of handle. */
+    height: 0.7em;
+}
+
+.ui-slider-handle {
+    /* Removes unpleasant looking focous highlight box */ 
+   outline: 0;
+}
+.ui-slider-range-min {
+    /* This is to fix (another) bug in the jQuery slider: the range
+     * indication bar did not have rounded corners. */
+
+    border-top-left-radius:        5px;
+    border-bottom-left-radius:     5px;
+    -moz-border-radius-topleft:    5px;
+    -moz-border-radius-bottomleft: 5px;
+}
+
+#speed-label {
+    vertical-align: top;
+}
+
+#speed-display {
+    margin-right: 1em;
+}
+
+#speed-val {
+    display: inline-block;
+    min-width: 5em;
+}
+
+#generation-display {
+    margin-right: 1em;
+}
+
+#status-display {
+    margin-bottom: 0.3em;
+}
+
+.config-section {
+    margin-bottom: 10px;
+    padding: 0.5em;
+    border-style: dashed;
+    border-width: thin;
+    border-color: #444;
+}
+
+.config-section h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 120%;
+}
+
+#no-of-colours-slider {
+    margin: 10px;
+}
+
+/* All swatches and labels */
+#colour-pickers {
+    float: left;
+}
+
+/* Swatch and label are in a table. The minimum row height is
+determined by the label text height. For square swatches set this the
+same as swatch width. */
+
+#colour-pickers tr {
+    height: 1.2em;
+}
+
+.swatch {
+    width: 1.2em;
+}
+
+/* Farbtastic wheel */
+#colour-picker {
+    float: left;
+    width: 195px;
+    margin: 20px;
+}
+
+.small {
+    font-size: 80%;
+}
+
+/*#swatch-tip {
+    float: right;
+    position: relative;
+    top: -3%;
+    width: 75%;
+    margin-right: -20px;
+}*/

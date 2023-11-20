@@ -1,0 +1,289 @@
+/*           CSS Pour Weather                  */
+#weather-container {
+    margin: 20px auto;
+    max-width: 500px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/*          CCS Pour CLICKER         */
+
+#jeu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 140px);
+}
+
+#jeu {
+    width: 80%;
+    max-width: 400px;
+    /* Largeur maximale du plateau */
+    aspect-ratio: 1/1;
+    /* Maintient le ratio hauteur/largeur */
+    position: relative;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    /* Bordure légèrement arrondie */
+    padding: 10px;
+    /* Ajout de l'espace à l'intérieur du plateau */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+    /* Ombre légère */
+    background-color: #ddd;
+}
+
+#forme {
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#score {
+    font-size: 24px;
+    color: #eee;
+}
+
+#tableau {
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 790px) {
+    #jeu-container {
+        flex-direction: column; /* Mettez en colonne pour les petits écrans */
+        align-items: center; /* Centrez les éléments verticalement */
+    }
+    #tableau {
+        top: 1%;
+        left: 0%;
+        position: relative; /* Changez la position en relative pour déplacer le tableau en dessous du jeu */
+        margin-top: 10px; /* Ajoutez un espace plus petit entre le jeu et le tableau */
+        text-align: center; /* Centrez le texte à l'intérieur du tableau */
+    }
+    #score {
+        margin-bottom: 5px; /* Réduisez légèrement l'espace entre le score et le chrono */
+    }
+}
+
+#tableau {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+#chrono {
+    font-size: 18px;
+    color: #eee;
+}
+
+
+/*       CSS POUR MORPION          */
+#game-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+#game-board {
+    margin-right: 20px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #333;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+.cell:hover {
+    background-color: #eee;
+}
+#message-modal {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#ok-button {
+   width: 100%;
+}
+
+.close {
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 10px;
+   cursor: pointer;
+}
+#message {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+/* Style pour les joueurs X et O */
+.cell.X {
+    color: #f00;
+   /* Rouge pour X */
+}
+.cell.O {
+    color: #00f;
+   /* Bleu pour O */
+}
+/* Style pour le tableau à droite du plateau */
+#score-table {
+   /* Ajustez la valeur en fonction de l'espace souhaité */
+    background-color: hsl(var(--ac));
+    color: hsl(var(--b1));
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+#score-table p {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 600px) {
+   /* Réglez la largeur en fonction de la taille de l'écran à partir de laquelle vous souhaitez effectuer la modification */
+   #game-container {
+     flex-direction: column; /* Définissez la disposition en colonne */
+   }
+ 
+   #score-table {
+     position: relative; /* Définissez la position sur relative pour revenir à la disposition normale */
+     top: auto; /* Réinitialisez la position en haut */
+     right: auto; /* Réinitialisez la position à droite */
+     margin-top: 10px; /* Ajoutez un espacement en haut pour séparer le tableau du plateau */
+   }
+ }
+
+/*        CSS POUR CPS             */
+
+/* Styles communs pour tous les écrans */
+#cps-container {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    width: 30%;
+    max-width: 30%;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+/* Styles spécifiques pour les téléphones */
+@media screen and (max-width: 850px) {
+    /* Placez le conteneur de l'historique en bas du CPS container */
+    #hist-container {
+        position: relative; /* Réinitialisez la position */
+        top: auto;
+        right: auto;
+        margin-top: 10px; /* Ajoutez un espacement en haut pour séparer le tableau du reste du contenu */
+    }
+    #cps-container {
+    width: 50%;
+    max-width: 50%;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    }
+}
+
+#cps-history li::before {
+    content: "\2192"; /* Code Unicode pour la flèche vers la droite (→) */
+    margin-right: 5px; /* Espace entre la flèche et le texte */
+}
+
+#left-column {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+    position: absolute;
+    left: 0.5%;
+    top: 15%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#click-button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacement du haut */
+    width: 100%;
+}
+
+#click-button.disabled {
+    opacity: 0.5; /* Opacité réduite pour griser le bouton */
+    pointer-events: none; /* Empêcher les interactions avec le bouton */
+}
+
+#click-count {
+    font-size: 35px;
+}
+
+#countdown {
+    font-size: 24px;
+}
+
+#retry-button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Espacement du haut */
+    width: 100%;
+}
+
+#cps-history ul {
+    font-size: 24px;
+}
+
+#cps-history li {
+    list-style-type: none;
+}
