@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Trouver le Nombre - HubGames" />
+    <meta name="description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/games/Find_the_numbre/" />
+    <meta property="og:title" content="Trouver le Nombre - HubGames" />
+    <meta property="og:description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    <meta property="og:image" content="https://hubgames.studio/content/images/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hubgames.studio/games/Find_the_numbre/" />
+    <meta property="twitter:title" content="Trouver le Nombre - HubGames" />
+    <meta property="twitter:description" content="Savoir toute les informations météo de l'instant de n'importe quelle ville." />
+    <meta property="twitter:image" content="https://hubgames.studio/content/images/icon.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../../content/images/icon.png">
+  <title>Find_the_number</title>
+</head>
+<body>
+  <div id="loader">
+    <div id="loader-spinner"></div>
+    <p>Chargement en cours...</p>
+  </div>
+  <script>
+    $(function(){
+        $("#footer").load("../../footer.html"); 
+      });
+  </script> 
+  <script> 
+    $(function(){
+      $("#nav").load("../../nav.html"); 
+    });
+  </script> 
+<div id="nav"></div>
+  <div id="game-container">
+    <div id="container-content">
+      <h2 id="instruction">Trouve le nombre entre 1 et 100</h2>
+      <input type="number" id="userGuess" min="1" max="100">
+      <button onclick="checkGuess()" class="btn btn-secondary mt-2" id="guessButton">Submit Guess</button>
+      <button onclick="resetGame()" class="btn btn-secondary mt-2" style="display: none;" id="resetButton">Rejouer</button>
+      <div id="feedback-container" style="display: none;">
+        <p id="result"></p>
+      </div>
+    </div>
+    <div id="hist-container">  
+      <h2 class="text-4xl">Historique</h2>
+      <ul id="guessesSoFar" class="text-left"></ul>
+    </div>
+  </div>
+  <a class="relative m-2 right-0 btn btn-primary return-button" href="../../">Retour au hub de jeu</a>
+  <div id="footer"></div>
+  <script src="script.js"></script>
+  <script src="../../loader.js"></script>
+</body>
+</html>
