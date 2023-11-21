@@ -1,17 +1,9 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: 'Noto Color Emoji', sans-serif;
-}
-
 .memory-game-container {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(10, 100px);
     grid-gap: 10px;
+    width: 100%;
 }
 
 .memory-card {
@@ -37,15 +29,10 @@ transform-style: preserve-3d;
 }
 
 .memory-card:hover {
-    
-   
-background-color: #627482; /* Couleur de fond au survol */
+    background-color: #627482; /* Couleur de fond au survol */
 }
 
 .memory-card.matched {
-    
-   
-visibility: hidden;
+    visibility: hidden;
 }
-
 
