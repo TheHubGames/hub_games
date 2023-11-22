@@ -273,3 +273,11 @@ button:hover{
 #toggle:not(:checked) + .container .square.clicked {
     display: none;
 }
+
+#toggleBtn {
+    /* Vos styles existants */
+    transition: transform 0.5s ease-in-out; /* Ajout de la transition */
+}
+.w-box {
+    width:min-content;
+}

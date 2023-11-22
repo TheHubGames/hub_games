@@ -92,14 +92,25 @@
     <div id="github-releases">
         <p id="load">Chargement de la dernière release depuis GitHub...</p>
     </div>
-    <div class="toggle-container">
-    <label for="toggle">Afficher vos favoris</label>
-    <input type="checkbox" id="toggle" />
-  </div>
+
+
+
+    <div class="w-box flex items-center justify-center btn btn-primary space-x-2 ml-2 mt-5">
+      <input type="checkbox" id="toggle" class="hidden" />
+      <label for="toggle" class="cursor-pointer flex items-center justify-center w-32 h-10 font-medium rounded-md shadow-md transition duration-300 ease-in-out">
+        <span class="mr-2">Afficher vos favoris</span>
+        <div class="relative w-12 h-4 bg-white rounded-full shadow-inner transition-transform duration-300 ease-in-out transform">
+          <div id="toggleBtn" class="absolute left-0 w-4 h-4 rounded-full shadow-md"></div>
+        </div>
+      </label>
+    </div>
+    
     
     <!-- List of games and app -->
-      <div id="game" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
-          
+      <div id="game" class="mr-2 ml-2 place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
+        <div id="noFavoritesMessage" class="text-red-500 font-bold hidden">
+          Vous n'avez pas de favori actuellement.
+        </div>        
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/Morpion.jpg" alt="Morpion Image" /></figure>
