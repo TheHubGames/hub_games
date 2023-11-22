@@ -227,3 +227,43 @@ button:hover{
 .play-button:hover {
     background-color: #ff6600;
 }
+.heart {
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      position: absolute;
+      bottom: 75px;
+      left: 5px;
+      font-size: 50px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      transition: transform 0.3s;
+    }
+
+    .heart:hover {
+      transform: scale(1.3);
+    }
+
+    .heart::before {
+      content: '\2665';
+    }
+
+    .heart.clicked::before {
+      color: red;
+    }
+
+    .heart.clicked {
+      transform: scale(1);
+    }
+    #toggle:checked + .container .square:not(.clicked) {
+      display: none;
+    }
+
+    #toggle:not(:checked) + .container .square.clicked {
+      display: none;
+    }
+
+
+    .container {
+      display: flex;
+    }
