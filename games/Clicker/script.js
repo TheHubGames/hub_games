@@ -1,10 +1,23 @@
 let score = 0;
 const scoreElement = document.querySelector("#score span");
+const bestScore = document.querySelector("#best_score span");
 const chronoElement = document.getElementById("chrono");
 const forme = document.getElementById("forme");
+var gameStart = false
+const gameIndicator = document.getElementById("GameStartIndicator")
+
+if (localStorage.getItem("bestScore") == undefined || null){
+    localStorage.setItem("bestScore", 0)
+}else{
+    bestScore.textContent = localStorage.getItem("bestScore")
+}
 
 // Fonction pour démarrer le jeu
 function startGame() {
+    score = 0
+    scoreElement.textContent = score;
+    gameIndicator.style.visibility = "hidden"
+    gameStart = true
     document.getElementById("popup").style.display = "none"; // Masquer la popup
     document.getElementById("jeu").style.pointerEvents = "auto"; // Activer le jeu
     deplacerForme(); // Démarrer le jeu en déplaçant la forme initiale
@@ -23,9 +36,13 @@ function closePopup() {
 }
 
 forme.addEventListener("click", () => {
-    score++;
-    scoreElement.textContent = score;
-    deplacerForme();
+    if (gameStart){
+        score++;
+        scoreElement.textContent = score;
+        deplacerForme();
+    }else{
+        startGame()
+    }
 });
 
 function deplacerForme() {
@@ -58,13 +75,23 @@ function startCountdown() {
         if (tempsRestant === 0) {
             clearInterval(chronoInterval);
             alert("Temps écoulé ! Votre score final est : " + score);
-            location.reload(); // Recharger la page pour recommencer
+
+            if(localStorage.getItem("bestScore") !== undefined){
+                if(score > localStorage.getItem("bestScore")){
+                    localStorage.setItem("bestScore", score)
+                }
+            }else{
+                localStorage.setItem("bestScore", score)
+            }
+
+            gameStart = false
+            gameIndicator.style.visibility = "visible"
+            forme.setAttribute("style", "")
+            bestScore.textContent = localStorage.getItem("bestScore")
+            tempsRestant = 30
         }
     }, 1000);
 }
-
-// Afficher la popup au chargement de la page
-openPopup();
 
 function closeWarning() {
     document.getElementById('warning').style.display = 'none';
