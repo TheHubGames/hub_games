@@ -95,7 +95,7 @@
 
 
 
-    <div class="w-box flex items-center justify-center btn btn-primary space-x-2 ml-2 mt-5">
+    <div class="w-max flex items-center justify-center btn btn-primary space-x-2 ml-2 mt-5">
       <input type="checkbox" id="toggle" class="hidden" />
       <label for="toggle" class="cursor-pointer flex items-center justify-center w-32 h-10 font-medium rounded-md shadow-md transition duration-300 ease-in-out">
         <span class="mr-2">Afficher vos favoris</span>
@@ -104,13 +104,14 @@
         </div>
       </label>
     </div>
-    
+  
+    <div id="noFavoritesMessage" class="text-red-500 font-bold hidden top-1/2 left-1/2">
+      Vous n'avez pas de favori actuellement.
+    </div>
     
     <!-- List of games and app -->
       <div id="game" class="mr-2 ml-2 place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
-        <div id="noFavoritesMessage" class="text-red-500 font-bold hidden">
-          Vous n'avez pas de favori actuellement.
-        </div>        
+
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/Morpion.jpg" alt="Morpion Image" /></figure>
