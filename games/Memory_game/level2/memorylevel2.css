@@ -1,7 +1,8 @@
 .memory-game-container {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(6, 100px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(6, minmax(50px, 100px)); /* Utilisation de minmax pour définir une taille flexible */
+    grid-gap: 5px; /* Réduction de l'espace entre les cartes sur les appareils mobiles */
     width: 100%;
+    margin: 0 auto; /* Centrer la grille */
 }

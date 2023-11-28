@@ -3,23 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleCheckbox = document.getElementById("toggle");
   const noFavoritesMessage = document.getElementById("noFavoritesMessage");
   const toggleBtn = document.getElementById('toggleBtn');
-
   // Fonction pour stocker les favoris dans les cookies avec une date d'expiration de 10 ans
   function setFavoritesInCookie() {
     const favorites = [];
-
     hearts.forEach((heart, index) => {
       if (heart.classList.contains("clicked")) {
         favorites.push(index);
       }
     });
-
     const expirationDate = new Date();
     expirationDate.setFullYear(expirationDate.getFullYear() + 10); // Expiration dans 10 ans
-
     document.cookie = `favorites=${JSON.stringify(favorites)}; expires=${expirationDate.toUTCString()}; path=/`;
   }
-
   // Fonction pour récupérer les favoris depuis les cookies
   function getFavoritesFromCookie() {
     const cookies = document.cookie.split(';');
@@ -31,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return [];
   }
-
   // Fonction pour stocker l'état du toggle dans les cookies avec une date d'expiration de 10 minutes
   function setToggleStateInCookie() {
     const expirationDate = new Date();
@@ -39,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.cookie = `toggleState=${toggleCheckbox.checked ? 'checked' : 'unchecked'}; expires=${expirationDate.toUTCString()}; path=/`;
   }
-
   // Fonction pour restaurer l'état du toggle depuis les cookies
   function restoreToggleStateFromCookie() {
     const cookies = document.cookie.split(';');
@@ -52,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
-
   // Fonction pour afficher ou masquer les favoris en fonction de l'état du toggle et des favoris sélectionnés
   function toggleFavoritesDisplay() {
     const favoritesFromCookie = getFavoritesFromCookie();
@@ -65,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
         container.style.display = "flex";
       }
     });
-
     const toggleBtn = document.getElementById('toggleBtn');
     if (toggleCheckbox.checked) {
       toggleBtn.style.transform = 'translateX(100%)';
@@ -73,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleBtn.style.transform = 'translateX(0)';
     }
   }
-
   // Fonction pour afficher ou masquer le message lorsque l'utilisateur n'a pas de favori
   function toggleNoFavoritesMessage() {
     const favoritesFromCookie = getFavoritesFromCookie();
@@ -83,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
       noFavoritesMessage.style.display = "none";
     }
   }
-
   // Fonction pour changer la couleur du bouton en fonction de l'état du toggle
   function toggleButtonColor() {
     if (toggleCheckbox.checked) {
@@ -94,10 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleBtn.classList.add("bg-red-600");
     }
   }
-
   // Initialisation de l'état du toggle depuis les cookies
   restoreToggleStateFromCookie();
-
   // Initialisation des favoris depuis les cookies
   const favoritesFromCookie = getFavoritesFromCookie();
   favoritesFromCookie.forEach((index) => {
@@ -105,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
       hearts[index].classList.add('clicked');
     }
   });
-
   // Gestion des clics sur les cœurs
   hearts.forEach((heart, index) => {
     heart.addEventListener("click", function () {
@@ -115,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleNoFavoritesMessage();
     });
   });
-
   // Gestion du toggle pour afficher/masquer les favoris
   toggleCheckbox.addEventListener("change", function () {
     setToggleStateInCookie();
@@ -123,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleNoFavoritesMessage();
     toggleButtonColor();
   });
-
   // Affichage initial des favoris, du message s'il n'y a pas de favori et des symboles V ou X
   toggleFavoritesDisplay();
   toggleNoFavoritesMessage();
