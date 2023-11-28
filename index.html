@@ -65,18 +65,19 @@
         <div id="loader-spinner"></div>
         <p>Chargement en cours...</p>
     </div>
+
     <script> 
     $(function(){
       $("#footer").load("footer.html"); 
     });
     </script> 
+
     <script> 
       $(function(){
         $("#nav").load("nav.html"); 
       });
     </script>
-  
-    
+
     <div id="nav"></div>
      <div id="warning" class="relative alert alert-warning ml-2 mr-2 w-auto text-center">
         <button class="absolute top-1 right-1 p-1" onclick="closeWarning()">
@@ -89,11 +90,10 @@
         Suite à de récents changements dans l'affichage du site, les thèmes du site sont momentanement indisponible. Veuillez nous excuser pour la gêne occasionnée.
       </span>
     </div>
+
     <div id="github-releases">
         <p id="load">Chargement de la dernière release depuis GitHub...</p>
     </div>
-
-
 
     <div class="w-max flex items-center justify-center btn btn-primary space-x-2 ml-2 mt-5">
       <input type="checkbox" id="toggle" class="hidden" />
@@ -110,8 +110,7 @@
     </div>
     
     <!-- List of games and app -->
-      <div id="game" class="mr-2 ml-2 place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
-
+    <div id="game" class="mr-2 ml-2 place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/Morpion.jpg" alt="Morpion Image" /></figure>
@@ -125,7 +124,6 @@
               </div>
         </div>
       </div>
-        
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/Weather.jpg" alt="Weather Image" /></figure>
@@ -139,7 +137,6 @@
               </div>
         </div>
       </div>
- 
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/ClickerGame.jpg" alt="Clicker Image" /></figure>
@@ -153,7 +150,6 @@
               </div>
         </div>
       </div>
-        
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/CPS.jpg" alt="CPS Image" /></figure>
@@ -167,7 +163,6 @@
               </div>
         </div>
       </div>
-  
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/Tetris.jpg" alt="Tetris Image" /></figure>
@@ -181,7 +176,6 @@
               </div>
         </div>
       </div>
-        
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/FTN.jpg" alt="FTN Image" /></figure>
@@ -195,7 +189,6 @@
               </div>
         </div>
       </div>
-  
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/Pong.jpg" alt="Pong Image" /></figure>
@@ -209,7 +202,6 @@
               </div>
         </div>
       </div>
-        
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/Flappy-Bird.jpg" alt="Flappy-Bird Image" /></figure>
@@ -223,7 +215,6 @@
               </div>
         </div>
       </div>
-      
       <div class="container">
         <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
           <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/JDLV.jpg" alt="JDLV Image" /></figure>
@@ -250,13 +241,23 @@
                   </div>
           </div>
       </div>
-        
+      <div class="container">
+        <div class="mt-4 card w-80 bg-base-300 shadow-xl h-full">
+            <figure><img class="object-cover aspect-square" src="https://hubgames.studio/content/images/dino-google.jpg" alt="dino google Image" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">Dino Google</h2>
+                  <p>Le dino quand ta pas de connection mais la tu en as.</p>
+                  <div class="card-actions justify-end">
+                    <a href="games/Dino-Google/" class="btn btn-primary">Jouer</a>
+                    <div class="heart"></div>
+                  </div>
+                </div>
+          </div>
+      </div>
     </div>
 
     <div id="footer"></div>
 
-
-    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
         const repoOwner = 'TheHubGames'; // Remplacez par le nom du propriétaire du dépôt
@@ -277,15 +278,11 @@
             document.getElementById('load').style.display = 'none';
 
             const releaseContainer = document.createElement('div');
-            releaseContainer.classList.add('card');
-            releaseContainer.classList.add('m-2');
-            releaseContainer.classList.add('lg:card-side');
-            releaseContainer.classList.add('bg-base-300');
-            releaseContainer.classList.add('shadow-xl');
+            releaseContainer.classList.add('card', 'm-2', 'lg:card-side', 'bg-base-300', 'shadow-xl');
 
             const firstFewLines = data.body.split('\n').slice(0, 8).join('\n'); // Récupère les 8 premières lignes
             const releaseHTML = `<div class="lg:w-1/3 card-body">
-                <h2 class="news-title accent-content light:base-100"><i class="fa-solid fa-bullhorn"></i> ${data.name}</h2>
+                <h2 class="news-title accent-content light:base-100 text-4xl-sm"><i class="fa-solid fa-bullhorn"></i> ${data.name}</h2>
                 <div class="news-text neutral-content">${md.render(firstFewLines)}</div>
                 <div class="card-actions justify-end">
                   <a href="hub_source/MAJ/Derniere_maj" class="btn btn-primary" target="_blank">Lire la suite</a>
@@ -302,7 +299,7 @@
             console.error('Erreur lors de la récupération de la dernière release depuis GitHub', error);
         });
     });
-    </script>
-    <script src="content/ressources/favorie.js"></script>
+  </script>
+  <script src="content/ressources/favorie.js"></script>
 </body>
 </html>
