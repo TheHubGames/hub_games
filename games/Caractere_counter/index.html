@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compteur de mots</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link rel="icon" href="img/ABC.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compte le nombre de caractères, de mots de paragraphe de vos textes facilement !">
+    <meta name="keywords" content="comptage de caractères, comptage de caractères en ligne, comptage de mots, comptage de lettres, comptage de paragraphes, mots clés, espaces, outils, ">
+
+    <meta name="og:title" content="Comptez les caractères, le nombre de mots facilement !">
+    <meta name="og:description" content="Découvrez le nombre de caractères que votre texte possède. Rédigez votre texte et découvrez le nombre de caractères, de mots, de paragraphes. Vous pouvez même définir une limite de caractère, personnalisée ou parmi celles proposées de base ! Simplifiez vous la vie !">
+    <meta name="og:image" content="https://Klaynight.studio/caractere_counter/img/ABC.png">
+    <meta name="og:url" content="https://Klaynight.studio/caractere_counter">
+    <meta content="#bfdbf7" data-react-helmet="true" name="theme-color" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="https://klaynight.studio/caractere_counter">Accueil</a></li>
+              <li>
+                <a href="https://Klaynight.studio/">PortFolio</a>
+                <!-- <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul> -->
+              </li>
+              <li>
+                  <select id="affiche-625" class="select select-bordered mx-2" data-choose-theme>
+                      <option value="light">Thème Clair</option>
+                      <option value="dark">Thème Sombre</option>
+                      <option value="aqua">Thème DreamCloud</option>
+                  </select>
+              </li>
+              <li>
+                <a id="affiche-390" href="https://github.com/klaynight-dev/caractere-counter" class="btn btn-neutral text-white mt-2 flex items-center">
+                    <i class="fa-brands fa-github mt-2"></i>
+                    <p class="mt-2">GitHub</p>
+                </a>
+              </li>
+            
+            </ul>
+          </div>
+          <a href="https://klaynight.studio/caractere_counter" class="btn btn-ghost normal-case text-xl" style="font-family: 'Westway', sans-serif;">
+              <img src="https://klaynight.studio/caractere_counter/img/ABC.png" class="w-10 rounded">
+              Caractere counter By Klaynight
+          </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <a href="https://klaynight.studio/caractere_counter">Accueil</a>
+            </li>
+            <!-- <li tabindex="0">
+              <details>
+                <summary>Parent</summary>
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </details>
+            </li> -->
+            <li>
+              <a href="https://klaynight.studio/">PortFolio</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <select id="affiche625" class="select select-bordered mx-2" data-choose-theme>
+            <option value="light">Thème Clair</option>
+            <option value="dark">Thème Sombre</option>
+            <option value="aqua">Thème DreamCloud</option>
+          </select>
+          <div id="affiche390">
+            <a href="https://github.com/klaynight-dev/caractere_counter" class="btn btn-neutral text-white"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+<div class="content">
+    <div class="form">
+        <div class="button">
+            <button id="share">Partager</button>
+            <button id="copy">Copier</button>
+            <button id="delete">Supprimer le texte</button>
+        </div>
+        <form name="compteur">
+            <label for="texte">Entrez le texte dont vous voulez avoir les statistiques ici</label>
+            <textarea name="texte" id="texte" placeholder="Entrez votre texte ici" tabindex=0></textarea>
+            <span id="caracter_limit_show">0/∞</span>
+        </form>
+    </div>
+    <div id="resultat">
+        <p><span id="nb_caracteres" class="valeur">0</span> : Nombre de caractères</p>
+        <p><span id="nb_caracteres_blank" class="valeur">0</span> : Nombre de caractères <i>(Espaces exclus)</i></p>
+        <p><span id="nb_mots" class="valeur">0</span> : Nombre de mots</p>
+        <p><span id="nb_phrases" class="valeur">0</span> : Nombre de phrases</p>
+        <p><span id="nb_para" class="valeur">0</span> : Nombre de paragraphes</p>
+        <p class="ask" data-modal="modalOne" tabindex=0><span id="tps_lecture" class="valeur">0 sec</span> : Temps de lecture</p>
+        <p class="ask" data-modal="modalTwo" tabindex=0><span id="tps_parole" class="valeur">0 sec</span> : Temps de parole
+        </p>
+    </div>
+</div>
+<div class="config">
+    <details>
+        <summary>Configuration</summary>
+        <form name="config">
+            <p>
+                <input type="checkbox" name="save_text" id="save_text"><label for="save_text">Enregistrer le texte</label>
+            </p>
+            <p>
+                <label for="read_time_select">Personnalisation du nombre de mots lus par minute</label><br>
+                <select name="read_time_select" id="read_time_select">
+                    <option value=151.5>9/10 ans (151,5 mots/min)</option>
+                    <option value=166.5>10/11 ans (166,5 mots/min)</option>
+                    <option value=177>11 à 14 ans (177 mots/min)</option>
+                    <option value=250>15 à 18 ans (250 mots/min)</option>
+                    <option value=220 selected>Adulte (220 mots/min)</option>
+                    <option value="custom">Personnalisé</option>
+                </select>
+                <br>
+                <input class="number" type="number" name="read_time" id="read_time" value="220"><label for="read_time">mots/min</label>
+            </p>
+            <p>
+                <label for="speech_time_select">Personnalisation du nombre de mots dits par minute</label><br>
+                <select name="speech_time_select" id="speech_time_select">
+                    <option value=90>90 mots/min</option>
+                    <option value=110>110 mots/min</option>
+                    <option value=130 selected>130 mots/min</option>
+                    <option value=150>150 mots/min</option>
+                    <option value=170>170 mots/min</option>
+                    <option value=200>200 mots/min</option>
+                    <option value=250>250 mots/min</option>
+                    <option value=300>300 mots/min</option>
+                    <option value="custom">Personnalisé</option>
+                </select>
+                <br>
+                <input class="number" type="number" name="speech_time" id="speech_time" value=130><label for="speech_time">mots/min</label>
+            </p>
+            <p>
+                <label for="caracter_limit_select">Personnalisation du nombre limite de caractères</label><br>
+                <select name="caracter_limit_select" id="caracter_limit_select">
+                    <option value="0">Pas de limite</option>
+                    <optgroup label="Facebook">
+                        <option value="63206">Post (63206 caractères)</option>
+                        <option value="150">Description (150 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Twitter">
+                        <option value="280">Tweet (280 caractères)</option>
+                        <option value="116">Commentaire d'un retweet (116 caractères)</option>
+                        <option value="15">Pseudo (15 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Instagram">
+                        <option value="150">Biographie (150 caractères)</option>
+                        <option value="2200">Titre (2200 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Pinterest">
+                        <option value="160">Biographie (160 caractères)</option>
+                        <option value="100">Titre (2200 caractères)</option>
+                        <option value="500">Description (500 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Google+">
+                        <option value="100000">Publication (100 000 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Youtube">
+                        <option value="100">Titre (100 caractères)</option>
+                        <option value="1000">Description (1000 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Linkedin">
+                        <option value="120">Titre (150 caractères)</option>
+                        <option value="2000">Résumé (2000 caractères)</option>
+                        <option value="600">Statut (600 caractères)</option>
+                        <option value="500">Chaque expérience (500 caractères)</option>
+                        <option value="100">Degré (100 caractères)</option>
+                        <option value="500">Formation (500 caractères)</option>
+                        <option value="1000">Intérêts ou les récompenses (1000 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Discord">
+                        <option value="2000">Message (2000 caractères)</option>
+                        <option value="32">Pseudo (32 caractères)</option>
+                        <option value="4000">Message avec Nitro (100 caractères)</option>
+                    </optgroup>
+                    <optgroup label="Parcoursup">
+                        <option value="1500">Projet de formation motivé (1500 caractères)</option>
+                        <option value="3500">Eléments liés à ma scolarité (3500 caractères)</option>
+                    </optgroup>
+                    
+                    <option value="custom">Personnalisé</option>
+                </select>
+                <br>
+                <input class="number" type="number" name="caracter_limit" id="caracter_limit" value=63206><label for="caracter_limit">caractères</label>
+            </p>
+            <p>
+                <input type="checkbox" name="save_config" id="save_config"><label for="save_config">Enregistrer la configuration</label>
+            </p>
+        </form>
+    </details>
+</div>
+
+<div id="modalOne" class="modal">
+    <div class="modal-content">
+        <div class="contact-form">
+            <a class="close" tabindex="0">&times;</a>
+            <h2>Temps de lecture</h2>
+            <p>Avez-vous déjà pensé au temps qu’il fallait au lecteur pour lire votre article ou pour publier sur un
+                blog ou un site Web? Pour éviter d’ennuyer l’utilisateur et augmenter son implication, il est bon de
+                considérer ce facteur: le temps de lecture. Avec le compteur de caractères, vous avez un instrument prêt
+                à le calculer facilement et surtout rapidement. Le calcul est basé sur une moyenne de <b>220 mots à la
+                    minute</b> qu’un adulte peut lire, divisée par le nombre de mots du texte.</p>
+        </div>
+    </div>
+</div>
+<div id="modalTwo" class="modal">
+    <div class="modal-content">
+        <div class="contact-form">
+            <span class="close" tabindex="0">&times;</span>
+            <h2>Temps de parole</h2>
+            <p>Le temps dans la parole est un facteur très important pour éviter d’ennuyer l’utilisateur et augmenter
+                son implication. Avec le compteur de caractères, vous avez un instrument prêt à le calculer facilement
+                et surtout rapidement. Le calcul est basé sur une moyenne de <b>130 mots à la minute</b> qu’un adulte
+                peut lire, divisée par le nombre de mots du texte.</p>
+        </div>
+    </div>
+</div>
+<footer>
+    
+</footer>
+<footer class="bg-base-100">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            &copy; 2020 - <span id="year"></span> - <a target="_blank" href="https://github.com/klaynight-dev">Klaynight-Dev</a><br>
+        </span>
+    <ul class="sm:text-center flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 name">
+        <li><a href="https://klaynight.studio" target="_blank" class="btn btn-neutral mr-2">PortFolio</a></li>
+        <li><a href="https://hubgames.studio" target="_blank" class="btn btn-neutral mr-2">HubGames</a></li>
+    </ul>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
