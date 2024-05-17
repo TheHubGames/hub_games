@@ -1,0 +1,271 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  align-content: center;
+  text-align: center;
+  font-size: 30px;
+}
+
+.content {
+  display: flex;
+}
+
+.form {
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form label {
+  display: none;
+}
+
+.form .button {
+  padding: 5px;
+  border-radius: 5px;
+  margin: auto 0 auto auto;
+  float: right;
+}
+
+.form .button button {
+  border: 1px solid #022b3a;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form .button button:hover {
+  background: #022b3a;
+}
+
+.form textarea {
+  width: 95%;
+  height: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #e1e5f2;
+  max-width: 95%;
+  max-height: 95%;
+  min-width: 97%;
+}
+
+.form .invalid {
+  border: 2px solid #ff0000;
+}
+
+
+.form #caracter_limit_show {
+  font-size: 14px;
+  margin: auto 0 auto auto;
+  float: right;
+  padding: 5px;
+}
+
+#resultat {
+  padding: 50px 0;
+}
+
+.valeur {
+  padding: 3px 5px;
+  margin: 1px 0;
+  border: 1px solid #e1e5f2;
+  background: #022b3a;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.ask {
+  text-decoration: underline dashed;
+  cursor: help;
+}
+
+details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  width: 75%;
+}
+
+details summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+  padding: 5px;
+  transition: margin 150ms ease-out;
+}
+
+details[open] summary {
+  padding-bottom: 10px;
+}
+
+details form {
+  border-top: 1px solid;
+  padding: 10px;
+}
+
+.config select {
+  width: 75%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #e1e5f2;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.config .number {
+  width: 75%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #e1e5f2;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.config label {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 8;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  margin: 50px auto;
+  border: 1px solid #999;
+  width: 60%;
+  background-color: #fefefe;
+  border-radius: 5px;
+  padding: 10px 20px 20px;
+}
+
+.modal-content h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  bottom: 0;
+  width: 100%;
+  padding-top: 50px;
+  height: 50px;
+}
+
+footer a:link,
+footer a:visited {
+  text-decoration: underline;
+}
+
+/* Make the website responsive */
+@media only screen and (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+  .form {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  .form .button {
+    margin: auto;
+    float: left;
+  }
+  .form textarea {
+    width: 90%;
+    height: 200px;
+    min-width: 90%;
+  }
+
+  .form #caracter_limit_show {
+    margin: auto 0 auto auto;
+    float: left;
+  }
+
+  #resultat {
+    padding: 0 20px;
+  }
+
+  details {
+    width: 90%;
+    height: auto;
+    margin: auto;
+  }
+
+  details summary {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  details form {
+    border-top: #022b3a 1px solid;
+    padding: 10px;
+  }
+
+  .config select {
+    width: 75%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #e1e5f2;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .config .number {
+    width: 75%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #e1e5f2;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .config label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+  }
+}
