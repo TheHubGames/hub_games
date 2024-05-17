@@ -1,61 +1,69 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #24292e;
+    background-color: #fff;
     margin: 0;
-    padding: 0;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 header {
-    text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eaecef;
 }
 
 header h1 {
+    font-size: 2em;
     margin: 0;
-    font-size: 2.5em;
-    color: #333;
+    font-weight: 500;
 }
 
 header p {
-    margin: 5px 0 0;
-    color: #666;
+    margin-top: 5px;
+    color: #586069;
 }
 
 section.patch-notes {
-    padding: 20px 0;
+    padding-bottom: 20px;
 }
 
 section h2 {
-    font-size: 2em;
-    color: #333;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #24292e;
 }
 
 section h3 {
-    font-size: 1.5em;
-    color: #333;
+    font-size: 1.25em;
     margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #24292e;
 }
 
 section h4 {
-    font-size: 1.25em;
-    color: #333;
-    margin-top: 15px;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #24292e;
 }
 
 ul {
     list-style-type: disc;
-    margin: 10px 0;
-    padding-left: 40px;
+    margin: 0;
+    padding-left: 20px;
 }
 
 ul ul {
@@ -69,30 +77,28 @@ table {
 }
 
 table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px;
 }
 
 table th {
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f6f8fa;
+    font-weight: 600;
 }
 
 table td {
     background-color: #fff;
-    color: #333;
 }
 
 table tbody tr:nth-child(even) td {
-    background-color: #f9f9f9;
+    background-color: #f6f8fa;
 }
 
 footer {
+    margin-top: 45px;
+    padding: 25px 0;
+    border-top: 1px solid #eaecef;
+    font-size: 14px;
+    color: #586069;
     text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
-    margin-top: 20px;
-    color: #666;
-    background-color: #f4f4f9;
 }
