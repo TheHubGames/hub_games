@@ -13,12 +13,49 @@
     <meta name="og:description" content="Découvrez le nombre de caractères que votre texte possède. Rédigez votre texte et découvrez le nombre de caractères, de mots, de paragraphes. Vous pouvez même définir une limite de caractère, personnalisée ou parmi celles proposées de base ! Simplifiez vous la vie !">
     <meta name="og:image" content="https://hubgames.studio/games/caractere_counter/img/ABC.png">
     <meta name="og:url" content="https://hubgames.studio/games/caractere_counter">
-    <meta content="#bfdbf7" data-react-helmet="true" name="theme-color" />
+    <meta content="#bfdbf7" data-react-helmet="true" name="theme-color" /><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Clicker Game - HubGames" />
+    <meta name="description" content="Pour passer le temps en cliquant sur un bouton multicolor, mais battre son score et s'entrener à OSU" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    
+   <!-- Twitter -->
+   <meta property="twitter:card" content="summary_large_image" />
+   <meta property="twitter:url" content="https://hubgames.studio/games/caractere_counter/" />
+   <meta property="twitter:title" content="Caractere Counter - HubGames" />
+   <meta property="twitter:description" content="Découvrez le nombre de caractères que votre texte possède. Rédigez votre texte et découvrez le nombre de caractères, de mots, de paragraphes. Vous pouvez même définir une limite de caractère, personnalisée ou parmi celles proposées de base ! Simplifiez vous la vie !" />
+   <meta property="twitter:image" content="https://hubgames.studio/games/caractere_counter/img/ABC.png" />
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    
+    <title>Caractere Counter - Hub Games</title>
+    <link rel="stylesheet" href="https://hubgames.studio/style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="https://hubgames.studio/content/images/icon.png">
 </head>
-<body>
+<body class="bg-base-100">
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
+    <script> 
+        $(function(){
+          $("#footer").load("../../footer.html"); 
+        });
+        </script> 
+        <script> 
+          $(function(){
+            $("#nav").load("../../nav.html"); 
+          });
+    </script> 
+    <div id="nav"></div>
 
     <div class="navbar bg-base-100">
         <div class="navbar-start">
@@ -233,20 +270,7 @@
         </div>
     </div>
 </div>
-<footer>
-    
-</footer>
-<footer class="bg-base-100">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            &copy; 2020 - <span id="year"></span> - <a target="_blank" href="https://github.com/klaynight-dev">Klaynight-Dev</a><br>
-        </span>
-    <ul class="sm:text-center flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 name">
-        <li><a href="https://klaynight.studio" target="_blank" class="btn btn-neutral mr-2">PortFolio</a></li>
-        <li><a href="https://hubgames.studio" target="_blank" class="btn btn-neutral mr-2">HubGames</a></li>
-    </ul>
-    </div>
-</footer>
+<div id="footer"></div>
 <script src="js/main.js"></script>
 </body>
 </html>
