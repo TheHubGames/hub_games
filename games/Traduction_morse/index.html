@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Code morse - HubGames" />
+    <meta name="description" content="Redigez un texte automatiquement traduit en morse ou l'inverse !" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/games/Traduction_morse/" />
+    <meta property="og:title" content="Code morse - HubGames" />
+    <meta property="og:description" content="Redigez un texte automatiquement traduit en morse ou l'inverse !" />
+    <meta property="og:image" content="https://hubgames.studio/content/images/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hubgames.studio/games/Traduction_morse/" />
+    <meta property="twitter:title" content="Code morse - HubGames" />
+    <meta property="twitter:description" content="Redigez un texte automatiquement traduit en morse ou l'inverse !" />
+    <meta property="twitter:image" content="https://hubgames.studio/images/icon.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+    <title>Code morse</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../content/images/icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
+    <script> 
+        $(function(){
+          $("#footer").load("../../footer.html"); 
+        });
+        </script> 
+        <script> 
+          $(function(){
+            $("#nav").load("../../nav.html"); 
+          });
+    </script> 
+    <div id="nav"></div>
+    <div class="container">
+        <div class="flex">
+            <div class="bloc">
+                <p>Écrire ou coller un texte :</p>
+                <textarea id="latinText" placeholder="Entrez le texte ici..."></textarea>
+                <div class="action-buttons">
+                    <button onclick="copyText('latinText')">Copier</button>
+                    <button onclick="clearText('latinText')">Effacer</button>
+                    <button onclick="saveText('latinText', 'hubgame_app_text.txt')">Enregistrer</button>
+                </div>
+            </div>
+            <div class="bloc">
+                <p>En Morse :</p>
+                <textarea id="morseText" placeholder="Le texte converti apparaîtra ici..."></textarea>
+                <div class="buttons">
+                    <button onclick="addSpace()">Espace</button>
+                    <button onclick="addDot()">·</button>
+                    <button onclick="addDash()">-</button>
+                </div>
+                <div class="action-buttons">
+                    <button onclick="copyText('morseText')">Copier</button>
+                    <button onclick="clearText('morseText')">Effacer</button>
+                    <button onclick="saveText('morseText', 'hubgame_app_morse.txt')">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Documentation sur le morse -->
+    <div class="documentation">
+        <h2>Documentation sur le code Morse</h2>
+        <p>Le code Morse est un système d'encodage de caractères textuels en séquences de signaux, telles que des signaux sonores, des signaux lumineux ou des impulsions électriques, utilisé pour transmettre du texte par des moyens tels que la télégraphie électrique.</p>
+        <p>Chaque lettre et chiffre est représenté par une séquence spécifique de points (·) et de tirets (-). Voici la correspondance des lettres de l'alphabet et des chiffres en code Morse :</p>
+        <div id="morseCodes">
+            <h3>Correspondance des lettres de l'alphabet et des chiffres en code Morse</h3>
+            <div class="columns">
+                <div class="column" id="column1"></div>
+                <div class="column" id="column2"></div>
+                <div class="column" id="column3"></div>
+                <div class="column" id="column4"></div>
+            </div>
+        </div>
+        
+        <p>Pour plus d'informations sur le code Morse, vous pouvez consulter <a href="https://fr/wikipedia.org/wiki/Code_Morse">Wikipédia</a>.</p>
+    </div>
+    <div id="footer"></div>
+    <script src="script.js"></script> 
+    <script src="../../loader.js"></script>
+</body>
+</html>
+

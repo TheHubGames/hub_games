@@ -1,0 +1,158 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    overflow: auto; /* Ajouté pour permettre le défilement sur les petits écrans */
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container { 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    padding: 20px; 
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 { 
+    text-align: center; 
+}
+
+textarea { 
+    width: 90%; 
+    height: 100px; 
+    margin-bottom: 20px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    resize: none; 
+}
+
+.buttons, .action-buttons { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 20px; 
+    width: 100%; /* Ajouté pour prendre toute la largeur du conteneur */
+}
+
+.buttons button, .action-buttons button { 
+    padding: 10px 20px; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    flex: 1; /* Pour rendre les boutons flexibles */
+    margin-right: 5px; /* Ajoute un espace entre les boutons */
+}
+
+.buttons button:hover, .action-buttons button:hover { 
+    background-color: #0056b3; 
+}
+
+.buttons button:last-child, .action-buttons button:last-child {
+    margin-right: 0; /* Supprime la marge du dernier bouton */
+}
+
+.bloc {
+    display: block;
+    margin: 30px 0; /* Marges verticales */
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Pour permettre l'empilement sur les petits écrans */
+    gap: 10px; /* Ajoute un espace entre les éléments flex */
+    width: 100%; /* Ajouté pour prendre toute la largeur du conteneur */
+}
+
+.flex > div {
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis */
+    box-sizing: border-box;
+    min-width: 200px; /* Assurez-vous qu'ils ne deviennent pas trop petits */
+}
+
+.documentation {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    width: 99%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.documentation h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.documentation p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.documentation a {
+    color: #007BFF;
+}
+
+/* Media queries pour le responsive design */
+@media (max-width: 768px) {
+    .buttons, .action-buttons {
+        flex-direction: column;
+    }
+
+    .buttons button, .action-buttons button {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .buttons button:last-child, .action-buttons button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.red {
+    display: inline;
+    margin-left: 10px;
+    color: rgb(200, 0, 0);
+    font-size: x-large;
+}
+
+.columns {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    font-size: larger;
+}
+
+.column {
+    margin-left: 5%;
+}
+
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column li {
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
