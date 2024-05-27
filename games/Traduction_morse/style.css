@@ -48,6 +48,7 @@ textarea {
     justify-content: space-between; 
     margin-bottom: 20px; 
     width: 100%; /* Ajouté pour prendre toute la largeur du conteneur */
+    background-color: blue;
 }
 
 .buttons button, .action-buttons button { 
