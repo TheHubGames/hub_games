@@ -190,7 +190,7 @@ button:hover{
 }
 .game {
     width: 300px;
-    margin: 20px;
+    margin: 20px auto;
     border: 1px solid #ccc;
     padding: 10px;
     background-color: white;
