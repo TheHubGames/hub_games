@@ -232,6 +232,8 @@ button:hover{
     height: 100%;
     width: 100%;
     align-items: center; /* Pour aligner verticalement les éléments au centre */
+    justify-content:center;
+    margin:0 auto;
 }
 
 .heart {
