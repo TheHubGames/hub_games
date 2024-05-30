@@ -82,7 +82,7 @@ function addDot() {
 
 function addDash() {
     const morseField = document.getElementById('morseText');
-    morseField.value += '-';
+    morseField.value += '−';
     morseField.dispatchEvent(new Event('input'));
 }
 
