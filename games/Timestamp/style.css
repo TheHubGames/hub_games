@@ -1,0 +1,38 @@
+.contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+}
+.containers {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 300px;
+}
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+code {
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+.example {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin:auto;
+    width: 320px;
+    text-align: center;
+}
+.example-code {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}

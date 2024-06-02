@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Timestamp - HubGames" />
+  <meta name="description" content="Obtenir en quelque clique le timestamp, c'est facile !" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hubgames.studio/games/Timestamp/" />
+  <meta property="og:title" content="Timestamp - HubGames" />
+  <meta property="og:description" content="Obtenir en quelque clique le timestamp, c'est facile !" />
+  <meta property="og:image" content="https://hubgames.studio/content/images/icon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://hubgames.studio/games/Timestamp/" />
+  <meta property="twitter:title" content="Timestamp - HubGames" />
+  <meta property="twitter:description" content="Obtenir en quelque clique le timestamp, c'est facile !" />
+  <meta property="twitter:image" content="https://hubgames.studio/content/images/icon.png" />
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+  <title>Timestamp</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" href="../../content/images/icon.png">
+</head>
+<body>
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+      </div>
+        <script> 
+            $(function(){
+              $("#footer").load("../../footer.html"); 
+            });
+            </script> 
+            <script> 
+              $(function(){
+                $("#nav").load("../../nav.html"); 
+              });
+        </script> 
+        <div id="nav"></div>
+        <div id="warning" class="relative alert alert-warning ml-2 mr-2 w-auto text-center">
+          <button class="absolute top-1 right-1 p-1" onclick="closeWarning()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>
+          </button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill inline">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+        <span class="inline">
+          Cette application est en cours de développement, si vous rencontrez des bugs merci de nous les signaler sur notre <a href="https://github.com/TheHubGames/hub_games">GitHub</a>.
+        </span>
+      </div>
+    <div class="contents">
+        <div class="containers">
+            <h2>Date en Timestamp</h2>
+            <input type="date" id="dateInput">
+            <input type="time" id="timeInput">
+            <button onclick="convertDateToTimestamp()">Convertir en Timestamp</button>
+            <div class="result" id="timestampResult"></div>
+        </div>
+        <div class="containers">
+            <h2>Timestamp en Date</h2>
+            <input type="number" id="timestampInput" placeholder="Entrez le timestamp">
+            <button onclick="convertTimestampToDate()">Convertir en Date</button>
+            <div class="result" id="dateResult"></div>
+        </div>
+    </div>
+    <div class="example" id="exemple">
+        <div class="example-code">Exemple Discord</div>
+        <ul>
+            <li><code>&lt;t:1715333340:t&gt;</code> : <t:1715333340:t> (11:29)</li>
+            <li><code>&lt;t:1715333340:T&gt;</code> : <t:1715333340:T> (11:29:00)</li>
+            <li><code>&lt;t:1715333340:d&gt;</code> : <t:1715333340:d> (10/05/2024)</li>
+            <li><code>&lt;t:1715333340:D&gt;</code> : <t:1715333340:D> (10 mai 2024)</li>
+            <li><code>&lt;t:1715333340:f&gt;</code> : <t:1715333340:f> (10 mai 2024 11:29)</li>
+            <li><code>&lt;t:1715333340:F&gt;</code> : <t:1715333340:F> (vendredi 10 mai 2024 11:29:00)</li>
+            <li><code>&lt;t:1715333340:R&gt;</code> : <t:1715333340:R> (il y a X temps)</li>
+        </ul>
+    </div>
+
+    <div id="footer"></div>
+    <script src="script.js" charset="utf-8"></script>
+    <script src="../../content\ressources\modal.js"
+    <script src="../../loader.js"></script>
+    
+</body>
+</html>
