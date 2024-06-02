@@ -54,30 +54,30 @@
                 <p>Écrire ou coller un texte :</p>
                 <textarea id="latinText" placeholder="Entrez le texte ici..."></textarea>
                 <div class="action-buttons">
-                    <button onclick="copyText('latinText')">Copier</button>
-                    <button onclick="clearText('latinText')">Effacer</button>
-                    <button onclick="saveText('latinText', 'hubgame_app_text.txt')">Enregistrer</button>
+                    <button class="btn btn-primary" onclick="copyText('latinText')">Copier</button>
+                    <button class="btn btn-primary" onclick="clearText('latinText')">Effacer</button>
+                    <button class="btn btn-primary" onclick="saveText('latinText', 'hubgame_app_text.txt')">Enregistrer</button>
                 </div>
             </div>
             <div class="bloc">
                 <p>En Morse :</p>
                 <textarea id="morseText" placeholder="Le texte converti apparaîtra ici..."></textarea>
                 <div class="buttons">
-                    <button onclick="addSpace()">Espace</button>
-                    <button onclick="addDot()">·</button>
-                    <button onclick="addDash()">-</button>
+                    <button class="btn btn-primary" onclick="addSpace()">Espace</button>
+                    <button class="btn btn-primary" onclick="addDot()">·</button>
+                    <button class="btn btn-primary" onclick="addDash()">-</button>
                 </div>
                 <div class="action-buttons">
-                    <button onclick="copyText('morseText')">Copier</button>
-                    <button onclick="clearText('morseText')">Effacer</button>
-                    <button onclick="saveText('morseText', 'hubgame_app_morse.txt')">Enregistrer</button>
+                    <button class="btn btn-primary" onclick="copyText('morseText')">Copier</button>
+                    <button class="btn btn-primary" onclick="clearText('morseText')">Effacer</button>
+                    <button class="btn btn-primary" onclick="saveText('morseText', 'hubgame_app_morse.txt')">Enregistrer</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Documentation sur le morse -->
-    <div class="documentation">
+    <div class="documentation m-2">
         <h2>Documentation sur le code Morse</h2>
         <p>Le code Morse est un système d'encodage de caractères textuels en séquences de signaux, telles que des signaux sonores, des signaux lumineux ou des impulsions électriques, utilisé pour transmettre du texte par des moyens tels que la télégraphie électrique.</p>
         <p>Chaque lettre et chiffre est représenté par une séquence spécifique de points (·) et de tirets (-). Voici la correspondance des lettres de l'alphabet et des chiffres en code Morse :</p>

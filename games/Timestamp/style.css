@@ -1,9 +1,3 @@
-.contents {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-items: center;
-}
 .containers {
     padding: 20px;
     border-radius: 10px;
@@ -18,7 +12,8 @@
 }
 code {
     padding: 2px 4px;
-    border-radius: 3px;
+    border-radius: 5px;
+    background-color: rgb(56, 55, 55);
 }
 .example {
     padding: 15px;
@@ -26,8 +21,7 @@ code {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     margin:auto;
-    width: 320px;
-    text-align: center;
+    width: max-content;
 }
 .example-code {
     padding: 10px;
@@ -35,4 +29,17 @@ code {
     margin-bottom: 10px;
     font-size: 1.1em;
     font-weight: bold;
+}
+.copy-button {
+    display: none;
+    right: 10px;
+    top: 5px;
+    position: absolute;
+    background-color: rgba(134, 134, 134, 1);
+}
+li {
+    position: relative;
+}
+li:hover .copy-button {
+    display: inline;
 }

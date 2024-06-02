@@ -48,7 +48,7 @@
               });
         </script> 
         <div id="nav"></div>
-        <div id="warning" class="relative alert alert-warning ml-2 mr-2 w-auto text-center">
+        <!--<div id="warning" class="relative alert alert-warning ml-2 mr-2 w-auto text-center">
           <button class="absolute top-1 right-1 p-1" onclick="closeWarning()">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>
@@ -58,23 +58,23 @@
         <span class="inline">
           Cette application est en cours de développement, si vous rencontrez des bugs merci de nous les signaler sur notre <a href="https://github.com/TheHubGames/hub_games">GitHub</a>.
         </span>
-      </div>
-    <div class="contents">
-        <div class="containers">
-            <h2>Date en Timestamp</h2>
+      </div>-->
+    <div class="flex justify-center flex-wrap">
+        <div class="containers bg-base-300 content-center">
+            <h2 class="m-1">Date en Timestamp</h2>
             <input type="date" id="dateInput">
             <input type="time" id="timeInput">
-            <button onclick="convertDateToTimestamp()">Convertir en Timestamp</button>
+            <button class="btn btn-primary mt-1" onclick="convertDateToTimestamp()">Convertir en Timestamp</button>
             <div class="result" id="timestampResult"></div>
         </div>
-        <div class="containers">
-            <h2>Timestamp en Date</h2>
+        <div class="containers bg-base-300 content-center">
+            <h2 class="m-1">Timestamp en Date</h2>
             <input type="number" id="timestampInput" placeholder="Entrez le timestamp">
-            <button onclick="convertTimestampToDate()">Convertir en Date</button>
+            <button class="btn btn-primary mt-1" onclick="convertTimestampToDate()">Convertir en Date</button>
             <div class="result" id="dateResult"></div>
         </div>
     </div>
-    <div class="example" id="exemple">
+    <div class="example bg-base-300" id="exemple">
         <div class="example-code">Exemple Discord</div>
         <ul>
             <li><code>&lt;t:1715333340:t&gt;</code> : <t:1715333340:t> (11:29)</li>

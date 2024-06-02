@@ -1,13 +1,3 @@
-body { 
-    font-family: Arial, sans-serif; 
-    margin: 0; 
-    padding: 0; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    overflow: auto; /* Ajouté pour permettre le défilement sur les petits écrans */
-}
-
 .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -48,7 +38,6 @@ textarea {
     justify-content: space-between; 
     margin-bottom: 20px; 
     width: 100%; /* Ajouté pour prendre toute la largeur du conteneur */
-    background-color: blue;
 }
 
 .buttons button, .action-buttons button { 
