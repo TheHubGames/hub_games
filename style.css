@@ -237,31 +237,29 @@ button:hover{
 }
 
 .heart {
-    width: 25px;
-    height: 25px; /* Définir également la hauteur pour maintenir le ratio */
-    margin-left: 10px;
-    margin-right: 10px; /* Ajouter une marge à droite pour l'espace */
-    background-color: transparent;
-    font-size: 50px;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: flex; /* Utiliser display flex pour aligner le contenu */
-    align-items:center; /* Aligner verticalement le contenu */
-    vertical-align: middle;
-    padding-top: 15px;
-    justify-content: center; /* Aligner horizontalement le contenu */
+    background-image: url(/content/images/ressources/coeur-gris.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    transition: background-color 0.3s;
 }
 
 .heart:hover {
     transform: scale(1.05);
 }
 
-.heart::before {
-    content: '\2665';
-}
-
-.heart.clicked::before {
-    color: red;
+.heart.clicked {
+    background-image: url(/content/images/ressources/coeur-rouge.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    transition: background-color 0.3s;
 }
 
 .heart.clicked {
