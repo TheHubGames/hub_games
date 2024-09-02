@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="DivCo - HubGames" />
+    <meta name="description" content="Sur un plateau de jeu en 3x3 le premier à alligner trois de ses pions à gagné." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hubgames.studio/games/DivCo/" />
+    <meta property="og:title" content="DivCo - HubGames" />
+    <meta property="og:description" content="Sur un plateau de jeu en 3x3 le premier à alligner trois de ses pions à gagné." />
+    <meta property="og:image" content="https://hubgames.studio/conent/images/icon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hubgames.studio/games/DivCo/" />
+    <meta property="twitter:title" content="DivCo - HubGames" />
+    <meta property="twitter:description" content="Sur un plateau de jeu en 3x3 le premier à alligner trois de ses pions à gagné." />
+    <meta property="twitter:image" content="https://hubgames.studio/content/images/icon.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    
+    <title>DivCo</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../../content/images/icon.png">
+    <style>
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .person-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: #e2e8f0; /* Couleur de fond pour la sélection */
+            padding: 0.5rem 1rem;
+            border-radius: 9999px 0px 0px 9999px ; /* Full rounded */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .person-item:hover {
+            filter: brightness(95%);
+        }
+    
+        .remove-btn {
+            position: relative;
+            display: inline;
+            align-items: center;
+            background-color: #e2e8f0; /* Couleur de fond pour la sélection */
+            padding: 0.5rem;
+            border-radius: 0px 9999px 9999px 0px ; /* Full rounded */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: -25px ;
+        }
+    
+        .remove-btn:hover {
+            background-color: #d1d5db; /* Couleur de fond au survol */
+            .croix {
+                color: #dc2626; /* Couleur de la croix de suppression au survol */
+            }
+            .person-item:hover {
+                filter: brightness(95%);
+            }
+        }
+        .bg-primary {
+            background-color: #8fc0ff; /* Exemple de couleur primaire */
+            color: white; /* Exemple de couleur du texte pour le contraste */
+        }
+    </style>
+    
+</head>
+<body style="color: #626262;">
+    <div id="loader">
+        <div id="loader-spinner"></div>
+        <p>Chargement en cours...</p>
+    </div>
+    <script>
+      $(function(){
+          $("#footer").load("../../footer.html"); 
+        });
+    </script> 
+  <script> 
+    $(function(){
+      $("#nav").load("../../nav.html"); 
+    });
+  </script> 
+  <div id="nav"></div>
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg relative">
+        <h1 class="text-2xl font-bold mb-6">Créer une liste de courses</h1>
+
+        <!-- Bouton pour ouvrir la popup d'ajout d'utilisateur -->
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4" onclick="togglePersonModal()">Ajouter un utilisateur</button>
+
+        <!-- Liste des utilisateurs ajoutés -->
+        <div id="peopleList" class="mb-6 flex flex-wrap gap-2">
+            <!-- Les personnes ajoutées apparaîtront ici -->
+        </div>
+
+        <!-- Popup Modale pour ajouter un utilisateur -->
+        <div id="personModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full relative">
+                <span class="modal-close" onclick="togglePersonModal()">&times;</span>
+                <h2 class="text-xl font-bold mb-4">Ajouter un utilisateur</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label for="personName" class="block text-gray-700">Nom de la personne:</label>
+                        <input type="text" id="personNameInput" name="personName" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                    </div>
+
+                    <!-- Boutons Ajouter et Annuler -->
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" onclick="addPerson()">Ajouter</button>
+                        <button type="button" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" onclick="togglePersonModal()">Annuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bouton pour ouvrir la popup d'ajout d'article -->
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4" onclick="toggleCourseModal()">Ajouter un article</button>
+        
+        <!-- Popup Modale pour ajouter un article -->
+        <div id="courseModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full relative">
+                <span class="modal-close" onclick="toggleCourseModal()">&times;</span>
+                <h2 class="text-xl font-bold mb-4">Ajouter un article</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label for="item" class="block text-gray-700">Nom de l'article:</label>
+                        <input type="text" id="item" name="item" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                    </div>
+
+                    <!-- Champs Prix et Quantité côte à côte -->
+                    <div class="flex space-x-4">
+                        <div class="flex-1">
+                            <label for="price" class="block text-gray-700">Prix de l'article:</label>
+                            <input type="number" id="price" name="price" class="w-full px-3 py-2 border border-gray-300 rounded" step="0.01" required>
+                        </div>
+                        <div class="flex-1">
+                            <label for="quantity" class="block text-gray-700">Quantité:</label>
+                            <input type="number" id="quantity" name="quantity" class="w-full px-3 py-2 border border-gray-300 rounded" required>
+                        </div>
+                    </div>
+
+                    <!-- Sélection des personnes concernées -->
+                    <div>
+                        <label class="block text-gray-700 mb-2">Personnes concernées:</label>
+                        <div id="peopleCheckboxes" class="flex flex-wrap gap-2">
+                            <!-- Cases à cocher pour les personnes -->
+                        </div>
+                    </div>
+
+                    <!-- Boutons Ajouter et Annuler -->
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" id="saveItemButton" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" onclick="saveItem()">Ajouter à la liste</button>
+                        <button type="button" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" onclick="toggleCourseModal()">Annuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Liste des articles ajoutés -->
+        <h2 class="text-xl font-semibold mt-8 mb-4">Liste des articles</h2>
+        <table id="courseTable" class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="py-2 px-4 border-b text-left">Nom de l'article</th>
+                    <th class="py-2 px-4 border-b text-left">Prix unitaire</th>
+                    <th class="py-2 px-4 border-b text-left">Quantité</th>
+                    <th class="py-2 px-4 border-b text-left">Personnes concernées</th>
+                    <th class="py-2 px-4 border-b text-left">Prix par personne</th>
+                    <th class="py-2 px-4 border-b text-left">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <!-- Bouton pour supprimer toute la liste -->
+        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 mt-4" onclick="deleteAllItems()">Supprimer toute la liste</button>
+
+        <!-- Affichage du total par personne -->
+        <h3 class="text-xl font-semibold mt-8 mb-4">Total par personne:</h3>
+        <div id="totalPerPerson" class="space-y-2"></div>
+
+    </div>
+
+    <div id="footer"></div>
+    <script src="script.js"></script>
+    <script src="../../loader.js"></script>
+</body>
+</html>
