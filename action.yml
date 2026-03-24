@@ -13,7 +13,7 @@ inputs:
   base-url-path:
     description: 'The url of your webpage'
     required: false
-    default: 'https://hubgames.studio²/'
+    default: 'https://hubgames.klaynight.fr/'
   include-html:
     description: 'Indicates whether to include html files in the sitemap.'
     required: false
